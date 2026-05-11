@@ -8,408 +8,271 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --verde: #6abf1e;
-  --verde-dark: #4a8a10;
-  --verde-light: #e8f5d5;
-  --gris: #2c2c2c;
-  --gris-mid: #555;
-  --gris-light: #f5f5f5;
-  --blanco: #ffffff;
-  --borde: #dde8cc;
-  --accent: #1a3a0a;
-  --text: #1e1e1e;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-  --radius: 12px;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --g:#6abf1e;--gd:#4a8a10;--gdd:#2d5a07;--gl:#eaf5d4;--gxl:#f4faea;
+  --ink:#141414;--inkm:#3a3a3a;--inks:#5c5c5c;--inkq:#8a8a8a;
+  --sf:#ffffff;--sf2:#f7f9f4;--bd:#d8e8c2;--bds:#eaf0df;
+  --sh:0 1px 3px rgba(0,0,0,.07),0 4px 14px rgba(0,0,0,.05);
+  --r:10px;--rl:16px
 }
+body{font-family:'DM Sans',sans-serif;font-size:15.5px;line-height:1.72;color:var(--ink);background:var(--sf2)}
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* NAV */
+header{position:sticky;top:0;z-index:200;background:#0a1503;border-bottom:2px solid var(--g)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:56px;gap:12px}
+.brand{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--g);white-space:nowrap;flex-shrink:0;letter-spacing:-.3px}
+.brand em{color:rgba(255,255,255,.4);font-style:normal;font-weight:400;font-size:.74rem;margin-left:7px}
+.nav-links{display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  color:rgba(255,255,255,.5);text-decoration:none;font-size:.73rem;font-weight:500;
+  padding:5px 9px;border-radius:6px;white-space:nowrap;
+  position:relative;transition:color .18s,background .18s;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:9px;right:9px;height:2px;
+  background:var(--g);transform:scaleX(0);border-radius:2px;transition:transform .2s
+}
+.nav-links a:hover{color:#fff;background:rgba(106,191,30,.16)}
+.nav-links a:hover::after{transform:scaleX(1)}
 
-html { scroll-behavior: smooth; }
+/* LAYOUT */
+.ctr{max-width:1200px;margin:0 auto}
+section{padding:60px 28px}
+section:nth-child(even){background:var(--sf)}
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--text);
-  background: #f8faf4;
-}
+/* BADGE */
+.badge{display:inline-flex;align-items:center;gap:7px;background:var(--gl);color:var(--gdd);font-size:.71rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 13px;border-radius:20px;border:1px solid var(--bd);margin-bottom:12px}
+.badge .dot{width:18px;height:18px;background:var(--g);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.64rem;font-weight:800}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.45rem,3vw,1.95rem);font-weight:800;color:var(--ink);margin-bottom:4px;line-height:1.15}
+.section-sub{color:var(--inks);font-size:.9rem;margin-bottom:32px;max-width:580px}
 
-/* ── NAV ── */
-header {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--gris);
-  border-bottom: 3px solid var(--verde);
-}
-.nav-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 60px;
-}
-.brand {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800; font-size: 1.15rem;
-  color: var(--verde); letter-spacing: 0.5px;
-}
-.brand span { color: #fff; }
-nav a {
-  color: rgba(255,255,255,0.78);
-  text-decoration: none; font-size: 0.8rem; font-weight: 500;
-  padding: 4px 8px; border-radius: 6px;
-  transition: color .2s, background .2s;
-}
-nav a:hover { color: #fff; background: rgba(106,191,30,0.25); }
-.nav-links { display: flex; flex-wrap: wrap; gap: 2px; }
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:7px;padding:8px 18px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;transition:all .18s;cursor:pointer;border:none;font-family:inherit;white-space:nowrap}
+.btn-p{background:var(--g);color:#fff}.btn-p:hover{background:var(--gd);transform:translateY(-1px)}
+.btn-s{background:transparent;color:var(--gd);border:1.5px solid var(--bd)}.btn-s:hover{background:var(--gl);border-color:var(--g)}
+.btn-gh{background:rgba(255,255,255,.09);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.2)}.btn-gh:hover{background:rgba(255,255,255,.16);color:#fff}
+.btn-sm{padding:6px 13px;font-size:.78rem}
+.btn-up{background:var(--sf2);color:var(--inks);border:1.5px dashed var(--bd)}.btn-up:hover{background:var(--gl);border-color:var(--g);color:var(--gd);border-style:solid}
 
-/* ── HERO ── */
-.hero {
-  background: var(--gris);
-  padding: 64px 24px 72px;
-  position: relative; overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 70% at 80% 50%, rgba(106,191,30,0.12) 0%, transparent 70%);
-}
-.hero-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 320px; gap: 48px;
-  align-items: center; position: relative;
-}
-.hero-badge {
-  display: inline-block;
-  background: rgba(106,191,30,0.18); border: 1px solid rgba(106,191,30,0.4);
-  color: var(--verde); font-size: 0.78rem; font-weight: 600; letter-spacing: 1px;
-  text-transform: uppercase; padding: 4px 14px; border-radius: 20px;
-  margin-bottom: 16px;
-}
-.hero h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800;
-  color: #fff; line-height: 1.1; margin-bottom: 18px;
-}
-.hero h1 em { color: var(--verde); font-style: normal; }
-.hero-desc {
-  color: rgba(255,255,255,0.68); font-size: 1rem;
-  max-width: 540px; margin-bottom: 28px;
-}
-.pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-.pill {
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.75); padding: 4px 14px;
-  border-radius: 20px; font-size: 0.78rem;
-}
-.btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 10px 22px; border-radius: 8px;
-  font-size: 0.88rem; font-weight: 600;
-  text-decoration: none; transition: all .2s; cursor: pointer;
-  border: none;
-}
-.btn-primary { background: var(--verde); color: #fff; }
-.btn-primary:hover { background: var(--verde-dark); }
-.btn-secondary {
-  background: transparent; color: rgba(255,255,255,0.8);
-  border: 1px solid rgba(255,255,255,0.25);
-}
-.btn-secondary:hover { background: rgba(255,255,255,0.08); color: #fff; }
-.btn-sm { padding: 7px 16px; font-size: 0.82rem; }
+/* HERO */
+.hero{background:#0a1503;padding:76px 28px 88px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 88% 40%,rgba(106,191,30,.18) 0%,transparent 60%),radial-gradient(ellipse 35% 50% at 8% 80%,rgba(106,191,30,.09) 0%,transparent 60%)}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(106,191,30,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(106,191,30,.05) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 80%)}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 295px;gap:52px;align-items:center;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(106,191,30,.14);border:1px solid rgba(106,191,30,.32);color:var(--g);font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+.eyebrow span{width:6px;height:6px;background:var(--g);border-radius:50%;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4.5vw,3.3rem);font-weight:800;color:#fff;line-height:1.06;margin-bottom:18px;letter-spacing:-1px}
+.hero h1 em{color:var(--g);font-style:normal}
+.hero h1 .sub{display:block;color:rgba(255,255,255,.36);font-size:.45em;font-weight:400;letter-spacing:0;margin-top:10px;font-family:'DM Sans',sans-serif;line-height:1.55}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.55);padding:3px 12px;border-radius:20px;font-size:.74rem}
+.hbtns{display:flex;gap:11px;flex-wrap:wrap}
 
-.ficha {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(106,191,30,0.3);
-  border-radius: var(--radius); padding: 24px;
-}
-.ficha h3 {
-  font-family: 'Syne', sans-serif; font-size: 0.9rem;
-  color: var(--verde); margin-bottom: 14px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.5px;
-}
-.ficha ul { list-style: none; }
-.ficha li {
-  color: rgba(255,255,255,0.75); font-size: 0.85rem;
-  padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-.ficha li:last-child { border-bottom: none; }
-.ficha li strong { color: var(--verde); }
+/* FICHA */
+.ficha{background:rgba(255,255,255,.04);border:1px solid rgba(106,191,30,.22);border-radius:var(--rl);padding:22px 20px}
+.ficha-hd{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:11px;border-bottom:1px solid rgba(255,255,255,.07)}
+.ficon{width:36px;height:36px;background:var(--g);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.ficha-hd h3{font-family:'Syne',sans-serif;font-size:.8rem;color:rgba(255,255,255,.9);font-weight:700}
+.ficha-hd p{font-size:.7rem;color:rgba(255,255,255,.38)}
+.ficha ul{list-style:none}
+.ficha li{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.76rem}
+.ficha li:last-child{border-bottom:none}
+.lk{color:rgba(255,255,255,.38);flex-shrink:0}.lv{color:rgba(255,255,255,.8);text-align:right;font-weight:500}
 
-/* ── SECCIONES ── */
-section { padding: 64px 24px; }
-section:nth-child(even) { background: #fff; }
-.container { max-width: 1200px; margin: 0 auto; }
+/* CARDS */
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl);padding:24px 26px;box-shadow:var(--sh)}
+.card.ac{border-left:4px solid var(--g);border-radius:0 var(--rl) var(--rl) 0}
+.card h3{font-family:'Syne',sans-serif;font-size:.98rem;font-weight:700;color:var(--ink);margin-bottom:9px}
+.card p{color:var(--inks);font-size:.9rem}
+.grid{display:grid;gap:16px}
+.c3{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
 
-.section-tag {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--verde-light); color: var(--verde-dark);
-  font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
-  text-transform: uppercase; padding: 4px 14px; border-radius: 20px;
-  margin-bottom: 10px;
-}
-.section-tag .num {
-  background: var(--verde); color: #fff;
-  width: 20px; height: 20px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.7rem; font-weight: 800;
-}
-.section-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800;
-  color: var(--gris); margin-bottom: 6px;
-}
-.section-sub { color: var(--gris-mid); margin-bottom: 36px; max-width: 620px; }
+/* OBJ CARDS */
+.ocard{background:var(--sf);border:1px solid var(--bds);border-radius:var(--rl);padding:20px;box-shadow:var(--sh);transition:box-shadow .2s,transform .2s}
+.ocard:hover{box-shadow:0 8px 28px rgba(106,191,30,.13);transform:translateY(-2px)}
+.onum{width:30px;height:30px;background:var(--g);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:.86rem;margin-bottom:11px}
+.ocard h3{font-size:.9rem}
 
-/* ── CARDS ── */
-.card {
-  background: #fff; border: 1px solid var(--borde);
-  border-radius: var(--radius); padding: 28px;
-  box-shadow: var(--shadow);
-}
-.card-grid { display: grid; gap: 20px; }
-.card-grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.card-grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.card-grid.cols-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+/* STEPS */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:13px}
+.step{background:var(--sf);border:1px solid var(--bds);border-radius:var(--rl);padding:17px 18px;display:flex;gap:12px;align-items:flex-start;transition:box-shadow .2s,transform .2s,border-color .2s}
+.step:hover{box-shadow:0 6px 22px rgba(106,191,30,.12);transform:translateY(-2px);border-color:var(--g)}
+.sn{flex-shrink:0;width:28px;height:28px;background:#111;color:var(--g);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:.79rem}
+.step h4{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:var(--ink);margin-bottom:3px}
+.step p{font-size:.75rem;color:var(--inkq);line-height:1.45}
 
-.card h3 {
-  font-family: 'Syne', sans-serif; font-size: 1rem;
-  font-weight: 700; color: var(--gris); margin-bottom: 10px;
-}
-.card p { color: var(--gris-mid); font-size: 0.92rem; }
-.card .num-badge {
-  width: 36px; height: 36px; background: var(--verde);
-  color: #fff; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem;
-  margin-bottom: 14px;
-}
-.card.accent-left { border-left: 4px solid var(--verde); }
-.card.dark { background: var(--gris); border-color: var(--gris); }
-.card.dark h3, .card.dark p { color: rgba(255,255,255,0.85); }
+/* DOC BLOCKS */
+.doc-block{background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl);padding:22px 26px;box-shadow:var(--sh);margin-bottom:18px}
+.dtags{display:flex;gap:6px;margin-bottom:10px}
+.dtag{font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:12px;letter-spacing:.3px}
+.dtag.v{background:var(--gl);color:var(--gdd);border:1px solid var(--bd)}
+.dtag.s{background:#f0f0f0;color:#444;border:1px solid #ddd}
+.doc-block h3{font-family:'Syne',sans-serif;font-size:.97rem;font-weight:700;color:var(--ink);margin-bottom:5px}
+.doc-block p{font-size:.83rem;color:var(--inks);margin-bottom:14px}
+.drow{display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding-top:13px;border-top:1px solid var(--bds)}
+.dinfo{font-size:.75rem;color:var(--inkq)}
 
-/* ── PROCESO MML ── */
-.mml-steps {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px; margin-bottom: 40px;
-}
-.step {
-  background: #fff; border: 1px solid var(--borde);
-  border-radius: var(--radius); padding: 20px;
-  display: flex; gap: 14px; align-items: flex-start;
-  transition: box-shadow .2s, transform .2s;
-}
-.step:hover { box-shadow: 0 8px 28px rgba(106,191,30,0.15); transform: translateY(-2px); }
-.step-num {
-  flex-shrink: 0;
-  width: 34px; height: 34px; background: var(--verde);
-  color: #fff; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.9rem;
-}
-.step-content h4 { font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; color: var(--gris); margin-bottom: 4px; }
-.step-content p { font-size: 0.8rem; color: var(--gris-mid); line-height: 1.5; }
+/* TABLAS */
+.tw{overflow-x:auto;border-radius:var(--rl);border:1px solid var(--bd);margin-top:18px}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+thead{background:#111}
+thead th{color:rgba(255,255,255,.85);padding:10px 13px;text-align:left;font-family:'Syne',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.3px;white-space:nowrap}
+thead th.thg{background:var(--gd);color:#fff}
+tbody tr{border-bottom:1px solid var(--bds)}
+tbody tr:nth-child(even){background:var(--sf2)}
+tbody tr:hover{background:var(--gxl)}
+td{padding:10px 13px;color:var(--inks);vertical-align:top;line-height:1.52}
+td strong,td b{color:var(--ink)}
+td ul{padding-left:14px}
+td li{margin-bottom:2px}
 
-/* ── TABLAS ── */
-.table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--borde); margin-top: 24px; }
-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-thead { background: var(--gris); }
-thead th { color: #fff; padding: 12px 14px; text-align: left; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.3px; white-space: nowrap; }
-tbody tr { border-bottom: 1px solid var(--borde); }
-tbody tr:nth-child(even) { background: #f9fbf6; }
-tbody tr:hover { background: var(--verde-light); }
-td { padding: 11px 14px; color: var(--gris-mid); vertical-align: top; line-height: 1.5; }
-td strong, td b { color: var(--gris); }
-td ul { padding-left: 16px; }
-td ul li { margin-bottom: 3px; }
-.th-verde { background: var(--verde) !important; }
+/* ÁRBOL */
+.tree{padding:20px}
+.tlbl{font-family:'Syne',sans-serif;font-size:.67rem;font-weight:700;color:var(--inkq);text-transform:uppercase;letter-spacing:1.2px;margin:8px 0;text-align:center}
+.trow{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin:5px 0}
+.tn{display:inline-flex;align-items:center;padding:8px 15px;border-radius:8px;font-size:.78rem;font-weight:500;line-height:1.4;text-align:center;max-width:230px}
+.tn.root{background:#111;color:#fff;font-family:'Syne',sans-serif;font-weight:700;max-width:420px;justify-content:center}
+.tn.cause{background:#fff0f0;color:#7a1a1a;border:1px solid #f5bfbf}
+.tn.effect{background:var(--gl);color:var(--gdd);border:1px solid var(--bd)}
+.tn.obj{background:var(--g);color:#fff;font-family:'Syne',sans-serif;font-weight:700;max-width:420px;justify-content:center}
+.tn.fin{background:#111;color:rgba(255,255,255,.82)}
+.tn.comp{background:#eaf0ff;color:#1a3a8a;border:1px solid #c0d0f5}
+.tn.acc{background:#fff8e8;color:#7a5000;border:1px solid #f0d590}
+.tarrow{text-align:center;color:var(--g);font-size:1.2rem;margin:2px 0;line-height:1}
 
-/* ── ÁRBOL VISUAL ── */
-.tree { text-align: center; padding: 20px 0; }
-.tree-node {
-  display: inline-block; padding: 10px 18px; border-radius: 8px;
-  font-size: 0.85rem; font-weight: 600; margin: 4px;
-}
-.tree-root { background: var(--gris); color: #fff; font-family: 'Syne', sans-serif; }
-.tree-cause { background: #fde8e8; color: #7a1a1a; border: 1px solid #f5b5b5; font-size: 0.78rem; }
-.tree-effect { background: var(--verde-light); color: var(--verde-dark); border: 1px solid var(--borde); font-size: 0.78rem; }
-.tree-obj { background: var(--verde); color: #fff; font-family: 'Syne', sans-serif; }
-.tree-fin { background: var(--gris); color: #fff; font-size: 0.78rem; }
-.tree-comp { background: #e8f0fe; color: #1a3a8a; border: 1px solid #b5c8f5; font-size: 0.78rem; }
-.tree-acc { background: #fff8e8; color: #7a5a0a; border: 1px solid #f5ddb5; font-size: 0.78rem; }
+/* ACTORES */
+.agrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:12px}
+.ac{border-radius:var(--rl);padding:16px;text-align:center;border:1px solid;transition:transform .2s,box-shadow .2s}
+.ac:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.ac.g{background:#f0fae0;border-color:#c0dca0}
+.ac.b{background:#eaf0ff;border-color:#b0c8f0}
+.ac.o{background:#fff8e8;border-color:#f0d080}
+.ac.r{background:#fff0f0;border-color:#f0c0c0}
+.aicon{font-size:1.8rem;margin-bottom:7px}
+.ac h4{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+.ac p{font-size:.72rem;color:var(--inks);line-height:1.4}
+.nbadge{display:inline-block;margin-top:7px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:10px}
+.na{background:var(--g);color:#fff}.nm{background:#f5c542;color:#4a3000}.nb{background:#ccc;color:#444}
 
-.tree-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 8px 0; }
-.tree-connector { text-align: center; color: var(--verde); font-size: 1.4rem; margin: 4px 0; }
+/* EAP */
+.eap{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+.ep{border-radius:var(--rl);padding:20px;border-top:4px solid}
+.ep.fi{border-color:var(--g);background:#f0fae0}.ep.pr{border-color:#2c7be5;background:#eaf2ff}
+.ep.co{border-color:#f5a623;background:#fff9f0}.ep.ac{border-color:#e54e4e;background:#fff2f2}
+.ep h4{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.6px;margin-bottom:9px}
+.ep.fi h4{color:#2a6000}.ep.pr h4{color:#1a4a9a}.ep.co h4{color:#7a4a00}.ep.ac h4{color:#7a1a1a}
+.ep ul{padding-left:15px;font-size:.8rem;color:var(--inks)}.ep li{margin-bottom:4px}
 
-/* ── MAPA ACTORES ── */
-.actor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 24px; }
-.actor-card {
-  border-radius: var(--radius); padding: 18px; text-align: center;
-  border: 1px solid var(--borde);
-}
-.actor-card.tipo-1 { background: #e8f5d5; border-color: #b5dca0; }
-.actor-card.tipo-2 { background: #e8f0fe; border-color: #b5c8f5; }
-.actor-card.tipo-3 { background: #fff3e8; border-color: #f5d5b5; }
-.actor-card.tipo-4 { background: #fde8e8; border-color: #f5b5b5; }
-.actor-icon { font-size: 2rem; margin-bottom: 8px; }
-.actor-card h4 { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--gris); margin-bottom: 4px; }
-.actor-card p { font-size: 0.75rem; color: var(--gris-mid); }
-.actor-card .nivel { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 8px; padding: 2px 8px; border-radius: 10px; display: inline-block; }
-.nivel.alto { background: var(--verde); color: #fff; }
-.nivel.medio { background: #f5c542; color: #333; }
-.nivel.bajo { background: #ccc; color: #333; }
+/* BUDGET */
+.brow{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--bds)}
+.brow:last-of-type{border-bottom:none}
+.bname{font-size:.88rem;color:var(--ink)}.bsrc{font-size:.72rem;color:var(--inkq)}
+.bamt{font-family:'Syne',sans-serif;font-weight:700;color:var(--gd);font-size:.92rem}
+.btotal{display:flex;justify-content:space-between;align-items:center;background:#111;border-radius:var(--r);padding:15px 18px;margin-top:14px}
+.btotal span{color:rgba(255,255,255,.5);font-size:.86rem}
+.btotal strong{color:var(--g);font-family:'Syne',sans-serif;font-size:1.35rem}
 
-/* ── EAP / Resumen Narrativo ── */
-.eap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
-.eap-card {
-  border-radius: var(--radius); padding: 20px;
-  border-top: 4px solid;
-}
-.eap-fines { border-color: #6abf1e; background: #f0fae0; }
-.eap-proposito { border-color: #2c7be5; background: #eaf2ff; }
-.eap-componentes { border-color: #f5a623; background: #fff8ec; }
-.eap-acciones { border-color: #e54e4e; background: #fff0f0; }
-.eap-card h4 { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
-.eap-fines h4 { color: #3a7a00; }
-.eap-proposito h4 { color: #1a4a9a; }
-.eap-componentes h4 { color: #7a4a00; }
-.eap-acciones h4 { color: #7a1a1a; }
-.eap-card ul { padding-left: 16px; font-size: 0.82rem; color: var(--gris-mid); }
-.eap-card li { margin-bottom: 5px; }
+/* TEAM */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:14px}
+.tcard{background:#111;border-radius:var(--rl);padding:24px 20px;text-align:center;border:1px solid rgba(106,191,30,.18);transition:border-color .2s,transform .2s}
+.tcard:hover{border-color:var(--g);transform:translateY(-2px)}
+.av{width:52px;height:52px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin:0 auto 12px}
+.tcard h4{font-family:'Syne',sans-serif;color:#fff;font-size:.9rem;margin-bottom:4px}
+.tcard .role{color:var(--g);font-size:.76rem;font-weight:600;margin-bottom:4px}
+.tcard .inst{color:rgba(255,255,255,.32);font-size:.72rem}
 
-/* ── MARCO LÓGICO TABLA ── */
-.ml-section { margin-bottom: 36px; }
-.ml-section-title {
-  font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 800;
-  color: var(--gris); margin-bottom: 12px;
-  padding-left: 12px; border-left: 4px solid var(--verde);
-}
+/* ML title */
+.mlt{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:800;color:var(--ink);margin:28px 0 10px;padding-left:13px;border-left:4px solid var(--g)}
 
-/* ── TIMELINE DOCS ── */
-.doc-item { position: relative; padding-left: 28px; margin-bottom: 32px; }
-.doc-item::before {
-  content: '';
-  position: absolute; left: 0; top: 8px; bottom: -32px;
-  width: 2px; background: var(--borde);
-}
-.doc-item:last-child::before { display: none; }
-.doc-dot {
-  position: absolute; left: -6px; top: 6px;
-  width: 14px; height: 14px; background: var(--verde);
-  border-radius: 50%; border: 2px solid #fff;
-  box-shadow: 0 0 0 2px var(--verde);
-}
+/* FOOTER */
+footer{background:#081002;color:rgba(255,255,255,.3);padding:28px;text-align:center;font-size:.78rem;border-top:1px solid rgba(106,191,30,.18)}
+footer strong{color:var(--g)}
 
-/* ── PRESUPUESTO ── */
-.presupuesto-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--borde); }
-.presupuesto-row:last-child { border-bottom: none; }
-.presupuesto-item { font-size: 0.9rem; color: var(--gris); }
-.presupuesto-monto { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--verde-dark); }
-.presupuesto-fuente { font-size: 0.78rem; color: var(--gris-mid); }
-.presupuesto-total { background: var(--gris); border-radius: var(--radius); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
-.presupuesto-total span { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
-.presupuesto-total strong { color: var(--verde); font-family: 'Syne', sans-serif; font-size: 1.4rem; }
-
-/* ── CONTACTO ── */
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-.contact-card {
-  background: var(--gris); border-radius: var(--radius);
-  padding: 24px; text-align: center;
-}
-.contact-card .avatar { width: 60px; height: 60px; background: var(--verde); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; color: #fff; margin: 0 auto 14px; }
-.contact-card h4 { font-family: 'Syne', sans-serif; color: #fff; font-size: 0.95rem; margin-bottom: 4px; }
-.contact-card p { color: rgba(255,255,255,0.55); font-size: 0.8rem; }
-
-/* ── FOOTER ── */
-footer {
-  background: var(--accent); color: rgba(255,255,255,0.6);
-  padding: 28px 24px; text-align: center; font-size: 0.82rem;
-}
-footer strong { color: var(--verde); }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .ficha { display: none; }
-  .nav-links { display: none; }
-}
+/* RESPONSIVE */
+@media(max-width:820px){.hero-inner{grid-template-columns:1fr}.ficha{display:none}section{padding:44px 18px}}
+@media(max-width:600px){.nav-inner{padding:0 14px}.hero{padding:52px 18px 64px}}
 </style>
 </head>
 <body>
 
-<!-- HEADER NAV -->
+<!-- NAV -->
 <header>
   <div class="nav-inner">
-    <div class="brand">Neuro<span>Byte</span></div>
+    <div class="brand">NeuroByte <em>CTeI · 2026</em></div>
     <div class="nav-links">
       <a href="#inicio">Inicio</a>
       <a href="#problema">Problema</a>
       <a href="#objetivos">Objetivos</a>
-      <a href="#mml-proceso">MML Proceso</a>
-      <a href="#mapa-actores">Actores</a>
-      <a href="#arbol-problema">Árbol Problema</a>
-      <a href="#arbol-objetivos">Árbol Objetivos</a>
+      <a href="#mml">MML</a>
+      <a href="#actores">Actores</a>
+      <a href="#arbol-p">Árbol Problema</a>
+      <a href="#arbol-o">Árbol Objetivos</a>
+      <a href="#acciones">Acciones</a>
       <a href="#eap">EAP</a>
-      <a href="#marco-logico">Marco Lógico</a>
+      <a href="#indicadores">Indicadores</a>
       <a href="#matrices">Matrices</a>
-      <a href="#contacto">Equipo</a>
+      <a href="#docs">Documentos</a>
+      <a href="#presupuesto">Presupuesto</a>
+      <a href="#equipo">Equipo</a>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero" id="inicio">
-  <div class="hero-inner container">
+  <div class="hero-inner ctr">
     <div>
-      <div class="hero-badge">Portafolio Digital CTeI I — 2026</div>
-      <h1>Tutor Lúdico<br/><em>tipo Trivia</em><br/>Saber 11°</h1>
-      <p class="hero-desc">Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias en las pruebas Saber 11° en estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá.</p>
-      <div class="pill-row">
+      <div class="eyebrow"><span></span>Portafolio Digital · CAI CTeI I · 2026</div>
+      <h1>
+        Tutor Lúdico<br/>
+        <em>tipo Trivia</em>
+        <span class="sub">Diseño e implementación para el fortalecimiento<br/>de competencias en las pruebas Saber 11°<br/>IED Rural San Gabriel de Cajicá</span>
+      </h1>
+      <div class="pills">
         <span class="pill">Gamificación</span>
-        <span class="pill">Pruebas Saber 11°</span>
+        <span class="pill">Saber 11°</span>
         <span class="pill">Educación Rural</span>
-        <span class="pill">Tecnología Educativa</span>
         <span class="pill">Cuasi-experimental</span>
+        <span class="pill">NeuroByte</span>
       </div>
-      <div class="btn-row">
-        <a href="#mml-proceso" class="btn btn-primary">Ver Marco Lógico</a>
-        <a href="#contacto" class="btn btn-secondary">Equipo NeuroByte</a>
+      <div class="hbtns">
+        <a href="#mml" class="btn btn-p">Ver Marco Lógico</a>
+        <a href="#docs" class="btn btn-gh">Documentos del proyecto</a>
       </div>
     </div>
     <div class="ficha">
-      <h3>Ficha rápida</h3>
+      <div class="ficha-hd">
+        <div class="ficon">🧠</div>
+        <div><h3>NeuroByte</h3><p>Ficha del proyecto</p></div>
+      </div>
       <ul>
-        <li><strong>Equipo:</strong> NeuroByte</li>
-        <li><strong>Autores:</strong> Oscar Camilo Pineda Osorio · Jeison Crishtofer Rojas Cruz</li>
-        <li><strong>Líder CTeI:</strong> José Alejandro Martínez Escobar</li>
-        <li><strong>Institución:</strong> IED Rural San Gabriel — Cajicá</li>
-        <li><strong>Universidad:</strong> UCundinamarca</li>
-        <li><strong>Año:</strong> 2026 · V2</li>
-        <li><strong>Código:</strong> CAD102020631</li>
-        <li><strong>Duración:</strong> 5 meses</li>
+        <li><span class="lk">Autores</span><span class="lv">O. Pineda · J. Rojas</span></li>
+        <li><span class="lk">Líder CTeI</span><span class="lv">J. A. Martínez</span></li>
+        <li><span class="lk">Institución</span><span class="lv">IED Rural San Gabriel</span></li>
+        <li><span class="lk">Universidad</span><span class="lv">UCundinamarca</span></li>
+        <li><span class="lk">Código</span><span class="lv">CAD102020631</span></li>
+        <li><span class="lk">Año</span><span class="lv">2026 · V2</span></li>
+        <li><span class="lk">Duración</span><span class="lv">5 meses</span></li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- PLANTEAMIENTO DEL PROBLEMA -->
+<!-- PROBLEMA -->
 <section id="problema">
-  <div class="container">
-    <div class="section-tag"><span class="num">1</span>Planteamiento</div>
+  <div class="ctr">
+    <div class="badge"><span class="dot">1</span>Planteamiento</div>
     <h2 class="section-title">Planteamiento del Problema</h2>
-    <p class="section-sub">Contexto y justificación de la investigación.</p>
-    <div class="card accent-left">
-      <p>Los resultados históricos de la IED Rural San Gabriel de Cajicá en las pruebas Saber 11° muestran un desempeño por debajo del promedio departamental y nacional en áreas como Matemáticas, Lectura Crítica y Ciencias Naturales. Esta situación se asocia a la escasez de herramientas pedagógicas digitales actualizadas, la limitada incorporación de tecnología en el aula y las condiciones particulares del contexto rural. La preparación tradicional basada en cuestionarios en papel o clases magistrales resulta insuficiente para desarrollar las competencias complejas que evalúan estas pruebas y no genera retroalimentación oportuna ni mantiene el interés del estudiante (Hattie &amp; Timperley, 2007). Ante esta realidad, surge la necesidad de diseñar e implementar una herramienta tecnológica lúdica que sea accesible, pertinente y alineada con los contenidos y competencias evaluados en las pruebas Saber 11°.</p>
+    <p class="section-sub">Contexto y justificación de la necesidad investigativa.</p>
+    <div class="card ac">
+      <p>Los resultados históricos de la IED Rural San Gabriel de Cajicá en las pruebas Saber 11° muestran un desempeño por debajo del promedio departamental y nacional en áreas como Matemáticas, Lectura Crítica y Ciencias Naturales. Esta situación se asocia a la escasez de herramientas pedagógicas digitales, la limitada incorporación de tecnología en el aula y las condiciones particulares del contexto rural. La preparación tradicional —basada en cuestionarios en papel o clases magistrales— resulta insuficiente para desarrollar competencias complejas sin retroalimentación oportuna ni motivación sostenida (Hattie &amp; Timperley, 2007). Surge así la necesidad de diseñar e implementar una herramienta tecnológica lúdica alineada con los contenidos y competencias evaluados en Saber 11°.</p>
     </div>
-  </div>
-</section>
-
-<!-- PREGUNTA PROBLEMA -->
-<section id="pregunta">
-  <div class="container">
-    <div class="section-tag"><span class="num">2</span>Pregunta</div>
-    <h2 class="section-title">Pregunta de Investigación</h2>
-    <div class="card" style="background: var(--gris); border: none;">
-      <p style="color: rgba(255,255,255,0.85); font-size: 1.05rem; font-style: italic; line-height: 1.8;">
+    <div style="margin-top:18px;background:#111;border-radius:var(--rl);padding:22px 26px;">
+      <p style="font-size:1rem;color:rgba(255,255,255,.82);font-style:italic;line-height:1.8;">
         "¿En qué medida la implementación de un tutor lúdico tipo trivia influye en el desempeño académico y la motivación de los estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá durante el periodo académico 2026-2?"
       </p>
     </div>
@@ -418,736 +281,382 @@ footer strong { color: var(--verde); }
 
 <!-- OBJETIVOS -->
 <section id="objetivos">
-  <div class="container">
-    <div class="section-tag"><span class="num">3</span>Objetivos</div>
+  <div class="ctr">
+    <div class="badge"><span class="dot">2</span>Objetivos</div>
     <h2 class="section-title">Objetivos</h2>
-    <div class="card accent-left" style="margin-bottom: 24px;">
-      <h3>Objetivo General</h3>
-      <p>Evaluar la influencia de la implementación de un tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11 de la Institución Educativa Departamental Rural San Gabriel de Cajicá durante el periodo académico 2026-2.</p>
-    </div>
-    <div class="card-grid cols-3">
-      <div class="card"><div class="num-badge">1</div><h3>Diagnóstico</h3><p>Diagnosticar el nivel de competencias de los estudiantes en las áreas evaluadas por Saber 11° mediante una prueba diagnóstica.</p></div>
-      <div class="card"><div class="num-badge">2</div><h3>Diseño</h3><p>Diseñar el tutor lúdico tipo trivia con base en los contenidos de Saber 11°, integrando principios de gamificación y retroalimentación inmediata.</p></div>
-      <div class="card"><div class="num-badge">3</div><h3>Implementación</h3><p>Implementar el tutor lúdico con los estudiantes de grado 11° de la IED Rural San Gabriel de Cajicá durante el período de intervención.</p></div>
-      <div class="card"><div class="num-badge">4</div><h3>Evaluación</h3><p>Evaluar el impacto del tutor lúdico en el desempeño académico y la motivación mediante comparación de resultados pre y post implementación.</p></div>
-      <div class="card"><div class="num-badge">5</div><h3>Recomendaciones</h3><p>Establecer recomendaciones para la réplica del tutor lúdico en otros contextos de educación rural en Colombia.</p></div>
+    <div class="card ac" style="margin-bottom:20px;"><h3>Objetivo General</h3><p>Evaluar la influencia de la implementación de un tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá durante el periodo académico 2026-2.</p></div>
+    <div class="grid c3">
+      <div class="ocard"><div class="onum">1</div><h3>Diagnóstico</h3><p>Aplicar una prueba diagnóstica para establecer el nivel inicial de competencias en las áreas Saber 11°.</p></div>
+      <div class="ocard"><div class="onum">2</div><h3>Diseño</h3><p>Diseñar el tutor lúdico con gamificación y retroalimentación inmediata alineado con Saber 11°.</p></div>
+      <div class="ocard"><div class="onum">3</div><h3>Implementación</h3><p>Implementar el tutor lúdico con los estudiantes de grado 11° durante el período de intervención.</p></div>
+      <div class="ocard"><div class="onum">4</div><h3>Evaluación</h3><p>Evaluar el impacto mediante comparación de resultados pre y post implementación con análisis estadístico.</p></div>
+      <div class="ocard"><div class="onum">5</div><h3>Recomendaciones</h3><p>Establecer recomendaciones para la réplica del tutor en otros contextos de educación rural en Colombia.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PROCESO DE CONSTRUCCIÓN MML — 9 ÍTEMS -->
-<section id="mml-proceso" style="background: #f0fae0;">
-  <div class="container">
-    <div class="section-tag"><span class="num">4</span>Marco Lógico</div>
+<!-- MML PROCESO -->
+<section id="mml" style="background:var(--sf2);">
+  <div class="ctr">
+    <div class="badge"><span class="dot">3</span>Marco Lógico</div>
     <h2 class="section-title">Proceso de Construcción del Marco Lógico</h2>
-    <p class="section-sub">Los 9 pasos metodológicos para la construcción de la Matriz de Marco Lógico (MML).</p>
-    <div class="mml-steps">
-      <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Mapa de Actores</h4><p>Identificación de todos los actores involucrados en el proyecto.</p></div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Análisis de Involucrados</h4><p>Tabla de intereses, recursos y mandatos de cada actor.</p></div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Árbol del Problema</h4><p>Causas y efectos del problema central identificado.</p></div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-content"><h4>Árbol de Objetivos</h4><p>Conversión del árbol de problemas en árbol de medios y fines.</p></div></div>
-      <div class="step"><div class="step-num">5</div><div class="step-content"><h4>Identificación de Acciones</h4><p>Tabla y árbol con las acciones derivadas de los medios.</p></div></div>
-      <div class="step"><div class="step-num">6</div><div class="step-content"><h4>EAP — Resumen Narrativo</h4><p>Estructura Analítica del Proyecto: Fines, Propósito, Componentes y Acciones.</p></div></div>
-      <div class="step"><div class="step-num">7</div><div class="step-content"><h4>Indicadores</h4><p>Indicadores verificables para cada nivel del resumen narrativo.</p></div></div>
-      <div class="step"><div class="step-num">8</div><div class="step-content"><h4>Medios de Verificación</h4><p>Fuentes y métodos para verificar el cumplimiento de los indicadores.</p></div></div>
-      <div class="step"><div class="step-num">9</div><div class="step-content"><h4>Supuestos</h4><p>Condiciones externas necesarias para el éxito del proyecto.</p></div></div>
+    <p class="section-sub">Los 9 pasos metodológicos de la Matriz de Marco Lógico (MML).</p>
+    <div class="sgrid">
+      <div class="step"><div class="sn">1</div><div><h4>Mapa de Actores</h4><p>Identificación de actores clave y su nivel de influencia.</p></div></div>
+      <div class="step"><div class="sn">2</div><div><h4>Análisis de Involucrados</h4><p>Intereses, recursos y mandatos de cada actor.</p></div></div>
+      <div class="step"><div class="sn">3</div><div><h4>Árbol del Problema</h4><p>Causas y efectos del problema central.</p></div></div>
+      <div class="step"><div class="sn">4</div><div><h4>Árbol de Objetivos</h4><p>Medios y fines como solución estructurada.</p></div></div>
+      <div class="step"><div class="sn">5</div><div><h4>Identificación de Acciones</h4><p>Tabla y árbol de acciones derivadas de los medios.</p></div></div>
+      <div class="step"><div class="sn">6</div><div><h4>EAP — Resumen Narrativo</h4><p>Fines, Propósito, Componentes y Acciones.</p></div></div>
+      <div class="step"><div class="sn">7</div><div><h4>Indicadores</h4><p>Indicadores verificables por nivel del proyecto.</p></div></div>
+      <div class="step"><div class="sn">8</div><div><h4>Medios de Verificación</h4><p>Fuentes para verificar el cumplimiento de indicadores.</p></div></div>
+      <div class="step"><div class="sn">9</div><div><h4>Supuestos</h4><p>Condiciones externas necesarias para el éxito.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- PASO 1: MAPA DE ACTORES -->
-<section id="mapa-actores">
-  <div class="container">
-    <div class="section-tag"><span class="num">1</span>Paso 1 — MML</div>
+<!-- ACTORES -->
+<section id="actores">
+  <div class="ctr">
+    <div class="badge"><span class="dot">1</span>Paso 1 — MML</div>
     <h2 class="section-title">Mapa de Actores</h2>
-    <p class="section-sub">Identificación de los actores clave vinculados al proyecto y su nivel de influencia e interés.</p>
-    <div class="actor-grid">
-      <div class="actor-card tipo-1">
-        <div class="actor-icon">🎓</div>
-        <h4>Estudiantes Grado 11</h4>
-        <p>Beneficiarios directos del tutor lúdico tipo trivia.</p>
-        <span class="nivel alto">Interés: Alto</span>
-      </div>
-      <div class="actor-card tipo-1">
-        <div class="actor-icon">👩‍🏫</div>
-        <h4>Docentes IED</h4>
-        <p>Acompañan la implementación y validan el contenido pedagógico.</p>
-        <span class="nivel alto">Influencia: Alta</span>
-      </div>
-      <div class="actor-card tipo-2">
-        <div class="actor-icon">🏫</div>
-        <h4>Directivos IED San Gabriel</h4>
-        <p>Proveen el espacio institucional y autorizan la intervención.</p>
-        <span class="nivel alto">Influencia: Alta</span>
-      </div>
-      <div class="actor-card tipo-2">
-        <div class="actor-icon">🔬</div>
-        <h4>Equipo Investigador (NeuroByte)</h4>
-        <p>Diseña, implementa y evalúa el tutor lúdico tipo trivia.</p>
-        <span class="nivel alto">Interés: Alto</span>
-      </div>
-      <div class="actor-card tipo-3">
-        <div class="actor-icon">🏛️</div>
-        <h4>Universidad de Cundinamarca</h4>
-        <p>Institución académica que respalda la investigación en el marco del CAI CTeI.</p>
-        <span class="nivel medio">Influencia: Media</span>
-      </div>
-      <div class="actor-card tipo-3">
-        <div class="actor-icon">👨‍👩‍👧</div>
-        <h4>Padres de Familia</h4>
-        <p>Interesados en la mejora académica de sus hijos para el acceso a educación superior.</p>
-        <span class="nivel medio">Interés: Medio</span>
-      </div>
-      <div class="actor-card tipo-4">
-        <div class="actor-icon">📊</div>
-        <h4>ICFES</h4>
-        <p>Define los estándares y competencias evaluadas en las pruebas Saber 11°.</p>
-        <span class="nivel bajo">Influencia: Baja</span>
-      </div>
-      <div class="actor-card tipo-4">
-        <div class="actor-icon">🏢</div>
-        <h4>MEN / Secretaría Educación</h4>
-        <p>Define lineamientos de política educativa y digitalización.</p>
-        <span class="nivel bajo">Influencia: Baja</span>
-      </div>
+    <div class="agrid">
+      <div class="ac g"><div class="aicon">🎓</div><h4>Estudiantes Grado 11</h4><p>Beneficiarios directos del tutor lúdico tipo trivia.</p><span class="nbadge na">Interés: Alto</span></div>
+      <div class="ac g"><div class="aicon">👩‍🏫</div><h4>Docentes IED</h4><p>Acompañan la implementación y validan el contenido.</p><span class="nbadge na">Influencia: Alta</span></div>
+      <div class="ac b"><div class="aicon">🏫</div><h4>Directivos IED San Gabriel</h4><p>Autorizan la intervención y gestionan recursos.</p><span class="nbadge na">Influencia: Alta</span></div>
+      <div class="ac b"><div class="aicon">🔬</div><h4>NeuroByte</h4><p>Equipo que diseña, implementa y evalúa el tutor.</p><span class="nbadge na">Promotor</span></div>
+      <div class="ac o"><div class="aicon">🏛️</div><h4>UCundinamarca</h4><p>Institución que respalda la investigación en el CAI CTeI.</p><span class="nbadge nm">Influencia: Media</span></div>
+      <div class="ac o"><div class="aicon">👨‍👩‍👧</div><h4>Padres de Familia</h4><p>Interesados en la mejora académica de sus hijos.</p><span class="nbadge nm">Interés: Medio</span></div>
+      <div class="ac r"><div class="aicon">📊</div><h4>ICFES</h4><p>Define los estándares de las pruebas Saber 11°.</p><span class="nbadge nb">Influencia: Baja</span></div>
+      <div class="ac r"><div class="aicon">🏢</div><h4>MEN / Sec. Educación</h4><p>Define lineamientos de política educativa y digitalización.</p><span class="nbadge nb">Influencia: Baja</span></div>
     </div>
   </div>
 </section>
 
-<!-- PASO 2: ANÁLISIS DE INVOLUCRADOS -->
-<section id="analisis-involucrados" style="background: #fff;">
-  <div class="container">
-    <div class="section-tag"><span class="num">2</span>Paso 2 — MML</div>
-    <h2 class="section-title">Tabla de Análisis de Involucrados</h2>
-    <div class="table-wrap">
+<!-- INVOLUCRADOS -->
+<section id="involucrados" style="background:var(--sf);">
+  <div class="ctr">
+    <div class="badge"><span class="dot">2</span>Paso 2 — MML</div>
+    <h2 class="section-title">Análisis de Involucrados</h2>
+    <div class="tw">
       <table>
-        <thead>
-          <tr>
-            <th>Actor</th>
-            <th>Intereses</th>
-            <th>Recursos disponibles</th>
-            <th>Mandatos / Compromisos</th>
-            <th>Posición frente al proyecto</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Actor</th><th>Intereses</th><th>Recursos disponibles</th><th>Mandatos / Compromisos</th><th class="thg">Posición</th></tr></thead>
         <tbody>
-          <tr>
-            <td><b>Estudiantes Grado 11</b></td>
-            <td>Mejorar resultados Saber 11° y acceder a educación superior.</td>
-            <td>Tiempo de estudio, motivación.</td>
-            <td>Participar activamente en la implementación y evaluaciones.</td>
-            <td style="color: var(--verde-dark); font-weight: 600;">✔ Favorable</td>
-          </tr>
-          <tr>
-            <td><b>Docentes IED</b></td>
-            <td>Mejorar el desempeño académico de sus estudiantes.</td>
-            <td>Conocimiento curricular, espacio en el aula.</td>
-            <td>Acompañar la implementación y validar contenidos.</td>
-            <td style="color: var(--verde-dark); font-weight: 600;">✔ Favorable</td>
-          </tr>
-          <tr>
-            <td><b>Directivos IED San Gabriel</b></td>
-            <td>Elevar índices de calidad educativa de la institución.</td>
-            <td>Espacios físicos, conectividad institucional.</td>
-            <td>Autorizar la intervención y gestionar recursos tecnológicos.</td>
-            <td style="color: var(--verde-dark); font-weight: 600;">✔ Favorable</td>
-          </tr>
-          <tr>
-            <td><b>Equipo NeuroByte</b></td>
-            <td>Diseñar e implementar el tutor lúdico y obtener evidencia empírica.</td>
-            <td>Conocimientos técnicos y pedagógicos, herramientas de desarrollo.</td>
-            <td>Entregar el tutor funcional, aplicar instrumentos y analizar resultados.</td>
-            <td style="color: var(--verde-dark); font-weight: 600;">✔ Promotor</td>
-          </tr>
-          <tr>
-            <td><b>Universidad de Cundinamarca</b></td>
-            <td>Fomentar la investigación aplicada en el CAI CTeI.</td>
-            <td>Tutoría académica, recursos bibliográficos.</td>
-            <td>Guiar el proceso investigativo y evaluar los entregables.</td>
-            <td style="color: var(--verde-dark); font-weight: 600;">✔ Favorable</td>
-          </tr>
-          <tr>
-            <td><b>Padres de Familia</b></td>
-            <td>Que sus hijos ingresen a la educación superior.</td>
-            <td>Consentimiento informado, apoyo en casa.</td>
-            <td>Autorizar la participación de los estudiantes menores de edad.</td>
-            <td style="color: #7a5a0a; font-weight: 600;">◈ Neutral</td>
-          </tr>
-          <tr>
-            <td><b>ICFES</b></td>
-            <td>Garantizar la calidad de las pruebas Saber 11°.</td>
-            <td>Marcos de referencia y banco de preguntas.</td>
-            <td>No aplica directamente; provee el marco de competencias.</td>
-            <td style="color: #7a5a0a; font-weight: 600;">◈ Neutral</td>
-          </tr>
+          <tr><td><b>Estudiantes Grado 11</b></td><td>Mejorar resultados Saber 11° y acceder a educación superior.</td><td>Tiempo de estudio, motivación.</td><td>Participar activamente en la implementación y evaluaciones.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
+          <tr><td><b>Docentes IED</b></td><td>Mejorar el desempeño académico de sus estudiantes.</td><td>Conocimiento curricular, espacio en el aula.</td><td>Acompañar la implementación y validar contenidos.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
+          <tr><td><b>Directivos IED San Gabriel</b></td><td>Elevar índices de calidad educativa institucional.</td><td>Espacios físicos, conectividad.</td><td>Autorizar la intervención y gestionar recursos tecnológicos.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
+          <tr><td><b>Equipo NeuroByte</b></td><td>Diseñar el tutor y obtener evidencia empírica.</td><td>Conocimientos técnicos, herramientas de desarrollo.</td><td>Entregar el tutor funcional, aplicar instrumentos y analizar resultados.</td><td style="color:#2a6000;font-weight:700;">✔ Promotor</td></tr>
+          <tr><td><b>UCundinamarca</b></td><td>Fomentar la investigación aplicada en el CAI CTeI.</td><td>Tutoría académica, recursos bibliográficos.</td><td>Guiar el proceso investigativo y evaluar entregables.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
+          <tr><td><b>Padres de Familia</b></td><td>Que sus hijos accedan a educación superior.</td><td>Consentimiento informado, apoyo en casa.</td><td>Autorizar la participación de los estudiantes menores de edad.</td><td style="color:#7a5000;font-weight:700;">◈ Neutral</td></tr>
+          <tr><td><b>ICFES</b></td><td>Garantizar la calidad de las pruebas Saber 11°.</td><td>Marcos de referencia y banco de preguntas.</td><td>No aplica directamente; provee el marco de competencias.</td><td style="color:#7a5000;font-weight:700;">◈ Neutral</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- PASO 3: ÁRBOL DEL PROBLEMA -->
-<section id="arbol-problema">
-  <div class="container">
-    <div class="section-tag"><span class="num">3</span>Paso 3 — MML</div>
+<!-- ÁRBOL PROBLEMA -->
+<section id="arbol-p">
+  <div class="ctr">
+    <div class="badge"><span class="dot">3</span>Paso 3 — MML</div>
     <h2 class="section-title">Árbol del Problema</h2>
-    <p class="section-sub">Causas y efectos del problema central identificado.</p>
     <div class="card">
       <div class="tree">
-        <!-- EFECTOS -->
-        <p style="font-family: Syne; font-size: 0.75rem; color: var(--gris-mid); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">EFECTOS</p>
-        <div class="tree-row">
-          <span class="tree-node tree-effect">Baja tasa de ingreso a educación superior</span>
-          <span class="tree-node tree-effect">Brecha educativa campo–ciudad</span>
-          <span class="tree-node tree-effect">Desmotivación académica en grado 11°</span>
+        <div class="tlbl">Efectos</div>
+        <div class="trow">
+          <span class="tn effect">Baja tasa de ingreso a educación superior desde zonas rurales</span>
+          <span class="tn effect">Brecha educativa campo–ciudad persistente</span>
+          <span class="tn effect">Desmotivación académica en grado 11°</span>
         </div>
-        <div class="tree-connector">▲</div>
-
-        <!-- PROBLEMA CENTRAL -->
-        <div style="margin: 8px auto; max-width: 600px;">
-          <span class="tree-node tree-root" style="display: block; padding: 14px 20px; border-radius: 10px;">
-            PROBLEMA CENTRAL: Bajo desempeño de los estudiantes de grado 11° de la IED Rural San Gabriel de Cajicá en las pruebas Saber 11°
-          </span>
+        <div class="tarrow">▲</div>
+        <div class="trow"><span class="tn root">PROBLEMA CENTRAL: Bajo desempeño de los estudiantes de grado 11° de la IED Rural San Gabriel de Cajicá en las pruebas Saber 11°</span></div>
+        <div class="tarrow">▼</div>
+        <div class="tlbl">Causas directas</div>
+        <div class="trow">
+          <span class="tn cause">Escasez de herramientas pedagógicas digitales</span>
+          <span class="tn cause">Preparación sin retroalimentación oportuna</span>
+          <span class="tn cause">Baja motivación para el estudio autónomo</span>
         </div>
-        <div class="tree-connector">▼</div>
-
-        <!-- CAUSAS DIRECTAS -->
-        <p style="font-family: Syne; font-size: 0.75rem; color: var(--gris-mid); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">CAUSAS DIRECTAS</p>
-        <div class="tree-row">
-          <span class="tree-node tree-cause">Escasez de herramientas pedagógicas digitales</span>
-          <span class="tree-node tree-cause">Preparación insuficiente y sin retroalimentación oportuna</span>
-          <span class="tree-node tree-cause">Baja motivación para el estudio autónomo</span>
-        </div>
-        <div class="tree-connector">▼</div>
-
-        <!-- CAUSAS INDIRECTAS -->
-        <p style="font-family: Syne; font-size: 0.75rem; color: var(--gris-mid); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">CAUSAS INDIRECTAS</p>
-        <div class="tree-row">
-          <span class="tree-node tree-cause">Contexto rural con limitado acceso tecnológico</span>
-          <span class="tree-node tree-cause">Estrategias didácticas tradicionales (cuestionarios en papel)</span>
-          <span class="tree-node tree-cause">Ausencia de gamificación en el aprendizaje</span>
-          <span class="tree-node tree-cause">Recursos presupuestales insuficientes</span>
+        <div class="tarrow">▼</div>
+        <div class="tlbl">Causas indirectas</div>
+        <div class="trow">
+          <span class="tn cause">Contexto rural con acceso tecnológico limitado</span>
+          <span class="tn cause">Estrategias didácticas tradicionales (papel)</span>
+          <span class="tn cause">Ausencia de gamificación en el aula</span>
+          <span class="tn cause">Recursos presupuestales insuficientes</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PASO 4: ÁRBOL DE OBJETIVOS -->
-<section id="arbol-objetivos" style="background: #fff;">
-  <div class="container">
-    <div class="section-tag"><span class="num">4</span>Paso 4 — MML</div>
+<!-- ÁRBOL OBJETIVOS -->
+<section id="arbol-o" style="background:var(--sf);">
+  <div class="ctr">
+    <div class="badge"><span class="dot">4</span>Paso 4 — MML</div>
     <h2 class="section-title">Árbol de Objetivos</h2>
-    <p class="section-sub">Transformación del árbol de problemas en árbol de medios y fines.</p>
     <div class="card">
       <div class="tree">
-        <!-- FINES -->
-        <p style="font-family: Syne; font-size: 0.75rem; color: var(--gris-mid); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">FINES</p>
-        <div class="tree-row">
-          <span class="tree-node tree-fin">Mayor acceso a educación superior desde contextos rurales</span>
-          <span class="tree-node tree-fin">Reducción brecha educativa campo–ciudad</span>
-          <span class="tree-node tree-fin">Estudiantes motivados y con aprendizaje autónomo</span>
+        <div class="tlbl">Fines</div>
+        <div class="trow">
+          <span class="tn fin">Mayor acceso a educación superior desde zonas rurales</span>
+          <span class="tn fin">Reducción de la brecha educativa campo–ciudad</span>
+          <span class="tn fin">Estudiantes motivados con aprendizaje autónomo</span>
         </div>
-        <div class="tree-connector">▲</div>
-
-        <!-- PROPÓSITO -->
-        <div style="margin: 8px auto; max-width: 620px;">
-          <span class="tree-node tree-obj" style="display: block; padding: 14px 20px; border-radius: 10px;">
-            PROPÓSITO: Mejorar el desempeño académico y la motivación de los estudiantes de grado 11° en las pruebas Saber 11° mediante el uso del tutor lúdico tipo trivia
-          </span>
+        <div class="tarrow">▲</div>
+        <div class="trow"><span class="tn obj">PROPÓSITO: Mejorar el desempeño académico y la motivación de los estudiantes de grado 11° en Saber 11° mediante el tutor lúdico tipo trivia</span></div>
+        <div class="tarrow">▼</div>
+        <div class="tlbl">Medios directos</div>
+        <div class="trow">
+          <span class="tn comp">Tutor lúdico tipo trivia funcional y disponible</span>
+          <span class="tn comp">Retroalimentación inmediata y pertinente</span>
+          <span class="tn comp">Mayor motivación intrínseca estudiantil</span>
         </div>
-        <div class="tree-connector">▼</div>
-
-        <!-- MEDIOS DIRECTOS -->
-        <p style="font-family: Syne; font-size: 0.75rem; color: var(--gris-mid); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">MEDIOS DIRECTOS</p>
-        <div class="tree-row">
-          <span class="tree-node tree-comp">Tutor lúdico tipo trivia disponible y funcional</span>
-          <span class="tree-node tree-comp">Retroalimentación inmediata y pertinente</span>
-          <span class="tree-node tree-comp">Mayor motivación intrínseca de los estudiantes</span>
-        </div>
-        <div class="tree-connector">▼</div>
-
-        <!-- MEDIOS INDIRECTOS -->
-        <p style="font-family: Syne; font-size: 0.75rem; color: var(--gris-mid); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">MEDIOS INDIRECTOS</p>
-        <div class="tree-row">
-          <span class="tree-node tree-acc">Diseño pedagógico alineado con Saber 11°</span>
-          <span class="tree-node tree-acc">Implementación con gamificación</span>
-          <span class="tree-node tree-acc">Instrumentos de evaluación pre/postest</span>
-          <span class="tree-node tree-acc">Acompañamiento docente e institucional</span>
+        <div class="tarrow">▼</div>
+        <div class="tlbl">Medios indirectos</div>
+        <div class="trow">
+          <span class="tn acc">Diseño pedagógico alineado con Saber 11°</span>
+          <span class="tn acc">Implementación con gamificación</span>
+          <span class="tn acc">Evaluación pre / postest</span>
+          <span class="tn acc">Acompañamiento docente e institucional</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PASO 5: IDENTIFICACIÓN DE ACCIONES -->
+<!-- ACCIONES -->
 <section id="acciones">
-  <div class="container">
-    <div class="section-tag"><span class="num">5</span>Paso 5 — MML</div>
+  <div class="ctr">
+    <div class="badge"><span class="dot">5</span>Paso 5 — MML</div>
     <h2 class="section-title">Identificación de Acciones</h2>
-    <p class="section-sub">Acciones derivadas de los medios del árbol de objetivos.</p>
-    <div class="table-wrap">
+    <div class="tw">
       <table>
-        <thead>
-          <tr>
-            <th>Medio</th>
-            <th>Acción</th>
-            <th>Componente</th>
-            <th>Responsable</th>
-            <th>Fecha estimada</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Medio</th><th>Acción</th><th>Componente</th><th>Responsable</th><th>Fecha</th></tr></thead>
         <tbody>
-          <tr>
-            <td>Diseño pedagógico alineado</td>
-            <td>Recolección de requerimientos pedagógicos y técnicos</td>
-            <td>Diseño del sistema</td>
-            <td>Investigador</td>
-            <td>Mes 1</td>
-          </tr>
-          <tr>
-            <td>Diseño pedagógico alineado</td>
-            <td>Diseño de interfaces y experiencia de usuario</td>
-            <td>Diseño del sistema</td>
-            <td>Equipo técnico</td>
-            <td>Mes 1</td>
-          </tr>
-          <tr>
-            <td>Tutor lúdico funcional</td>
-            <td>Desarrollo del tutor lúdico tipo trivia</td>
-            <td>Desarrollo del tutor</td>
-            <td>Equipo técnico</td>
-            <td>Mes 3</td>
-          </tr>
-          <tr>
-            <td>Tutor lúdico funcional</td>
-            <td>Integración de preguntas tipo Saber 11°</td>
-            <td>Desarrollo del tutor</td>
-            <td>Equipo técnico</td>
-            <td>Mes 3</td>
-          </tr>
-          <tr>
-            <td>Mayor motivación estudiantil</td>
-            <td>Implementación piloto con estudiantes grado 11</td>
-            <td>Implementación piloto</td>
-            <td>Investigador y docentes</td>
-            <td>Mes 4</td>
-          </tr>
-          <tr>
-            <td>Instrumentos de evaluación</td>
-            <td>Aplicación de pruebas diagnósticas y postest</td>
-            <td>Evaluación académica</td>
-            <td>Investigador</td>
-            <td>Mes 4</td>
-          </tr>
-          <tr>
-            <td>Retroalimentación inmediata</td>
-            <td>Aplicación de encuestas de percepción (Likert)</td>
-            <td>Evaluación de percepción</td>
-            <td>Investigador</td>
-            <td>Mes 4</td>
-          </tr>
-          <tr>
-            <td>Acompañamiento docente</td>
-            <td>Análisis de resultados y conclusiones</td>
-            <td>Evaluación académica</td>
-            <td>Investigador</td>
-            <td>Mes 5</td>
-          </tr>
+          <tr><td>Diseño pedagógico alineado</td><td>Recolección de requerimientos pedagógicos y técnicos</td><td>C1: Diseño del sistema</td><td>Investigador</td><td>Mes 1</td></tr>
+          <tr><td>Diseño pedagógico alineado</td><td>Diseño de interfaces y experiencia de usuario (UX)</td><td>C1: Diseño del sistema</td><td>Equipo técnico</td><td>Mes 1</td></tr>
+          <tr><td>Tutor lúdico funcional</td><td>Desarrollo del tutor lúdico tipo trivia</td><td>C2: Desarrollo del tutor</td><td>Equipo técnico</td><td>Mes 3</td></tr>
+          <tr><td>Tutor lúdico funcional</td><td>Integración de preguntas tipo Saber 11° (5 áreas)</td><td>C2: Desarrollo del tutor</td><td>Equipo técnico</td><td>Mes 3</td></tr>
+          <tr><td>Motivación estudiantil</td><td>Implementación piloto con estudiantes grado 11</td><td>C3: Implementación piloto</td><td>Investigador y docentes</td><td>Mes 4</td></tr>
+          <tr><td>Instrumentos de evaluación</td><td>Aplicación de pruebas diagnósticas y postest</td><td>C4: Evaluación académica</td><td>Investigador</td><td>Mes 4</td></tr>
+          <tr><td>Retroalimentación inmediata</td><td>Aplicación de encuestas de percepción (Likert)</td><td>C5: Evaluación de percepción</td><td>Investigador</td><td>Mes 4</td></tr>
+          <tr><td>Acompañamiento docente</td><td>Análisis de resultados y elaboración de conclusiones</td><td>C4: Evaluación académica</td><td>Investigador</td><td>Mes 5</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- PASO 6: EAP — RESUMEN NARRATIVO -->
-<section id="eap" style="background: #fff;">
-  <div class="container">
-    <div class="section-tag"><span class="num">6</span>Paso 6 — MML</div>
+<!-- EAP -->
+<section id="eap" style="background:var(--sf);">
+  <div class="ctr">
+    <div class="badge"><span class="dot">6</span>Paso 6 — MML</div>
     <h2 class="section-title">Estructura Analítica del Proyecto — EAP</h2>
     <p class="section-sub">Resumen Narrativo: Fines, Propósito, Componentes y Acciones.</p>
-    <div class="eap-grid">
-      <div class="eap-card eap-fines">
-        <h4>🌿 Fines</h4>
-        <ul>
-          <li>Mayor acceso de jóvenes rurales a educación superior.</li>
-          <li>Reducción de la brecha educativa campo–ciudad en Colombia.</li>
-          <li>Estudiantes de grado 11 con competencias sólidas para el mundo universitario.</li>
-          <li>Modelo replicable de innovación educativa en contextos rurales.</li>
-        </ul>
-      </div>
-      <div class="eap-card eap-proposito">
-        <h4>🎯 Propósito</h4>
-        <ul>
-          <li>Mejorar el desempeño académico y la motivación de los estudiantes de grado 11° de la IED Rural San Gabriel de Cajicá en las pruebas Saber 11° mediante el tutor lúdico tipo trivia.</li>
-          <li>Generar evidencia empírica sobre el impacto de la gamificación en el fortalecimiento de competencias en pruebas estandarizadas.</li>
-        </ul>
-      </div>
-      <div class="eap-card eap-componentes">
-        <h4>⚙️ Componentes</h4>
-        <ul>
-          <li><b>C1:</b> Diseño del sistema (arquitectura y funcionalidades del tutor).</li>
-          <li><b>C2:</b> Desarrollo del tutor (módulos funcionales implementados).</li>
-          <li><b>C3:</b> Implementación piloto con estudiantes de grado 11.</li>
-          <li><b>C4:</b> Evaluación académica (pre/postest y análisis estadístico).</li>
-          <li><b>C5:</b> Evaluación de percepción (motivación y satisfacción).</li>
-        </ul>
-      </div>
-      <div class="eap-card eap-acciones">
-        <h4>📋 Acciones</h4>
-        <ul>
-          <li>Recolección de requerimientos pedagógicos y técnicos.</li>
-          <li>Diseño de interfaces y UX del tutor.</li>
-          <li>Desarrollo e integración de preguntas Saber 11°.</li>
-          <li>Implementación piloto y registros de uso.</li>
-          <li>Aplicación de pretest, postest y encuestas Likert.</li>
-          <li>Análisis estadístico comparativo de resultados.</li>
-        </ul>
-      </div>
+    <div class="eap">
+      <div class="ep fi"><h4>🌿 Fines</h4><ul><li>Mayor acceso de jóvenes rurales a educación superior.</li><li>Reducción brecha educativa campo–ciudad.</li><li>Modelo replicable de innovación educativa rural.</li><li>Estudiantes con competencias sólidas para la universidad.</li></ul></div>
+      <div class="ep pr"><h4>🎯 Propósito</h4><ul><li>Mejorar el desempeño académico y la motivación en Saber 11° mediante el tutor lúdico tipo trivia en la IED Rural San Gabriel.</li><li>Generar evidencia empírica sobre el impacto de la gamificación en pruebas estandarizadas.</li></ul></div>
+      <div class="ep co"><h4>⚙️ Componentes</h4><ul><li><b>C1:</b> Diseño del sistema (arquitectura y funcionalidades).</li><li><b>C2:</b> Desarrollo del tutor (módulos implementados).</li><li><b>C3:</b> Implementación piloto con grado 11.</li><li><b>C4:</b> Evaluación académica (pretest / postest).</li><li><b>C5:</b> Evaluación de percepción y motivación.</li></ul></div>
+      <div class="ep ac"><h4>📋 Acciones</h4><ul><li>Recolección de requerimientos pedagógicos y técnicos.</li><li>Diseño de interfaces y UX del tutor.</li><li>Desarrollo e integración de preguntas Saber 11°.</li><li>Implementación piloto con registros de uso.</li><li>Aplicación de pretest, postest y encuestas Likert.</li><li>Análisis estadístico comparativo de resultados.</li></ul></div>
     </div>
-
-    <!-- RESUMEN NARRATIVO TABLA -->
-    <div class="table-wrap" style="margin-top: 32px;">
+    <div class="tw" style="margin-top:28px;">
       <table>
-        <thead>
-          <tr>
-            <th colspan="2" style="text-align: center; font-size: 0.9rem;">RESUMEN NARRATIVO — Matriz de Marco Lógico</th>
-          </tr>
-        </thead>
+        <thead><tr><th colspan="2" style="text-align:center;font-size:.82rem;">RESUMEN NARRATIVO — Matriz de Marco Lógico</th></tr></thead>
         <tbody>
-          <tr><td style="width:180px; font-weight: 700; background: var(--verde-light);">Título del proyecto</td><td>"Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias en las pruebas Saber 11°".</td></tr>
-          <tr><td style="font-weight: 700; background: var(--verde-light);">Tema</td><td>Implementación de una herramienta gamificada para fortalecer competencias académicas en estudiantes de grado 11.</td></tr>
-          <tr><td style="font-weight: 700; background: var(--verde-light);">Objetivo</td><td>Evaluar la influencia de un tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes durante la preparación para las pruebas Saber 11°.</td></tr>
-          <tr><td style="font-weight: 700; background: var(--verde-light);">Pregunta problema</td><td>¿En qué medida la implementación de un tutor lúdico tipo trivia influye en el desempeño académico y la motivación de los estudiantes de grado 11 durante el periodo académico 2026-2?</td></tr>
-          <tr><td style="font-weight: 700; background: var(--verde-light);">Resultados esperados</td><td>Incremento en la motivación estudiantil · Mejora en resultados de simulacros Saber 11° · Mayor participación en aprendizaje autónomo · Integración de herramientas tecnológicas en procesos educativos institucionales.</td></tr>
-          <tr><td style="font-weight: 700; background: var(--verde-light);">Financiamiento</td><td>Recursos propios y apoyo institucional.</td></tr>
-          <tr><td style="font-weight: 700; background: var(--verde-light);">Duración</td><td>5 meses.</td></tr>
-          <tr><td style="font-weight: 700; background: var(--verde-light);">Equipo del proyecto</td><td>Investigador principal · Docentes de apoyo institucional · Estudiantes participantes.</td></tr>
-          <tr><td style="font-weight: 700; background: var(--verde-light);">Evaluación</td><td>Análisis comparativo de resultados académicos (pretest vs postest) y aplicación de encuestas de percepción tipo Likert.</td></tr>
-          <tr><td style="font-weight: 700; background: var(--verde-light);">Beneficios</td><td>Fortalecimiento de competencias académicas · Incremento de motivación y participación estudiantil · Integración de estrategias innovadoras de aprendizaje.</td></tr>
-          <tr><td style="font-weight: 700; background: var(--verde-light);">Impacto</td><td>Contribución al uso de tecnologías educativas innovadoras en la institución · Fortalecimiento de procesos de preparación para pruebas Saber 11°.</td></tr>
+          <tr><td style="width:170px;font-weight:700;background:var(--gl);color:var(--gdd);">Título</td><td>"Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias en las pruebas Saber 11°".</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Tema</td><td>Implementación de una herramienta gamificada para fortalecer competencias académicas en estudiantes de grado 11.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Objetivo</td><td>Evaluar la influencia de un tutor lúdico tipo trivia en el desempeño académico y la motivación durante la preparación para las pruebas Saber 11°.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Pregunta</td><td>¿En qué medida la implementación de un tutor lúdico tipo trivia influye en el desempeño académico y la motivación de los estudiantes de grado 11 durante el periodo académico 2026-2?</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Resultados esperados</td><td>Incremento en la motivación estudiantil · Mejora en resultados de simulacros · Mayor participación en aprendizaje autónomo · Integración de tecnología en procesos educativos.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Financiamiento</td><td>Recursos propios y apoyo institucional.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Duración</td><td>5 meses.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Equipo</td><td>Investigador principal · Docentes de apoyo institucional · Estudiantes participantes.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Evaluación</td><td>Análisis comparativo de resultados académicos (pretest vs postest) y encuestas de percepción tipo Likert.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Beneficios</td><td>Fortalecimiento de competencias · Incremento de motivación y participación · Integración de estrategias innovadoras de aprendizaje.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Impacto</td><td>Contribución al uso de tecnologías educativas en la institución · Fortalecimiento de la preparación para pruebas Saber 11°.</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- PASOS 7, 8, 9: MARCO LÓGICO COMPLETO -->
-<section id="marco-logico">
-  <div class="container">
-    <div class="section-tag"><span class="num">7·8·9</span>Pasos 7, 8 y 9 — MML</div>
+<!-- INDICADORES 7-8-9 -->
+<section id="indicadores">
+  <div class="ctr">
+    <div class="badge"><span class="dot">7·8·9</span>Pasos 7, 8 y 9 — MML</div>
     <h2 class="section-title">Indicadores, Medios de Verificación y Supuestos</h2>
-    <p class="section-sub">Matriz de Marco Lógico completa del proyecto.</p>
-
-    <!-- Objetivo General -->
-    <div class="ml-section">
-      <div class="ml-section-title">Objetivo General</div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th style="width:30%">Nivel / Objetivo</th>
-              <th>Indicadores</th>
-              <th>Medios de Verificación</th>
-              <th>Supuestos</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><b>Evaluar la influencia del tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá durante el periodo 2026-2.</b></td>
-              <td>
-                • Al menos el 70% de los estudiantes mejora su puntaje en el postest respecto al pretest.<br/>
-                • Incremento de al menos 15 puntos promedio en las áreas evaluadas.<br/>
-                • Nivel de motivación ≥ 4/5 en escala Likert al finalizar la intervención.
-              </td>
-              <td>
-                • Resultados de pruebas diagnósticas y postest.<br/>
-                • Registros académicos del periodo.<br/>
-                • Encuestas de percepción aplicadas.
-              </td>
-              <td>
-                • Disponibilidad de recursos tecnológicos y acceso a internet en la institución.<br/>
-                • Participación activa de los estudiantes durante todo el período de implementación.
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="mlt">Objetivo General</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:26%">Nivel / Objetivo</th><th>Indicadores</th><th>Medios de Verificación</th><th>Supuestos</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Evaluar la influencia del tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11 durante el periodo 2026-2.</b></td>
+            <td>• ≥70% de estudiantes mejoran puntaje en postest.<br/>• Incremento promedio ≥15 puntos en áreas evaluadas.<br/>• Motivación ≥4/5 en escala Likert al finalizar.</td>
+            <td>• Resultados de pruebas diagnósticas y postest.<br/>• Registros académicos del periodo.<br/>• Encuestas de percepción aplicadas.</td>
+            <td>• Disponibilidad de recursos tecnológicos y acceso a internet.<br/>• Participación activa de los estudiantes durante toda la intervención.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
-    <!-- Componentes -->
-    <div class="ml-section">
-      <div class="ml-section-title">Componentes</div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Componente</th>
-              <th>Objetivo específico</th>
-              <th>Indicador</th>
-              <th>Medios de verificación</th>
-              <th>Supuestos</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><b>C1: Diseño del sistema</b></td>
-              <td>Diseñar la arquitectura y funcionalidades del tutor lúdico tipo trivia.</td>
-              <td>Documento de diseño aprobado y prototipo de interfaz validado por docentes.</td>
-              <td>Capturas del sistema, repositorio del proyecto, rúbrica de validación pedagógica.</td>
-              <td>Disponibilidad de herramientas de desarrollo y acceso a marcos de referencia Saber 11°.</td>
-            </tr>
-            <tr>
-              <td><b>C2: Desarrollo del tutor</b></td>
-              <td>Implementar los módulos funcionales del tutor con preguntas tipo Saber 11°.</td>
-              <td>Tutor funcionando con ≥ 200 preguntas en 5 áreas, retroalimentación inmediata activa.</td>
-              <td>Código fuente, pruebas funcionales y prueba de usabilidad.</td>
-              <td>Acceso a recursos tecnológicos y conectividad adecuada para el desarrollo.</td>
-            </tr>
-            <tr>
-              <td><b>C3: Implementación piloto</b></td>
-              <td>Aplicar el tutor con los estudiantes de grado 11.</td>
-              <td>≥ 80% de estudiantes matriculados participan en al menos 3 sesiones del tutor.</td>
-              <td>Registros de uso de la plataforma, listas de participación, bitácoras.</td>
-              <td>Disponibilidad y compromiso de los estudiantes y acompañamiento institucional.</td>
-            </tr>
-            <tr>
-              <td><b>C4: Evaluación académica</b></td>
-              <td>Analizar el cambio en resultados antes y después del uso del tutor.</td>
-              <td>Diferencia estadísticamente significativa entre pretest y postest (t-student, p &lt; 0.05).</td>
-              <td>Resultados de simulacros y análisis estadístico comparativo.</td>
-              <td>Participación constante de los estudiantes en ambas pruebas (pretest y postest).</td>
-            </tr>
-            <tr>
-              <td><b>C5: Evaluación de percepción</b></td>
-              <td>Medir el nivel de motivación y percepción de utilidad del tutor.</td>
-              <td>Puntuación promedio ≥ 4 en escala Likert (1–5) en motivación y satisfacción.</td>
-              <td>Encuestas y formularios aplicados al finalizar la intervención.</td>
-              <td>Honestidad y compromiso de los estudiantes en sus respuestas.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="mlt">Componentes</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Componente</th><th>Objetivo específico</th><th>Indicador</th><th>Medios de verificación</th><th>Supuestos</th></tr></thead>
+        <tbody>
+          <tr><td><b>C1: Diseño del sistema</b></td><td>Diseñar la arquitectura y funcionalidades del tutor lúdico tipo trivia.</td><td>Documento de diseño aprobado y prototipo validado por docentes.</td><td>Capturas del sistema, repositorio, rúbrica de validación.</td><td>Disponibilidad de herramientas de desarrollo y marcos Saber 11°.</td></tr>
+          <tr><td><b>C2: Desarrollo del tutor</b></td><td>Implementar los módulos funcionales con preguntas tipo Saber 11°.</td><td>Tutor funcionando con ≥200 preguntas en 5 áreas, retroalimentación activa.</td><td>Código fuente, pruebas funcionales y prueba de usabilidad.</td><td>Acceso a recursos tecnológicos y conectividad adecuada.</td></tr>
+          <tr><td><b>C3: Implementación piloto</b></td><td>Aplicar el tutor con estudiantes de grado 11.</td><td>≥80% de estudiantes participan en ≥3 sesiones del tutor.</td><td>Registros de uso de la plataforma, listas de participación, bitácoras.</td><td>Disponibilidad y compromiso de estudiantes y acompañamiento institucional.</td></tr>
+          <tr><td><b>C4: Evaluación académica</b></td><td>Analizar cambio en resultados antes y después del uso del tutor.</td><td>Diferencia estadísticamente significativa pretest vs postest (t-student, p &lt;0.05).</td><td>Resultados de simulacros y análisis estadístico comparativo.</td><td>Participación constante en ambas pruebas.</td></tr>
+          <tr><td><b>C5: Evaluación de percepción</b></td><td>Medir motivación y percepción de utilidad del tutor.</td><td>Puntuación promedio ≥4 en escala Likert (1–5) en motivación y satisfacción.</td><td>Encuestas y formularios aplicados al finalizar la intervención.</td><td>Honestidad y compromiso de los estudiantes en sus respuestas.</td></tr>
+        </tbody>
+      </table>
     </div>
-
-    <!-- Actividades -->
-    <div class="ml-section">
-      <div class="ml-section-title">Actividades</div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Actividad</th>
-              <th>Componente</th>
-              <th>Responsable</th>
-              <th>Fecha estimada</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Recolección de requerimientos pedagógicos y técnicos</td><td>C1: Diseño del sistema</td><td>Investigador</td><td>Mes 1</td></tr>
-            <tr><td>Diseño de interfaces y experiencia de usuario</td><td>C1: Diseño del sistema</td><td>Equipo técnico</td><td>Mes 1</td></tr>
-            <tr><td>Desarrollo del tutor lúdico tipo trivia</td><td>C2: Desarrollo del tutor</td><td>Equipo técnico</td><td>Mes 3</td></tr>
-            <tr><td>Integración de preguntas tipo Saber 11°</td><td>C2: Desarrollo del tutor</td><td>Equipo técnico</td><td>Mes 3</td></tr>
-            <tr><td>Implementación piloto con estudiantes grado 11</td><td>C3: Implementación piloto</td><td>Investigador y docentes</td><td>Mes 4</td></tr>
-            <tr><td>Aplicación de pruebas diagnósticas y postest</td><td>C4: Evaluación académica</td><td>Investigador</td><td>Mes 4</td></tr>
-            <tr><td>Aplicación de encuestas de percepción (Likert)</td><td>C5: Evaluación de percepción</td><td>Investigador</td><td>Mes 4</td></tr>
-            <tr><td>Análisis de resultados y conclusiones</td><td>C4: Evaluación académica</td><td>Investigador</td><td>Mes 5</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="mlt">Actividades</div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Actividad</th><th>Componente</th><th>Responsable</th><th>Fecha estimada</th></tr></thead>
+        <tbody>
+          <tr><td>Recolección de requerimientos pedagógicos y técnicos</td><td>C1: Diseño del sistema</td><td>Investigador</td><td>Mes 1</td></tr>
+          <tr><td>Diseño de interfaces y experiencia de usuario</td><td>C1: Diseño del sistema</td><td>Equipo técnico</td><td>Mes 1</td></tr>
+          <tr><td>Desarrollo del tutor lúdico tipo trivia</td><td>C2: Desarrollo del tutor</td><td>Equipo técnico</td><td>Mes 3</td></tr>
+          <tr><td>Integración de preguntas tipo Saber 11°</td><td>C2: Desarrollo del tutor</td><td>Equipo técnico</td><td>Mes 3</td></tr>
+          <tr><td>Implementación piloto con estudiantes grado 11</td><td>C3: Implementación piloto</td><td>Investigador y docentes</td><td>Mes 4</td></tr>
+          <tr><td>Aplicación de pruebas diagnósticas y postest</td><td>C4: Evaluación académica</td><td>Investigador</td><td>Mes 4</td></tr>
+          <tr><td>Aplicación de encuestas de percepción (Likert)</td><td>C5: Evaluación de percepción</td><td>Investigador</td><td>Mes 4</td></tr>
+          <tr><td>Análisis de resultados y conclusiones</td><td>C4: Evaluación académica</td><td>Investigador</td><td>Mes 5</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
-<!-- MATRICES DE CONSISTENCIA Y OPERACIONALIZACIÓN -->
-<section id="matrices" style="background: #fff;">
-  <div class="container">
-    <div class="section-tag"><span class="num">+</span>Matrices</div>
+<!-- MATRICES -->
+<section id="matrices" style="background:var(--sf);">
+  <div class="ctr">
+    <div class="badge"><span class="dot">+</span>Matrices</div>
     <h2 class="section-title">Matriz de Consistencia</h2>
-    <p class="section-sub">Articulación entre preguntas, objetivos, hipótesis y variables del estudio.</p>
-    <div class="table-wrap">
+    <div class="tw">
       <table>
-        <thead>
-          <tr>
-            <th>Pregunta</th>
-            <th>Objetivo</th>
-            <th>Hipótesis</th>
-            <th>Variables / Conceptos</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Pregunta</th><th>Objetivo</th><th>Hipótesis</th><th>Variables / Conceptos</th></tr></thead>
         <tbody>
-          <tr>
-            <td>¿De qué manera el diseño e implementación de un tutor lúdico tipo trivia contribuye al fortalecimiento de competencias en las pruebas Saber 11° en estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá?</td>
-            <td>Evaluar la influencia del tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá.</td>
-            <td>El diseño e implementación de un tutor lúdico tipo trivia contribuye significativamente al fortalecimiento de competencias evaluadas en Saber 11° y a la mejora de la motivación estudiantil.</td>
-            <td><b>Independiente:</b> Tutor lúdico tipo trivia<br/><b>Dependiente:</b> Competencias Saber 11° / Motivación<br/><b>Latentes:</b> Autorregulación, Retroalimentación, Desempeño académico</td>
-          </tr>
-          <tr>
-            <td>¿Cuáles son las características pedagógicas y tecnológicas necesarias para el diseño del tutor lúdico tipo trivia?</td>
-            <td>Diseñar el tutor lúdico tipo trivia con base en los contenidos Saber 11° e integrando principios de gamificación.</td>
-            <td>Las características pedagógicas y tecnológicas del tutor influyen en la efectividad del proceso de aprendizaje.</td>
-            <td><b>Independiente:</b> Tutor lúdico tipo trivia<br/><b>Atributivas:</b> Diseño pedagógico, Características tecnológicas, Contenido curricular</td>
-          </tr>
-          <tr>
-            <td>¿Qué impacto tiene el tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes?</td>
-            <td>Evaluar el impacto del tutor en el desempeño y la motivación mediante comparación pretest–postest.</td>
-            <td>El uso sistemático del tutor lúdico genera un impacto positivo y significativo en el desempeño y la motivación.</td>
-            <td><b>Independiente:</b> Tutor lúdico<br/><b>Dependiente:</b> Desempeño académico y motivación<br/><b>Categóricas:</b> Puntajes simulacros, Nivel de motivación</td>
-          </tr>
-          <tr>
-            <td>¿De qué manera la retroalimentación inmediata del tutor favorece la autorregulación del aprendizaje?</td>
-            <td>Analizar la relación entre la retroalimentación inmediata del tutor y la autorregulación del aprendizaje.</td>
-            <td>La retroalimentación inmediata favorece la autorregulación del aprendizaje en los estudiantes.</td>
-            <td><b>Independiente:</b> Retroalimentación inmediata<br/><b>Dependiente:</b> Autorregulación del aprendizaje<br/><b>Latente:</b> Metacognición</td>
-          </tr>
+          <tr><td>¿De qué manera el diseño e implementación de un tutor lúdico tipo trivia contribuye al fortalecimiento de competencias Saber 11° en grado 11 de la IED Rural San Gabriel de Cajicá?</td><td>Evaluar la influencia del tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11.</td><td>El diseño e implementación de un tutor lúdico tipo trivia contribuye significativamente al fortalecimiento de competencias Saber 11° y la motivación estudiantil.</td><td><b>Independiente:</b> Tutor lúdico tipo trivia<br/><b>Dependiente:</b> Competencias Saber 11° / Motivación<br/><b>Latentes:</b> Autorregulación, Retroalimentación, Desempeño</td></tr>
+          <tr><td>¿Cuáles son las características pedagógicas y tecnológicas necesarias para el diseño del tutor lúdico tipo trivia?</td><td>Diseñar el tutor lúdico con base en los contenidos Saber 11° integrando principios de gamificación.</td><td>Las características pedagógicas y tecnológicas del tutor influyen en la efectividad del proceso de aprendizaje.</td><td><b>Independiente:</b> Tutor lúdico tipo trivia<br/><b>Atributivas:</b> Diseño pedagógico, Características tecnológicas, Contenido curricular Saber 11°</td></tr>
+          <tr><td>¿Qué impacto tiene el tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes?</td><td>Evaluar el impacto del tutor en el desempeño y la motivación mediante comparación pretest–postest.</td><td>El uso sistemático del tutor lúdico genera un impacto positivo y significativo en el desempeño y la motivación.</td><td><b>Independiente:</b> Tutor lúdico<br/><b>Dependiente:</b> Desempeño académico y motivación<br/><b>Categóricas:</b> Puntajes simulacros, Nivel de motivación Likert</td></tr>
+          <tr><td>¿De qué manera la retroalimentación inmediata del tutor favorece la autorregulación del aprendizaje?</td><td>Analizar la relación entre la retroalimentación inmediata del tutor y la autorregulación del aprendizaje.</td><td>La retroalimentación inmediata favorece la autorregulación del aprendizaje en los estudiantes de grado 11.</td><td><b>Independiente:</b> Retroalimentación inmediata<br/><b>Dependiente:</b> Autorregulación del aprendizaje<br/><b>Latente:</b> Metacognición</td></tr>
         </tbody>
       </table>
+    </div>
+    <h2 class="section-title" style="margin-top:48px;">Matriz de Operacionalización de Variables</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Variable / Categoría</th><th>Tipo</th><th>Definición Conceptual</th><th>Definición Operacional</th><th>Dimensión</th><th>Indicadores</th><th>Instrumento</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="3"><b>Tutor lúdico tipo trivia</b></td><td rowspan="3">Independiente</td><td rowspan="3">Herramienta educativa digital que integra mecánicas de juego tipo trivia (Prensky, 2001; Mayer, 2019).</td><td rowspan="3">Se identifica a través del diseño e implementación de la plataforma con preguntas de opción múltiple con retroalimentación inmediata.</td><td>Diseño pedagógico</td><td>Alineación con competencias Saber 11°, claridad de instrucciones.</td><td rowspan="3">Rúbrica de evaluación del diseño</td></tr>
+          <tr><td>Características tecnológicas</td><td>Usabilidad, accesibilidad, disponibilidad.</td></tr>
+          <tr><td>Contenido temático</td><td>Cobertura de las 5 áreas Saber 11°.</td></tr>
+          <tr><td rowspan="2"><b>Competencias Saber 11°</b></td><td rowspan="2">Dependiente</td><td rowspan="2">Habilidades cognitivas y científicas evaluadas por el ICFES en grado 11° (ICFES, 2021).</td><td rowspan="2">Se mide mediante puntajes en simulacros pre y post implementación.</td><td>Desempeño académico</td><td>Puntajes pretest vs postest por área.</td><td rowspan="2">Prueba diagnóstica y simulacro</td></tr>
+          <tr><td>Áreas evaluadas</td><td>% respuestas correctas por área (5 áreas).</td></tr>
+          <tr><td rowspan="2"><b>Motivación</b></td><td rowspan="2">Latente</td><td rowspan="2">Disposición interna para participar en actividades de aprendizaje (Ryan &amp; Deci, 2000).</td><td rowspan="2">Se identifica mediante encuestas y registros de uso de la plataforma.</td><td>Motivación intrínseca</td><td>Frecuencia de uso voluntario, tiempo por sesión.</td><td rowspan="2">Encuesta Likert y registros del sistema</td></tr>
+          <tr><td>Participación</td><td>Sesiones completadas, niveles alcanzados.</td></tr>
+          <tr><td rowspan="2"><b>Retroalimentación inmediata</b></td><td rowspan="2">Independiente</td><td rowspan="2">Información instantánea al estudiante con orientaciones para mejorar (Hattie &amp; Timperley, 2007).</td><td rowspan="2">Se identifica en la función del tutor que muestra el resultado de cada respuesta con explicaciones automáticas.</td><td>Calidad</td><td>Claridad de explicación, pertinencia del contenido.</td><td rowspan="2">Rúbrica de evaluación y prueba técnica</td></tr>
+          <tr><td>Oportunidad</td><td>Tiempo de respuesta del sistema.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTOS -->
+<section id="docs">
+  <div class="ctr">
+    <div class="badge"><span class="dot">📄</span>Documentos</div>
+    <h2 class="section-title">Documentos del Proyecto</h2>
+    <p class="section-sub">Reemplaza los <code style="background:#eee;padding:2px 6px;border-radius:4px;font-size:.85em;">#</code> con los enlaces reales de OneDrive o Google Drive una vez subas cada archivo.</p>
+
+    <div class="doc-block">
+      <div class="dtags"><span class="dtag v">Versión 2</span><span class="dtag s">Anteproyecto</span></div>
+      <h3>Anteproyecto de Investigación</h3>
+      <p>Documento completo con marco teórico, matrices de consistencia y operacionalización, marco metodológico y referencias bibliográficas. Entrega: 10 de mayo de 2026.</p>
+      <div class="drow">
+        <a href="#" class="btn btn-p btn-sm">🔗 Ver en OneDrive</a>
+        <a href="#" class="btn btn-s btn-sm">⬇ Descargar PDF</a>
+        <a href="#" class="btn btn-up btn-sm"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Subir documento</a>
+        <span class="dinfo">📅 10 mayo 2026</span>
+      </div>
     </div>
 
-    <!-- MATRIZ OPERACIONALIZACIÓN -->
-    <h2 class="section-title" style="margin-top: 56px;">Matriz de Operacionalización de Variables</h2>
-    <p class="section-sub">Categorías, dimensiones, indicadores e instrumentos del estudio.</p>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Variable / Categoría</th>
-            <th>Tipo</th>
-            <th>Definición Conceptual</th>
-            <th>Definición Operacional</th>
-            <th>Dimensión</th>
-            <th>Indicadores</th>
-            <th>Instrumento</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td rowspan="3"><b>Tutor lúdico tipo trivia</b></td>
-            <td rowspan="3">Independiente</td>
-            <td rowspan="3">Herramienta educativa digital que integra mecánicas de juego tipo trivia para mediar procesos de enseñanza-aprendizaje (Prensky, 2001; Mayer, 2019).</td>
-            <td rowspan="3">Se identifica a través del diseño e implementación de la plataforma con preguntas de opción múltiple por áreas Saber 11° con retroalimentación inmediata.</td>
-            <td>Diseño pedagógico</td>
-            <td>Alineación con competencias Saber 11°, claridad de instrucciones.</td>
-            <td rowspan="3">Rúbrica de evaluación del diseño</td>
-          </tr>
-          <tr>
-            <td>Características tecnológicas</td>
-            <td>Usabilidad, accesibilidad, disponibilidad.</td>
-          </tr>
-          <tr>
-            <td>Contenido temático</td>
-            <td>Cobertura de las 5 áreas Saber 11°.</td>
-          </tr>
-          <tr>
-            <td rowspan="2"><b>Competencias Saber 11°</b></td>
-            <td rowspan="2">Dependiente</td>
-            <td rowspan="2">Habilidades cognitivas, comunicativas y científicas evaluadas por el ICFES en grado 11° (ICFES, 2021).</td>
-            <td rowspan="2">Se mide mediante puntajes en simulacros pre y post implementación del tutor.</td>
-            <td>Desempeño académico</td>
-            <td>Puntajes pretest vs postest.</td>
-            <td rowspan="2">Prueba diagnóstica y simulacro</td>
-          </tr>
-          <tr>
-            <td>Áreas evaluadas</td>
-            <td>% respuestas correctas por área.</td>
-          </tr>
-          <tr>
-            <td rowspan="2"><b>Motivación</b></td>
-            <td rowspan="2">Latente</td>
-            <td rowspan="2">Disposición interna del estudiante para participar en actividades de aprendizaje (Ryan &amp; Deci, 2000).</td>
-            <td rowspan="2">Se identifica mediante encuestas de satisfacción y registros de uso de la plataforma.</td>
-            <td>Motivación intrínseca</td>
-            <td>Frecuencia de uso voluntario, tiempo por sesión.</td>
-            <td rowspan="2">Encuesta Likert y registros del sistema</td>
-          </tr>
-          <tr>
-            <td>Participación</td>
-            <td>Sesiones completadas, niveles alcanzados.</td>
-          </tr>
-          <tr>
-            <td rowspan="2"><b>Retroalimentación inmediata</b></td>
-            <td rowspan="2">Independiente</td>
-            <td rowspan="2">Información instantánea al estudiante sobre sus respuestas con orientaciones para mejorar (Hattie &amp; Timperley, 2007).</td>
-            <td rowspan="2">Se identifica en la función del tutor que muestra el resultado de cada respuesta con explicaciones automáticas.</td>
-            <td>Calidad</td>
-            <td>Claridad de explicación, pertinencia del contenido.</td>
-            <td rowspan="2">Rúbrica y prueba técnica</td>
-          </tr>
-          <tr>
-            <td>Oportunidad</td>
-            <td>Tiempo de respuesta del sistema.</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="doc-block">
+      <div class="dtags"><span class="dtag v">Versión 1</span><span class="dtag s">Plantilla MML</span></div>
+      <h3>Plantilla Matriz de Marco Lógico</h3>
+      <p>Documento Word editable con los 9 ítems de la MML: mapa de actores, árbol de problemas y objetivos, EAP, indicadores, medios de verificación y supuestos. Tarea: <strong>R2-A2-S13</strong> — Entrega: 10 de mayo 2026 a las 23:59 h.</p>
+      <div class="drow">
+        <a href="#" class="btn btn-p btn-sm">🔗 Ver en OneDrive</a>
+        <a href="#" class="btn btn-s btn-sm">⬇ Descargar Word</a>
+        <a href="#" class="btn btn-up btn-sm"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Subir documento</a>
+        <span class="dinfo">📅 10 mayo 2026 · 23:59 h</span>
+      </div>
     </div>
+
+    <div class="doc-block">
+      <div class="dtags"><span class="dtag v">Versión 1</span><span class="dtag s">Pechakucha</span></div>
+      <h3>Presentación Pechakucha — Feria de Innovación</h3>
+      <p>20 diapositivas × 20 segundos para la Feria de Innovación y Conocimiento (Sesión N°13 — 12 mayo 2026). Duración máxima: 6 min 40 seg. Tarea: <strong>R2-A3-S15</strong>.</p>
+      <div class="drow">
+        <a href="#" class="btn btn-p btn-sm">🔗 Ver en OneDrive</a>
+        <a href="#" class="btn btn-s btn-sm">⬇ Descargar PDF</a>
+        <a href="#" class="btn btn-up btn-sm"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Subir presentación</a>
+        <span class="dinfo">📅 12 mayo 2026</span>
+      </div>
+    </div>
+
+    <div class="doc-block">
+      <div class="dtags"><span class="dtag s">Video</span><span class="dtag" style="background:#fff3cd;color:#7a5000;border:1px solid #f0d080;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:12px;">⏳ Pendiente</span></div>
+      <h3>Video de Exposición — Feria de Proyectos</h3>
+      <p>Grabación de la presentación Pechakucha en la Feria de Innovación (12 mayo 2026). Se sube al portafolio digital junto con el link de acceso en los comentarios de la tarea <strong>R2-A3-S15</strong>.</p>
+      <div class="drow">
+        <a href="#" class="btn btn-p btn-sm">▶ Ver video</a>
+        <a href="#" class="btn btn-up btn-sm"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Subir video</a>
+        <span class="dinfo">📅 12 mayo 2026</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- PRESUPUESTO -->
-<section id="presupuesto">
-  <div class="container">
-    <div class="section-tag"><span class="num">$</span>Presupuesto</div>
+<section id="presupuesto" style="background:var(--sf);">
+  <div class="ctr">
+    <div class="badge"><span class="dot">$</span>Presupuesto</div>
     <h2 class="section-title">Presupuesto del Proyecto</h2>
-    <div class="card" style="max-width: 640px;">
-      <div class="presupuesto-row">
-        <div><div class="presupuesto-item">Desarrollo del software</div><div class="presupuesto-fuente">Fondos propios de la organización</div></div>
-        <div class="presupuesto-monto">$500.000</div>
-      </div>
-      <div class="presupuesto-row">
-        <div><div class="presupuesto-item">Hosting y base de datos</div><div class="presupuesto-fuente">Fondos propios de la organización</div></div>
-        <div class="presupuesto-monto">$150.000</div>
-      </div>
-      <div class="presupuesto-row">
-        <div><div class="presupuesto-item">Equipos y conectividad</div><div class="presupuesto-fuente">Recursos institucionales</div></div>
-        <div class="presupuesto-monto">$300.000</div>
-      </div>
-      <div class="presupuesto-row">
-        <div><div class="presupuesto-item">Aplicación de instrumentos</div><div class="presupuesto-fuente">Fondos propios de la organización</div></div>
-        <div class="presupuesto-monto">$100.000</div>
-      </div>
-      <div class="presupuesto-row">
-        <div><div class="presupuesto-item">Papelería y documentación</div><div class="presupuesto-fuente">Fondos propios de la organización</div></div>
-        <div class="presupuesto-monto">$50.000</div>
-      </div>
-      <div class="presupuesto-total">
-        <span>Total del proyecto</span>
-        <strong>$1.100.000</strong>
-      </div>
+    <div class="card" style="max-width:580px;">
+      <div class="brow"><div><div class="bname">Desarrollo del software</div><div class="bsrc">Fondos propios de la organización</div></div><div class="bamt">$500.000</div></div>
+      <div class="brow"><div><div class="bname">Hosting y base de datos</div><div class="bsrc">Fondos propios de la organización</div></div><div class="bamt">$150.000</div></div>
+      <div class="brow"><div><div class="bname">Equipos y conectividad</div><div class="bsrc">Recursos institucionales</div></div><div class="bamt">$300.000</div></div>
+      <div class="brow"><div><div class="bname">Aplicación de instrumentos</div><div class="bsrc">Fondos propios de la organización</div></div><div class="bamt">$100.000</div></div>
+      <div class="brow"><div><div class="bname">Papelería y documentación</div><div class="bsrc">Fondos propios de la organización</div></div><div class="bamt">$50.000</div></div>
+      <div class="btotal"><span>Total del proyecto</span><strong>$1.100.000</strong></div>
     </div>
   </div>
 </section>
 
-<!-- EQUIPO / CONTACTO -->
-<section id="contacto" style="background: #fff;">
-  <div class="container">
-    <div class="section-tag"><span class="num">👥</span>Equipo</div>
+<!-- EQUIPO -->
+<section id="equipo">
+  <div class="ctr">
+    <div class="badge"><span class="dot">👥</span>Equipo</div>
     <h2 class="section-title">Equipo NeuroByte</h2>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="avatar">OP</div>
-        <h4>Oscar Camilo Pineda Osorio</h4>
-        <p>Investigador principal · NeuroByte</p>
-        <p style="margin-top: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.4);">Universidad de Cundinamarca · CAI CTeI I</p>
-      </div>
-      <div class="contact-card">
-        <div class="avatar">JR</div>
-        <h4>Jeison Crishtofer Rojas Cruz</h4>
-        <p>Investigador principal · NeuroByte</p>
-        <p style="margin-top: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.4);">Universidad de Cundinamarca · CAI CTeI I</p>
-      </div>
-      <div class="contact-card">
-        <div class="avatar">JM</div>
-        <h4>José Alejandro Martínez Escobar</h4>
-        <p>Líder CAI CTeI</p>
-        <p style="margin-top: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.4);">Universidad de Cundinamarca · 2026</p>
-      </div>
+    <div class="tgrid">
+      <div class="tcard"><div class="av">OP</div><h4>Oscar Camilo Pineda Osorio</h4><div class="role">Investigador principal</div><div class="inst">UCundinamarca · CAI CTeI I · 2026</div></div>
+      <div class="tcard"><div class="av">JR</div><h4>Jeison Crishtofer Rojas Cruz</h4><div class="role">Investigador principal</div><div class="inst">UCundinamarca · CAI CTeI I · 2026</div></div>
+      <div class="tcard"><div class="av">JM</div><h4>José Alejandro Martínez Escobar</h4><div class="role">Líder CAI CTeI</div><div class="inst">Universidad de Cundinamarca · 2026</div></div>
     </div>
   </div>
 </section>
 
 <footer>
   <p><strong>NeuroByte</strong> — Portafolio Digital CTeI I · Universidad de Cundinamarca · CAD102020631 · 2026</p>
-  <p style="margin-top: 6px;">IED Rural San Gabriel de Cajicá | Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias Saber 11°</p>
+  <p style="margin-top:5px;">IED Rural San Gabriel de Cajicá · Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias Saber 11°</p>
 </footer>
 
 </body>
