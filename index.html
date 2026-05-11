@@ -58,18 +58,27 @@ section:nth-child(even){background:var(--sf)}
 .btn-up{background:var(--sf2);color:var(--inks);border:1.5px dashed var(--bd)}.btn-up:hover{background:var(--gl);border-color:var(--g);color:var(--gd);border-style:solid}
 
 /* HERO */
-.hero{background:#0a1503;padding:76px 28px 88px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 88% 40%,rgba(106,191,30,.18) 0%,transparent 60%),radial-gradient(ellipse 35% 50% at 8% 80%,rgba(106,191,30,.09) 0%,transparent 60%)}
-.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(106,191,30,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(106,191,30,.05) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 20%,transparent 80%)}
+.hero{
+  background-color:#0a1503 !important;
+  background:#0a1503;
+  padding:76px 28px 88px;
+  position:relative;overflow:hidden;
+  /* fallback solid color always visible */
+  color:#fff;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:#0a1503;
+}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 295px;gap:52px;align-items:center;position:relative;z-index:1}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(106,191,30,.14);border:1px solid rgba(106,191,30,.32);color:var(--g);font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(106,191,30,.2);border:1px solid rgba(106,191,30,.45);color:#8fe040;font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:20px}
 .eyebrow span{width:6px;height:6px;background:var(--g);border-radius:50%;animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4.5vw,3.3rem);font-weight:800;color:#fff;line-height:1.06;margin-bottom:18px;letter-spacing:-1px}
-.hero h1 em{color:var(--g);font-style:normal}
-.hero h1 .sub{display:block;color:rgba(255,255,255,.36);font-size:.45em;font-weight:400;letter-spacing:0;margin-top:10px;font-family:'DM Sans',sans-serif;line-height:1.55}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4.5vw,3.3rem);font-weight:800;color:#ffffff !important;line-height:1.06;margin-bottom:18px;letter-spacing:-1px}
+.hero h1 em{color:#7dd63a !important;font-style:normal}
+.hero h1 .sub{display:block;color:rgba(255,255,255,.55) !important;font-size:.45em;font-weight:400;letter-spacing:0;margin-top:10px;font-family:'DM Sans',sans-serif;line-height:1.55}
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.55);padding:3px 12px;border-radius:20px;font-size:.74rem}
+.pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.7);padding:3px 12px;border-radius:20px;font-size:.74rem}
 .hbtns{display:flex;gap:11px;flex-wrap:wrap}
 
 /* FICHA */
@@ -202,7 +211,7 @@ footer strong{color:var(--g)}
 <!-- NAV -->
 <header>
   <div class="nav-inner">
-    <div class="brand">NeuroByte </div>
+    <div class="brand">NeuroByte <em>CTeI · 2026</em></div>
     <div class="nav-links">
       <a href="#inicio">Inicio</a>
       <a href="#problema">Problema</a>
@@ -223,10 +232,11 @@ footer strong{color:var(--g)}
 </header>
 
 <!-- HERO -->
-<section class="hero" id="inicio">
+<section class="hero" id="inicio" style="background:#0a1503 !important;">
+  <div class="hero-bg"></div>
   <div class="hero-inner ctr">
     <div>
-      <div class="eyebrow"><span></span>Portafolio Digital · CAI CTeI I · 2026</div>
+      <div class="eyebrow"><span></span>Portafolio Digital · 2026</div>
       <h1>
         Tutor Lúdico<br/>
         <em>tipo Trivia</em>
@@ -284,13 +294,27 @@ footer strong{color:var(--g)}
   <div class="ctr">
     <div class="badge"><span class="dot">2</span>Objetivos</div>
     <h2 class="section-title">Objetivos</h2>
-    <div class="card ac" style="margin-bottom:20px;"><h3>Objetivo General</h3><p>Evaluar la influencia de la implementación de un tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá durante el periodo académico 2026-2.</p></div>
-    <div class="grid c3">
-      <div class="ocard"><div class="onum">1</div><h3>Diagnóstico</h3><p>Aplicar una prueba diagnóstica para establecer el nivel inicial de competencias en las áreas Saber 11°.</p></div>
-      <div class="ocard"><div class="onum">2</div><h3>Diseño</h3><p>Diseñar el tutor lúdico con gamificación y retroalimentación inmediata alineado con Saber 11°.</p></div>
-      <div class="ocard"><div class="onum">3</div><h3>Implementación</h3><p>Implementar el tutor lúdico con los estudiantes de grado 11° durante el período de intervención.</p></div>
-      <div class="ocard"><div class="onum">4</div><h3>Evaluación</h3><p>Evaluar el impacto mediante comparación de resultados pre y post implementación con análisis estadístico.</p></div>
-      <div class="ocard"><div class="onum">5</div><h3>Recomendaciones</h3><p>Establecer recomendaciones para la réplica del tutor en otros contextos de educación rural en Colombia.</p></div>
+    <div class="card ac" style="margin-bottom:28px;">
+      <h3>Objetivo General</h3>
+      <p>Evaluar la influencia de la implementación de un tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá durante el periodo académico 2026-2.</p>
+    </div>
+    <p style="font-family:'Syne',sans-serif;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--gd);margin-bottom:14px;padding-left:4px;border-left:3px solid var(--g);padding-left:10px;">Objetivos Específicos</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+      <div class="ocard">
+        <div class="onum">1</div>
+        <h3>Diseño e Implementación</h3>
+        <p>Diseñar e implementar un tutor lúdico tipo trivia basado en preguntas tipo Saber 11° y estrategias de gamificación para el fortalecimiento de competencias académicas.</p>
+      </div>
+      <div class="ocard">
+        <div class="onum">2</div>
+        <h3>Comparación de Desempeño</h3>
+        <p>Comparar el desempeño académico de los estudiantes antes y después del uso del tutor lúdico mediante pruebas diagnósticas y simulacros tipo Saber 11°.</p>
+      </div>
+      <div class="ocard">
+        <div class="onum">3</div>
+        <h3>Análisis de Motivación</h3>
+        <p>Analizar el nivel de motivación y percepción de utilidad del tutor lúdico por parte de los estudiantes durante el proceso de implementación.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -656,7 +680,7 @@ footer strong{color:var(--g)}
 
 <footer>
   <p><strong>NeuroByte</strong> — Portafolio Digital CTeI I · Universidad de Cundinamarca · CAD102020631 · 2026</p>
-  <p style="margin-top:5px;">IED Rural San Gabriel de Cajicá · Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias Saber 11°</p>
+  <p style="margin-top:5px;">Ingenieria de Sistemas y Computación · Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias Saber 11°</p>
 </footer>
 
 </body>
