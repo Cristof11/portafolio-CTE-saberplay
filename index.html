@@ -219,12 +219,15 @@ footer strong{color:var(--g)}
       <a href="#docs">Documentos</a>
       <a href="#matrices">Matrices</a>
       <a href="#marco-logico">Marco Lógico</a>
-      <a href="#involucrados">↳ Análisis Involucrados</a>
+      <a href="#involucrados">↳ Involucrados</a>
       <a href="#arbol-p">↳ Árbol Problemas</a>
       <a href="#arbol-o">↳ Árbol Soluciones</a>
-      <a href="#acciones">↳ Selección Estrategia</a>
+      <a href="#acciones">↳ Estrategia</a>
       <a href="#eap">↳ EAP</a>
       <a href="#resumen-narrativo">↳ Resumen Narrativo</a>
+      <a href="#indicadores">↳ Indicadores</a>
+      <a href="#medios-verificacion">↳ Medios Verificación</a>
+      <a href="#supuestos">↳ Supuestos</a>
     </div>
   </div>
 </header>
@@ -352,6 +355,19 @@ footer strong{color:var(--g)}
       </div>
     </div>
 
+    <!-- Matriz de Marco Lógico (diligenciada) -->
+    <div class="doc-block">
+      <div class="dtags"><span class="dtag v">Versión 1</span><span class="dtag s">Matriz Marco Lógico</span></div>
+      <h3>Matriz de Marco Lógico — Diligenciada</h3>
+      <p>Documento Word completamente diligenciado con la Matriz de Marco Lógico del proyecto: objetivo general, indicadores, medios de verificación, supuestos, componentes, actividades, resumen narrativo y presupuesto. Tarea: <strong>R2-A2-S13</strong> — Entrega: 10 de mayo 2026 a las 23:59 h.</p>
+      <div class="drow">
+        <a href="#" class="btn btn-p btn-sm">🔗 Ver en OneDrive</a>
+        <a href="#" class="btn btn-s btn-sm">⬇ Descargar Word</a>
+        <a href="#" class="btn btn-up btn-sm"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Subir documento</a>
+        <span class="dinfo">📅 10 mayo 2026 · 23:59 h</span>
+      </div>
+    </div>
+
     <!-- RAE -->
     <div class="doc-block">
       <div class="dtags"><span class="dtag v">Versión 1</span><span class="dtag s">RAE</span></div>
@@ -441,227 +457,828 @@ footer strong{color:var(--g)}
   </div>
 </section>
 
+
 <!-- ═══ MARCO LÓGICO — encabezado ═══ -->
 <section id="marco-logico" style="background:#0a1503;padding:48px 28px 36px;">
   <div class="ctr">
     <div class="badge" style="background:rgba(106,191,30,.2);border-color:rgba(106,191,30,.4);color:#8fe040;"><span class="dot">ML</span>Marco Lógico</div>
     <h2 class="section-title" style="color:#fff;">Matriz de Marco Lógico</h2>
     <p class="section-sub" style="color:rgba(255,255,255,.55);">Construcción paso a paso: Análisis de Involucrados · Árbol de Problemas · Árbol de Soluciones · Selección de Estrategia · EAP · Resumen Narrativo.</p>
-    <!-- pasos rápidos -->
     <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;">
-      <a href="#involucrados" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;transition:all .18s;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">1 · Análisis de Involucrados</a>
-      <a href="#arbol-p" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;transition:all .18s;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">2 · Árbol de Problemas</a>
-      <a href="#arbol-o" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;transition:all .18s;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">3 · Árbol de Soluciones</a>
-      <a href="#acciones" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;transition:all .18s;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">4 · Selección de Estrategia</a>
-      <a href="#eap" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;transition:all .18s;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">5 · EAP</a>
-      <a href="#resumen-narrativo" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;transition:all .18s;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">6 · Resumen Narrativo</a>
+      <a href="#involucrados" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">1 · Análisis de Involucrados</a>
+      <a href="#arbol-p" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">2 · Árbol de Problemas</a>
+      <a href="#arbol-o" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">3 · Árbol de Soluciones</a>
+      <a href="#acciones" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">4 · Selección de Estrategia</a>
+      <a href="#eap" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">5 · EAP</a>
+      <a href="#resumen-narrativo" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">6 · Resumen Narrativo</a>
+      <a href="#indicadores" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">7 · Indicadores</a>
+      <a href="#medios-verificacion" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">8 · Medios de Verificación</a>
+      <a href="#supuestos" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:5px 14px;border-radius:20px;font-size:.75rem;text-decoration:none;" onmouseover="this.style.background='rgba(106,191,30,.25)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,.08)';this.style.color='rgba(255,255,255,.7)'">9 · Supuestos</a>
     </div>
   </div>
 </section>
 
-<!-- ═══ 1. ANÁLISIS DE INVOLUCRADOS ═══ -->
+<!-- PASO 1 -->
 <section id="involucrados">
   <div class="ctr">
     <div class="badge"><span class="dot">1</span>Marco Lógico</div>
-    <h2 class="section-title">Análisis de Involucrados</h2>
-    <p class="section-sub">Intereses, recursos, mandatos y posición de cada actor frente al proyecto.</p>
-
-    <!-- Mapa de actores visual -->
-    <div class="agrid" style="margin-bottom:28px;">
+    <h2 class="section-title">Paso 1. Análisis de Involucrados</h2>
+    <p class="section-sub">Identificación y valoración de los actores relacionados directa e indirectamente con el proyecto.</p>
+    <div class="card" style="margin-bottom:20px;">
+      <div class="dtags"><span class="dtag v">1.1</span><span class="dtag s">Identificación</span></div>
+      <h3>Actores relacionados con el proyecto</h3>
+      <p>El análisis de involucrados permite identificar los actores que se relacionan directa o indirectamente con el proyecto, considerando su interés, nivel de influencia y posible relación con el problema de investigación. Los involucrados corresponden a actores educativos, institucionales, tecnológicos y comunitarios relacionados con el diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias Saber 11° en la IED Rural San Gabriel de Cajicá.</p>
+    </div>
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">1.2</span><span class="dtag s">Mapa de actores</span></div>
+    <h3 style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:14px;">Representación de los involucrados</h3>
+    <div class="agrid" style="margin-bottom:24px;">
       <div class="ac g"><div class="aicon">🎓</div><h4>Estudiantes Grado 11</h4><p>Beneficiarios directos del tutor lúdico tipo trivia.</p><span class="nbadge na">Interés: Alto</span></div>
-      <div class="ac g"><div class="aicon">👩‍🏫</div><h4>Docentes IED</h4><p>Acompañan la implementación y validan el contenido.</p><span class="nbadge na">Influencia: Alta</span></div>
-      <div class="ac b"><div class="aicon">🏫</div><h4>Directivos IED San Gabriel</h4><p>Autorizan la intervención y gestionan recursos.</p><span class="nbadge na">Influencia: Alta</span></div>
-      <div class="ac b"><div class="aicon">🔬</div><h4>NeuroByte</h4><p>Equipo que diseña, implementa y evalúa el tutor.</p><span class="nbadge na">Promotor</span></div>
+      <div class="ac g"><div class="aicon">👩‍🏫</div><h4>Docentes IED</h4><p>Acompañan la implementación y validan el contenido pedagógico.</p><span class="nbadge na">Influencia: Alta</span></div>
+      <div class="ac b"><div class="aicon">🏫</div><h4>Directivos IED San Gabriel</h4><p>Autorizan la intervención y gestionan recursos institucionales.</p><span class="nbadge na">Influencia: Alta</span></div>
+      <div class="ac b"><div class="aicon">🔬</div><h4>NeuroByte</h4><p>Equipo investigador que diseña, implementa y evalúa el tutor.</p><span class="nbadge na">Promotor</span></div>
       <div class="ac o"><div class="aicon">🏛️</div><h4>UCundinamarca</h4><p>Institución que respalda la investigación en el CAI CTeI.</p><span class="nbadge nm">Influencia: Media</span></div>
       <div class="ac o"><div class="aicon">👨‍👩‍👧</div><h4>Padres de Familia</h4><p>Interesados en la mejora académica de sus hijos.</p><span class="nbadge nm">Interés: Medio</span></div>
       <div class="ac r"><div class="aicon">📊</div><h4>ICFES</h4><p>Define los estándares de las pruebas Saber 11°.</p><span class="nbadge nb">Influencia: Baja</span></div>
-      <div class="ac r"><div class="aicon">🏢</div><h4>MEN / Sec. Educación</h4><p>Define lineamientos de política educativa y digitalización.</p><span class="nbadge nb">Influencia: Baja</span></div>
+      <div class="ac r"><div class="aicon">🏢</div><h4>MEN / Sec. Educación</h4><p>Define lineamientos de política educativa y digitalización rural.</p><span class="nbadge nb">Influencia: Baja</span></div>
     </div>
-
-    <!-- Tabla análisis -->
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">1.3</span><span class="dtag s">Tabla E.F.R.</span></div>
+    <p style="font-size:.87rem;color:var(--inks);margin-bottom:6px;">Valoración de cada involucrado en escala 1-5 según Expectativa (E), Fuerza (F) y Resultante (E×F).</p>
+    <div class="tw" style="margin-bottom:20px;">
+      <table>
+        <thead><tr><th>Involucrado</th><th>Categoría</th><th>Expectativa (E)</th><th>Fuerza (F)</th><th>Resultante (E×F)</th><th class="thg">Prioridad</th></tr></thead>
+        <tbody>
+          <tr><td><b>Estudiantes de grado 11°</b></td><td>Actor directo</td><td>5</td><td>5</td><td>25</td><td style="color:#2a6000;font-weight:700;">Alta</td></tr>
+          <tr><td><b>Equipo NeuroByte</b></td><td>Promotor / Investigador</td><td>5</td><td>5</td><td>25</td><td style="color:#2a6000;font-weight:700;">Alta</td></tr>
+          <tr><td><b>Docentes IED San Gabriel</b></td><td>Actor académico</td><td>5</td><td>5</td><td>25</td><td style="color:#2a6000;font-weight:700;">Alta</td></tr>
+          <tr><td><b>Directivos IED San Gabriel</b></td><td>Actor institucional</td><td>5</td><td>4</td><td>20</td><td style="color:#2a6000;font-weight:700;">Alta</td></tr>
+          <tr><td><b>Universidad de Cundinamarca</b></td><td>Actor institucional</td><td>5</td><td>4</td><td>20</td><td style="color:#2a6000;font-weight:700;">Alta</td></tr>
+          <tr><td><b>Padres de familia</b></td><td>Beneficiario indirecto</td><td>4</td><td>3</td><td>12</td><td style="color:#7a5000;font-weight:700;">Media</td></tr>
+          <tr><td><b>ICFES</b></td><td>Actor normativo</td><td>3</td><td>3</td><td>9</td><td style="color:#888;font-weight:700;">Baja</td></tr>
+          <tr><td><b>MEN / Sec. Educación</b></td><td>Actor normativo</td><td>3</td><td>2</td><td>6</td><td style="color:#888;font-weight:700;">Baja</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mlt">Tabla de análisis — Intereses, recursos y mandatos</div>
     <div class="tw">
       <table>
         <thead><tr><th>Actor</th><th>Intereses</th><th>Recursos disponibles</th><th>Mandatos / Compromisos</th><th class="thg">Posición</th></tr></thead>
         <tbody>
-          <tr><td><b>Estudiantes Grado 11</b></td><td>Mejorar resultados Saber 11° y acceder a educación superior.</td><td>Tiempo de estudio, motivación.</td><td>Participar activamente en la implementación y evaluaciones.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
-          <tr><td><b>Docentes IED</b></td><td>Mejorar el desempeño académico de sus estudiantes.</td><td>Conocimiento curricular, espacio en el aula.</td><td>Acompañar la implementación y validar contenidos.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
-          <tr><td><b>Directivos IED San Gabriel</b></td><td>Elevar índices de calidad educativa institucional.</td><td>Espacios físicos, conectividad.</td><td>Autorizar la intervención y gestionar recursos tecnológicos.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
-          <tr><td><b>Equipo NeuroByte</b></td><td>Diseñar el tutor y obtener evidencia empírica.</td><td>Conocimientos técnicos, herramientas de desarrollo.</td><td>Entregar el tutor funcional, aplicar instrumentos y analizar resultados.</td><td style="color:#2a6000;font-weight:700;">✔ Promotor</td></tr>
-          <tr><td><b>UCundinamarca</b></td><td>Fomentar la investigación aplicada en el CAI CTeI.</td><td>Tutoría académica, recursos bibliográficos.</td><td>Guiar el proceso investigativo y evaluar entregables.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
-          <tr><td><b>Padres de Familia</b></td><td>Que sus hijos accedan a educación superior.</td><td>Consentimiento informado, apoyo en casa.</td><td>Autorizar la participación de los estudiantes menores de edad.</td><td style="color:#7a5000;font-weight:700;">◈ Neutral</td></tr>
-          <tr><td><b>ICFES</b></td><td>Garantizar la calidad de las pruebas Saber 11°.</td><td>Marcos de referencia y banco de preguntas.</td><td>No aplica directamente; provee el marco de competencias.</td><td style="color:#7a5000;font-weight:700;">◈ Neutral</td></tr>
+          <tr><td><b>Estudiantes Grado 11</b></td><td>Mejorar resultados Saber 11° y acceder a educación superior.</td><td>Tiempo de estudio, motivación, dispositivos básicos.</td><td>Participar activamente en la implementación y en las pruebas diagnóstica y postest.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
+          <tr><td><b>Docentes IED</b></td><td>Mejorar el desempeño académico e integrar herramientas tecnológicas.</td><td>Conocimiento curricular, espacio en el aula, orientación pedagógica.</td><td>Acompañar la implementación, validar contenidos y registrar observaciones.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
+          <tr><td><b>Directivos IED</b></td><td>Elevar los índices de calidad educativa y fortalecer resultados Saber 11°.</td><td>Espacios físicos, conectividad institucional, aval para la intervención.</td><td>Autorizar la investigación y gestionar el acceso a recursos tecnológicos.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
+          <tr><td><b>Equipo NeuroByte</b></td><td>Diseñar e implementar el tutor lúdico y obtener evidencia empírica sobre su impacto.</td><td>Conocimientos técnicos y pedagógicos, herramientas de desarrollo.</td><td>Entregar el tutor funcional, aplicar instrumentos y analizar los resultados.</td><td style="color:#2a6000;font-weight:700;">✔ Promotor</td></tr>
+          <tr><td><b>UCundinamarca</b></td><td>Fomentar la investigación aplicada en el CAI CTeI y articular proyectos rurales.</td><td>Tutoría académica, recursos bibliográficos, aval institucional.</td><td>Guiar el proceso investigativo y evaluar los entregables del proyecto.</td><td style="color:#2a6000;font-weight:700;">✔ Favorable</td></tr>
+          <tr><td><b>Padres de Familia</b></td><td>Que sus hijos mejoren su desempeño y accedan a educación superior.</td><td>Consentimiento informado, apoyo en el proceso en casa.</td><td>Autorizar la participación de los estudiantes menores de edad.</td><td style="color:#7a5000;font-weight:700;">◈ Neutral</td></tr>
+          <tr><td><b>ICFES</b></td><td>Garantizar la calidad y pertinencia de las pruebas Saber 11°.</td><td>Marcos de referencia, guías de orientación, banco de preguntas.</td><td>No aplica directamente; provee el marco de competencias y áreas evaluadas.</td><td style="color:#7a5000;font-weight:700;">◈ Neutral</td></tr>
         </tbody>
       </table>
+    </div>
+    <div class="card" style="margin-top:18px;border-left:4px solid var(--g);border-radius:0 var(--rl) var(--rl) 0;">
+      <h3>Interpretación del análisis de involucrados</h3>
+      <p>Los estudiantes, docentes y el equipo NeuroByte obtienen la mayor resultante (25), dado su relación directa con el fenómeno investigado. Los directivos y la UCundinamarca presentan resultante alta (20). Los padres de familia tienen resultante media (12). ICFES y MEN se consideran actores normativos con influencia baja que proveen el marco curricular para el diseño del tutor.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══ 2. ÁRBOL DEL PROBLEMA ═══ -->
+<!-- PASO 2 -->
 <section id="arbol-p" style="background:var(--sf);">
   <div class="ctr">
     <div class="badge"><span class="dot">2</span>Marco Lógico</div>
-    <h2 class="section-title">Árbol de Problemas</h2>
-    <p class="section-sub">Causas directas e indirectas y efectos del problema central identificado.</p>
-    <div class="card">
+    <h2 class="section-title">Paso 2. Árbol de Problemas</h2>
+    <p class="section-sub">Representación del problema central, sus causas directas e indirectas y los efectos que genera.</p>
+    <div class="card" style="margin-bottom:18px;">
+      <div class="dtags"><span class="dtag v">2.1</span><span class="dtag s">Problema central</span></div>
+      <h3>Definición del problema central</h3>
+      <p>A partir del planteamiento del proyecto, se identifica como problema central:</p>
+      <div style="background:#111;border-radius:var(--r);padding:16px 20px;margin-top:12px;">
+        <p style="color:rgba(255,255,255,.88);font-style:italic;font-size:.93rem;line-height:1.7;">Bajo desempeño de los estudiantes de grado 11° de la IED Rural San Gabriel de Cajicá en las pruebas Saber 11°, asociado a la ausencia de herramientas pedagógicas digitales motivadoras con retroalimentación oportuna.</p>
+      </div>
+    </div>
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">2.2</span><span class="dtag s">Árbol de problemas</span></div>
+    <div class="card" style="margin-bottom:18px;">
       <div class="tree">
-        <div class="tlbl">Efectos</div>
+        <div class="tlbl">Efectos superiores</div>
         <div class="trow">
           <span class="tn effect">Baja tasa de ingreso a educación superior desde zonas rurales</span>
-          <span class="tn effect">Brecha educativa campo–ciudad persistente</span>
-          <span class="tn effect">Desmotivación académica en grado 11°</span>
+          <span class="tn effect">Ampliación de la brecha educativa campo–ciudad</span>
+          <span class="tn effect">Desmotivación frente a la vida académica</span>
+        </div>
+        <div class="tarrow">▲</div>
+        <div class="tlbl">Efectos directos</div>
+        <div class="trow">
+          <span class="tn effect">Puntajes Saber 11° por debajo del promedio departamental</span>
+          <span class="tn effect">Limitadas oportunidades de acceso a educación superior</span>
+          <span class="tn effect">Estudiantes sin estrategias de estudio autónomo eficaces</span>
         </div>
         <div class="tarrow">▲</div>
         <div class="trow"><span class="tn root">PROBLEMA CENTRAL: Bajo desempeño de los estudiantes de grado 11° de la IED Rural San Gabriel de Cajicá en las pruebas Saber 11°</span></div>
         <div class="tarrow">▼</div>
         <div class="tlbl">Causas directas</div>
         <div class="trow">
-          <span class="tn cause">Escasez de herramientas pedagógicas digitales</span>
-          <span class="tn cause">Preparación sin retroalimentación oportuna</span>
-          <span class="tn cause">Baja motivación para el estudio autónomo</span>
+          <span class="tn cause">Escasez de herramientas pedagógicas digitales actualizadas</span>
+          <span class="tn cause">Preparación sin retroalimentación inmediata ni oportuna</span>
+          <span class="tn cause">Baja motivación intrínseca para el estudio autónomo</span>
         </div>
         <div class="tarrow">▼</div>
         <div class="tlbl">Causas indirectas</div>
         <div class="trow">
           <span class="tn cause">Contexto rural con acceso tecnológico limitado</span>
-          <span class="tn cause">Estrategias didácticas tradicionales (papel)</span>
-          <span class="tn cause">Ausencia de gamificación en el aula</span>
-          <span class="tn cause">Recursos presupuestales insuficientes</span>
+          <span class="tn cause">Estrategias didácticas tradicionales (papel, clases magistrales)</span>
+          <span class="tn cause">Ausencia de gamificación en procesos de enseñanza</span>
+          <span class="tn cause">Recursos presupuestales insuficientes para tecnología</span>
         </div>
       </div>
+    </div>
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">2.2.1</span><span class="dtag s">Árbol de efectos</span></div>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead><tr><th>Nivel</th><th>Efecto identificado</th><th>Relación causal</th></tr></thead>
+        <tbody>
+          <tr><td>Efecto directo</td><td>Puntajes Saber 11° por debajo del promedio departamental y nacional.</td><td>Se deriva directamente del bajo desempeño en las áreas evaluadas.</td></tr>
+          <tr><td>Efecto directo</td><td>Limitadas estrategias de estudio autónomo y preparación efectiva.</td><td>Consecuencia de la falta de herramientas con retroalimentación oportuna.</td></tr>
+          <tr><td>Efecto directo</td><td>Baja motivación y compromiso de los estudiantes frente a las pruebas.</td><td>Resultado de métodos de preparación poco atractivos y sin componente lúdico.</td></tr>
+          <tr><td>Efecto superior</td><td>Limitadas oportunidades de acceso a educación superior pública.</td><td>Consecuencia de los bajos puntajes en las pruebas de Estado.</td></tr>
+          <tr><td>Efecto superior</td><td>Ampliación de la brecha educativa entre zonas rurales y urbanas.</td><td>Resultado acumulado del bajo desempeño sostenido en la institución.</td></tr>
+          <tr><td>Efecto superior</td><td>Desmotivación frente a la continuación de estudios superiores.</td><td>Derivado de la percepción negativa frente al rendimiento en Saber 11°.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">2.2.2</span><span class="dtag s">Árbol de causas</span></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Nivel</th><th>Causa identificada</th><th>Relación causal</th></tr></thead>
+        <tbody>
+          <tr><td>Causa indirecta</td><td>Contexto rural con acceso tecnológico limitado y conectividad deficiente.</td><td>Dificulta el acceso a recursos digitales educativos actualizados.</td></tr>
+          <tr><td>Causa directa</td><td>Escasez de herramientas pedagógicas digitales alineadas con Saber 11°.</td><td>Impide que los estudiantes practiquen competencias con recursos adecuados.</td></tr>
+          <tr><td>Causa indirecta</td><td>Estrategias didácticas tradicionales basadas en papel y clases magistrales.</td><td>Generan poca motivación y no permiten retroalimentación inmediata.</td></tr>
+          <tr><td>Causa directa</td><td>Preparación para Saber 11° sin retroalimentación oportuna ni personalizada.</td><td>El estudiante no identifica sus errores a tiempo para corregirlos.</td></tr>
+          <tr><td>Causa indirecta</td><td>Ausencia de gamificación y elementos lúdicos en los procesos de enseñanza.</td><td>Reduce la motivación intrínseca y el compromiso con el estudio autónomo.</td></tr>
+          <tr><td>Causa directa</td><td>Baja motivación intrínseca para el estudio autónomo y la preparación para pruebas.</td><td>Los estudiantes no desarrollan hábitos de estudio sostenidos fuera del aula.</td></tr>
+          <tr><td>Causa indirecta</td><td>Recursos presupuestales insuficientes de la institución para tecnología educativa.</td><td>Limita la posibilidad de integrar herramientas digitales en los procesos formativos.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:18px;border-left:4px solid var(--g);border-radius:0 var(--rl) var(--rl) 0;">
+      <h3>Interpretación del árbol de problemas</h3>
+      <p>El análisis identificó como situación central el bajo desempeño de los estudiantes de grado 11° en las pruebas Saber 11°. Esta situación se relaciona con la escasez de herramientas pedagógicas digitales, la ausencia de retroalimentación oportuna, la baja motivación y las limitaciones tecnológicas del contexto rural. Los efectos restringen las oportunidades de acceso a educación superior y amplían la brecha campo-ciudad, mientras que las causas están en factores metodológicos, tecnológicos y presupuestales estructurales.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══ 3. ÁRBOL DE SOLUCIONES ═══ -->
+<!-- PASO 3 -->
 <section id="arbol-o">
   <div class="ctr">
     <div class="badge"><span class="dot">3</span>Marco Lógico</div>
-    <h2 class="section-title">Árbol de Soluciones</h2>
-    <p class="section-sub">Transformación del árbol de problemas en árbol de medios y fines.</p>
-    <div class="card">
+    <h2 class="section-title">Paso 3. Árbol de Soluciones</h2>
+    <p class="section-sub">Transformación del árbol de problemas: causas en medios, efectos en fines, problema central en propósito del proyecto.</p>
+    <div class="card" style="margin-bottom:18px;">
+      <div class="dtags"><span class="dtag v">3.1</span><span class="dtag s">Objetivo central</span></div>
+      <h3>Transformación del problema en objetivo</h3>
+      <p>A partir del problema central, se plantea el siguiente propósito del proyecto:</p>
+      <div style="background:var(--g);border-radius:var(--r);padding:16px 20px;margin-top:12px;">
+        <p style="color:#fff;font-style:italic;font-size:.93rem;line-height:1.7;font-weight:600;">Mejorar el desempeño académico y la motivación de los estudiantes de grado 11° de la IED Rural San Gabriel de Cajicá en las pruebas Saber 11° mediante el diseño e implementación de un tutor lúdico tipo trivia.</p>
+      </div>
+    </div>
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">3.2</span><span class="dtag s">Árbol de objetivos</span></div>
+    <div class="card" style="margin-bottom:18px;">
       <div class="tree">
-        <div class="tlbl">Fines</div>
+        <div class="tlbl">Fines superiores</div>
         <div class="trow">
-          <span class="tn fin">Mayor acceso a educación superior desde zonas rurales</span>
+          <span class="tn fin">Mayor acceso de jóvenes rurales a educación superior</span>
           <span class="tn fin">Reducción de la brecha educativa campo–ciudad</span>
-          <span class="tn fin">Estudiantes motivados con aprendizaje autónomo</span>
+          <span class="tn fin">Modelo replicable de tecnología educativa lúdica rural</span>
+        </div>
+        <div class="tarrow">▲</div>
+        <div class="tlbl">Fines directos</div>
+        <div class="trow">
+          <span class="tn effect">Puntajes Saber 11° mejorados</span>
+          <span class="tn effect">Mayores oportunidades de acceso a educación superior</span>
+          <span class="tn effect">Estudiantes con estrategias de estudio autónomo eficaces</span>
         </div>
         <div class="tarrow">▲</div>
         <div class="trow"><span class="tn obj">PROPÓSITO: Mejorar el desempeño académico y la motivación de los estudiantes de grado 11° en Saber 11° mediante el tutor lúdico tipo trivia</span></div>
         <div class="tarrow">▼</div>
         <div class="tlbl">Medios directos</div>
         <div class="trow">
-          <span class="tn comp">Tutor lúdico tipo trivia funcional y disponible</span>
-          <span class="tn comp">Retroalimentación inmediata y pertinente</span>
-          <span class="tn comp">Mayor motivación intrínseca estudiantil</span>
+          <span class="tn comp">Tutor lúdico tipo trivia funcional alineado con Saber 11°</span>
+          <span class="tn comp">Retroalimentación inmediata integrada en el tutor</span>
+          <span class="tn comp">Mayor motivación intrínseca de los estudiantes</span>
         </div>
         <div class="tarrow">▼</div>
         <div class="tlbl">Medios indirectos</div>
         <div class="trow">
-          <span class="tn acc">Diseño pedagógico alineado con Saber 11°</span>
-          <span class="tn acc">Implementación con gamificación</span>
-          <span class="tn acc">Evaluación pre / postest</span>
+          <span class="tn acc">Diseño pedagógico alineado con competencias Saber 11°</span>
+          <span class="tn acc">Gamificación integrada en el proceso de aprendizaje</span>
+          <span class="tn acc">Evaluación diagnóstica y postest para medir impacto</span>
           <span class="tn acc">Acompañamiento docente e institucional</span>
         </div>
       </div>
     </div>
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">3.2.1</span><span class="dtag s">Árbol de fines</span></div>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead><tr><th>Nivel</th><th>Fin identificado</th></tr></thead>
+        <tbody>
+          <tr><td>Fin directo</td><td>Puntajes Saber 11° mejorados por encima del promedio departamental.</td></tr>
+          <tr><td>Fin directo</td><td>Estudiantes con estrategias de estudio autónomo eficaces y sostenibles.</td></tr>
+          <tr><td>Fin directo</td><td>Mayor motivación y compromiso con la preparación para pruebas de Estado.</td></tr>
+          <tr><td>Fin superior</td><td>Mayor acceso de jóvenes rurales a educación superior pública en Colombia.</td></tr>
+          <tr><td>Fin superior</td><td>Reducción de la brecha educativa entre zonas rurales y urbanas.</td></tr>
+          <tr><td>Fin superior</td><td>Modelo replicable de tecnología educativa lúdica en contextos rurales colombianos.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">3.2.2</span><span class="dtag s">Árbol de medios</span></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Nivel</th><th>Medio identificado</th></tr></thead>
+        <tbody>
+          <tr><td>Medio directo</td><td>Tutor lúdico tipo trivia funcionando con preguntas tipo Saber 11° y retroalimentación inmediata.</td></tr>
+          <tr><td>Medio directo</td><td>Retroalimentación inmediata integrada que permite al estudiante identificar errores y mejorar.</td></tr>
+          <tr><td>Medio directo</td><td>Mayor motivación intrínseca generada por los elementos lúdicos y el formato de trivia.</td></tr>
+          <tr><td>Medio indirecto</td><td>Diseño pedagógico alineado con las competencias y áreas de las pruebas Saber 11°.</td></tr>
+          <tr><td>Medio indirecto</td><td>Gamificación integrada como principio de diseño del tutor (niveles, puntajes, retos).</td></tr>
+          <tr><td>Medio indirecto</td><td>Evaluación diagnóstica (pretest) y postest para medir el impacto de la intervención.</td></tr>
+          <tr><td>Medio indirecto</td><td>Acompañamiento docente e institucional durante el período de implementación piloto.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:18px;border-left:4px solid var(--g);border-radius:0 var(--rl) var(--rl) 0;">
+      <h3>Interpretación del árbol de soluciones</h3>
+      <p>Los medios directos apuntan al desarrollo del tutor lúdico y a la mejora de la motivación. Los medios indirectos se relacionan con el diseño pedagógico, la gamificación y la evaluación comparativa. Los fines superiores reflejan el impacto esperado en equidad educativa y acceso a educación superior para estudiantes de contextos rurales.</p>
+    </div>
   </div>
 </section>
 
-<!-- ═══ 4. SELECCIÓN DE ESTRATEGIA ═══ -->
+<!-- PASO 4 -->
 <section id="acciones" style="background:var(--sf);">
   <div class="ctr">
     <div class="badge"><span class="dot">4</span>Marco Lógico</div>
-    <h2 class="section-title">Selección de Estrategia</h2>
-    <p class="section-sub">Acciones y actividades derivadas de los medios del árbol de soluciones, organizadas por componente.</p>
-    <div class="tw">
+    <h2 class="section-title">Paso 4. Selección de Estrategia</h2>
+    <p class="section-sub">Acciones que operacionalizan los medios del árbol de objetivos, coherentes con las causas del árbol de problemas.</p>
+    <div class="card" style="margin-bottom:18px;">
+      <div class="dtags"><span class="dtag v">4.1</span><span class="dtag s">Coherencia lógica</span></div>
+      <h3>Relación lógica: Acción → Medio → Causa → Problema</h3>
+      <div style="background:#111;border-radius:var(--r);padding:12px 18px;margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+        <span style="color:#7dd63a;font-family:'Syne',sans-serif;font-weight:700;font-size:.8rem;">Acción técnico-pedagógica</span>
+        <span style="color:rgba(255,255,255,.4);">→</span>
+        <span style="color:rgba(255,255,255,.65);font-size:.8rem;">Medio del árbol de objetivos</span>
+        <span style="color:rgba(255,255,255,.4);">→</span>
+        <span style="color:rgba(255,255,255,.65);font-size:.8rem;">Causa del árbol de problemas</span>
+        <span style="color:rgba(255,255,255,.4);">→</span>
+        <span style="color:rgba(255,255,255,.65);font-size:.8rem;">Problema central</span>
+      </div>
+    </div>
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">4.2</span><span class="dtag s">Acciones propuestas</span></div>
+    <div class="tw" style="margin-bottom:18px;">
       <table>
-        <thead><tr><th>Medio / Estrategia</th><th>Acción</th><th>Componente</th><th>Responsable</th><th>Fecha</th></tr></thead>
+        <thead><tr><th>Acción</th><th>Medio</th><th>Causa que supera</th><th>Componente</th><th>Responsable</th><th>Fecha</th></tr></thead>
         <tbody>
-          <tr><td>Diseño pedagógico alineado</td><td>Recolección de requerimientos pedagógicos y técnicos</td><td>C1: Diseño del sistema</td><td>Investigador</td><td>Mes 1</td></tr>
-          <tr><td>Diseño pedagógico alineado</td><td>Diseño de interfaces y experiencia de usuario (UX)</td><td>C1: Diseño del sistema</td><td>Equipo técnico</td><td>Mes 1</td></tr>
-          <tr><td>Tutor lúdico funcional</td><td>Desarrollo del tutor lúdico tipo trivia</td><td>C2: Desarrollo del tutor</td><td>Equipo técnico</td><td>Mes 3</td></tr>
-          <tr><td>Tutor lúdico funcional</td><td>Integración de preguntas tipo Saber 11° (5 áreas)</td><td>C2: Desarrollo del tutor</td><td>Equipo técnico</td><td>Mes 3</td></tr>
-          <tr><td>Motivación estudiantil</td><td>Implementación piloto con estudiantes grado 11</td><td>C3: Implementación piloto</td><td>Investigador y docentes</td><td>Mes 4</td></tr>
-          <tr><td>Instrumentos de evaluación</td><td>Aplicación de pruebas diagnósticas y postest</td><td>C4: Evaluación académica</td><td>Investigador</td><td>Mes 4</td></tr>
-          <tr><td>Retroalimentación inmediata</td><td>Aplicación de encuestas de percepción (Likert)</td><td>C5: Evaluación de percepción</td><td>Investigador</td><td>Mes 4</td></tr>
-          <tr><td>Acompañamiento docente</td><td>Análisis de resultados y elaboración de conclusiones</td><td>C4: Evaluación académica</td><td>Investigador</td><td>Mes 5</td></tr>
+          <tr><td>Recolección de requerimientos pedagógicos y técnicos del tutor lúdico.</td><td>Diseño pedagógico alineado con Saber 11°.</td><td>Escasez de herramientas pedagógicas digitales.</td><td>C1</td><td>Investigador</td><td>Mes 1</td></tr>
+          <tr><td>Diseño de interfaces y experiencia de usuario (UX/UI) del tutor tipo trivia.</td><td>Gamificación integrada como principio de diseño.</td><td>Ausencia de gamificación en el aula.</td><td>C1</td><td>Equipo técnico</td><td>Mes 1</td></tr>
+          <tr><td>Desarrollo del tutor lúdico tipo trivia con sus módulos funcionales.</td><td>Tutor lúdico tipo trivia funcional.</td><td>Escasez de herramientas pedagógicas digitales.</td><td>C2</td><td>Equipo técnico</td><td>Mes 3</td></tr>
+          <tr><td>Integración de preguntas tipo Saber 11° en las 5 áreas evaluadas.</td><td>Diseño pedagógico alineado con Saber 11°.</td><td>Preparación sin retroalimentación oportuna.</td><td>C2</td><td>Equipo técnico</td><td>Mes 3</td></tr>
+          <tr><td>Aplicación de prueba diagnóstica (pretest) a los estudiantes de grado 11°.</td><td>Evaluación diagnóstica para medir impacto.</td><td>Baja motivación y ausencia de métricas de desempeño.</td><td>C3</td><td>Investigador</td><td>Mes 4</td></tr>
+          <tr><td>Implementación piloto del tutor lúdico con los estudiantes de grado 11°.</td><td>Mayor motivación intrínseca de los estudiantes.</td><td>Baja motivación para el estudio autónomo.</td><td>C3</td><td>Investigador y docentes</td><td>Mes 4</td></tr>
+          <tr><td>Aplicación del postest y encuestas de percepción tipo Likert.</td><td>Evaluación postest para medir el impacto.</td><td>Preparación sin retroalimentación.</td><td>C4, C5</td><td>Investigador</td><td>Mes 4</td></tr>
+          <tr><td>Análisis estadístico comparativo de resultados y elaboración de conclusiones.</td><td>Retroalimentación inmediata integrada en el tutor.</td><td>Preparación sin retroalimentación oportuna.</td><td>C4</td><td>Investigador</td><td>Mes 5</td></tr>
         </tbody>
       </table>
+    </div>
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">4.3</span><span class="dtag s">Medios y acciones detalladas</span></div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-bottom:18px;">
+      <div class="ocard"><div class="onum">M1</div><h3>Diseño pedagógico alineado con Saber 11°</h3><ul style="padding-left:15px;font-size:.82rem;color:var(--inks);margin-top:8px;"><li>Definir competencias y áreas según guía ICFES.</li><li>Estructurar banco de preguntas por área y nivel de dificultad.</li><li>Validar el contenido con docentes de la IED.</li><li>Definir mecánicas de gamificación.</li></ul></div>
+      <div class="ocard"><div class="onum">M2</div><h3>Desarrollo del tutor lúdico tipo trivia</h3><ul style="padding-left:15px;font-size:.82rem;color:var(--inks);margin-top:8px;"><li>Diseñar la arquitectura técnica del sistema.</li><li>Desarrollar la interfaz de usuario (UX/UI).</li><li>Implementar el motor de trivia con retroalimentación inmediata.</li><li>Integrar ≥200 preguntas en las 5 áreas Saber 11°.</li></ul></div>
+      <div class="ocard"><div class="onum">M3</div><h3>Implementación y evaluación de impacto</h3><ul style="padding-left:15px;font-size:.82rem;color:var(--inks);margin-top:8px;"><li>Aplicar pretest para establecer línea base.</li><li>Ejecutar el piloto con estudiantes de grado 11°.</li><li>Registrar uso, sesiones y resultados.</li><li>Aplicar postest y encuesta Likert de percepción.</li></ul></div>
+      <div class="ocard"><div class="onum">M4</div><h3>Análisis, síntesis y recomendaciones</h3><ul style="padding-left:15px;font-size:.82rem;color:var(--inks);margin-top:8px;"><li>Comparar estadísticamente pretest vs postest.</li><li>Analizar motivación y satisfacción estudiantil.</li><li>Identificar áreas de mejora del tutor lúdico.</li><li>Formular conclusiones y recomendaciones de réplica.</li></ul></div>
+    </div>
+    <div class="card" style="border-left:4px solid var(--g);border-radius:0 var(--rl) var(--rl) 0;">
+      <h3>Interpretación de la estrategia seleccionada</h3>
+      <p>Cada acción propuesta responde directamente a una causa del árbol de problemas. La estrategia se concreta en el diseño, implementación y evaluación cuasi-experimental de un tutor lúdico tipo trivia para las áreas y competencias Saber 11°, garantizando la coherencia lógica del marco de intervención.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══ 5. EAP ═══ -->
+<!-- PASO 5 — EAP -->
 <section id="eap">
   <div class="ctr">
     <div class="badge"><span class="dot">5</span>Marco Lógico</div>
-    <h2 class="section-title">Estructura Analítica del Proyecto — EAP</h2>
-    <p class="section-sub">Fines, Propósito, Componentes y Acciones del proyecto.</p>
-    <div class="eap">
-      <div class="ep fi"><h4>🌿 Fines</h4><ul><li>Mayor acceso de jóvenes rurales a educación superior.</li><li>Reducción brecha educativa campo–ciudad.</li><li>Modelo replicable de innovación educativa rural.</li><li>Estudiantes con competencias sólidas para la universidad.</li></ul></div>
-      <div class="ep pr"><h4>🎯 Propósito</h4><ul><li>Mejorar el desempeño académico y la motivación en Saber 11° mediante el tutor lúdico tipo trivia en la IED Rural San Gabriel.</li><li>Generar evidencia empírica sobre el impacto de la gamificación en pruebas estandarizadas.</li></ul></div>
-      <div class="ep co"><h4>⚙️ Componentes</h4><ul><li><b>C1:</b> Diseño del sistema (arquitectura y funcionalidades).</li><li><b>C2:</b> Desarrollo del tutor (módulos implementados).</li><li><b>C3:</b> Implementación piloto con grado 11.</li><li><b>C4:</b> Evaluación académica (pretest / postest).</li><li><b>C5:</b> Evaluación de percepción y motivación.</li></ul></div>
-      <div class="ep ac"><h4>📋 Acciones</h4><ul><li>Recolección de requerimientos pedagógicos y técnicos.</li><li>Diseño de interfaces y UX del tutor.</li><li>Desarrollo e integración de preguntas Saber 11°.</li><li>Implementación piloto con registros de uso.</li><li>Aplicación de pretest, postest y encuestas Likert.</li><li>Análisis estadístico comparativo de resultados.</li></ul></div>
+    <h2 class="section-title">Paso 5. Estructura Analítica del Proyecto — EAP</h2>
+    <p class="section-sub">Organización jerárquica en cuatro niveles: Fin → Propósito → Componentes → Actividades.</p>
+    <div class="eap" style="margin-bottom:24px;">
+      <div class="ep fi"><h4>🌿 Fines</h4><ul><li>Mayor acceso de jóvenes rurales a educación superior.</li><li>Reducción de la brecha educativa campo–ciudad.</li><li>Modelo replicable de tecnología educativa lúdica rural.</li><li>Estudiantes con competencias sólidas para la universidad.</li><li>Fortalecimiento de la innovación pedagógica en la IED San Gabriel.</li></ul></div>
+      <div class="ep pr"><h4>🎯 Propósito</h4><ul><li>Mejorar el desempeño académico y la motivación de los estudiantes de grado 11° de la IED Rural San Gabriel en las pruebas Saber 11° mediante el tutor lúdico tipo trivia.</li><li>Generar evidencia empírica sobre el impacto de la gamificación en pruebas estandarizadas en contextos rurales.</li></ul></div>
+      <div class="ep co"><h4>⚙️ Componentes</h4><ul><li><b>C1:</b> Sistema del tutor lúdico diseñado y validado.</li><li><b>C2:</b> Tutor lúdico tipo trivia desarrollado e implementado.</li><li><b>C3:</b> Implementación piloto con estudiantes de grado 11° completada.</li><li><b>C4:</b> Evaluación académica (pretest / postest) realizada.</li><li><b>C5:</b> Evaluación de percepción y motivación aplicada.</li></ul></div>
+      <div class="ep ac"><h4>📋 Actividades</h4><ul><li>Recolección de requerimientos pedagógicos y técnicos.</li><li>Diseño de interfaces y arquitectura del sistema.</li><li>Desarrollo del tutor e integración de preguntas Saber 11°.</li><li>Pruebas de funcionamiento y validación docente.</li><li>Aplicación de pretest, piloto, postest y encuestas Likert.</li><li>Análisis estadístico y formulación de conclusiones.</li></ul></div>
+    </div>
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">5.3</span><span class="dtag s">Actividades por componente</span></div>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead><tr><th>Nivel</th><th>Código</th><th>Formulación en la EAP</th><th>Descripción</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="5"><b>Fines</b></td><td>F.1</td><td>Mayor acceso de jóvenes rurales a educación superior.</td><td rowspan="5">Resultados superiores esperados. Representan el aporte del proyecto a la equidad educativa y la innovación pedagógica en contextos rurales.</td></tr>
+          <tr><td>F.2</td><td>Reducción de la brecha educativa campo–ciudad.</td></tr>
+          <tr><td>F.3</td><td>Modelo replicable de innovación educativa para instituciones rurales.</td></tr>
+          <tr><td>F.4</td><td>Estudiantes de grado 11° con competencias sólidas para educación superior.</td></tr>
+          <tr><td>F.5</td><td>Fortalecimiento de la innovación pedagógica en la IED San Gabriel de Cajicá.</td></tr>
+          <tr><td><b>Propósito</b></td><td>P.1</td><td>Mejorar el desempeño académico y la motivación de los estudiantes de grado 11° de la IED Rural San Gabriel en las pruebas Saber 11° mediante el tutor lúdico tipo trivia.</td><td>Objetivo central del proyecto.</td></tr>
+          <tr><td rowspan="5"><b>Componentes</b></td><td>C.1</td><td>Sistema del tutor lúdico diseñado y pedagógicamente validado.</td><td rowspan="5">Productos principales que deben obtenerse para alcanzar el propósito.</td></tr>
+          <tr><td>C.2</td><td>Tutor lúdico tipo trivia desarrollado con ≥200 preguntas en 5 áreas Saber 11°.</td></tr>
+          <tr><td>C.3</td><td>Implementación piloto con estudiantes de grado 11° completada.</td></tr>
+          <tr><td>C.4</td><td>Evaluación académica comparativa (pretest vs postest) realizada.</td></tr>
+          <tr><td>C.5</td><td>Evaluación de percepción y motivación estudiantil analizada.</td></tr>
+          <tr><td rowspan="4"><b>Actividades C.1</b></td><td>A.1.1</td><td>Recolectar requerimientos pedagógicos y técnicos del tutor.</td><td rowspan="4">Acciones para el diseño del sistema.</td></tr>
+          <tr><td>A.1.2</td><td>Definir competencias y áreas de Saber 11° a abordar.</td></tr>
+          <tr><td>A.1.3</td><td>Diseñar la arquitectura técnica e interfaces del sistema (UX/UI).</td></tr>
+          <tr><td>A.1.4</td><td>Validar el diseño con docentes de la IED San Gabriel.</td></tr>
+          <tr><td rowspan="4"><b>Actividades C.2</b></td><td>A.2.1</td><td>Desarrollar los módulos funcionales del tutor lúdico tipo trivia.</td><td rowspan="4">Acciones para el desarrollo técnico del tutor.</td></tr>
+          <tr><td>A.2.2</td><td>Integrar banco de preguntas tipo Saber 11° en las 5 áreas.</td></tr>
+          <tr><td>A.2.3</td><td>Implementar el sistema de retroalimentación inmediata por respuesta.</td></tr>
+          <tr><td>A.2.4</td><td>Realizar pruebas de funcionamiento, usabilidad y ajustes técnicos.</td></tr>
+          <tr><td rowspan="3"><b>Actividades C.3</b></td><td>A.3.1</td><td>Aplicar prueba diagnóstica (pretest) a los estudiantes.</td><td rowspan="3">Acciones para la implementación piloto.</td></tr>
+          <tr><td>A.3.2</td><td>Ejecutar el piloto del tutor lúdico durante 4 semanas.</td></tr>
+          <tr><td>A.3.3</td><td>Registrar datos de uso, sesiones y resultados en la plataforma.</td></tr>
+          <tr><td rowspan="4"><b>Actividades C.4 y C.5</b></td><td>A.4.1</td><td>Aplicar postest para comparar el desempeño antes y después.</td><td rowspan="4">Acciones para la evaluación académica y de percepción.</td></tr>
+          <tr><td>A.4.2</td><td>Aplicar encuesta de satisfacción y motivación (Likert 1-5).</td></tr>
+          <tr><td>A.4.3</td><td>Realizar análisis estadístico comparativo (t-student).</td></tr>
+          <tr><td>A.4.4</td><td>Formular conclusiones y recomendaciones del proyecto.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="border-left:4px solid var(--g);border-radius:0 var(--rl) var(--rl) 0;">
+      <h3>Interpretación de la EAP</h3>
+      <p>La EAP conecta en secuencia lógica el fin, el propósito, los 5 componentes y las actividades del proyecto. Los componentes y actividades permiten operacionalizar la estrategia en acciones concretas de diseño, desarrollo, implementación y evaluación del tutor lúdico tipo trivia.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══ 6. RESUMEN NARRATIVO ═══ -->
+<!-- PASO 6 — RESUMEN NARRATIVO -->
 <section id="resumen-narrativo" style="background:var(--sf);">
   <div class="ctr">
     <div class="badge"><span class="dot">6</span>Marco Lógico</div>
-    <h2 class="section-title">Resumen Narrativo</h2>
-    <p class="section-sub">Matriz de Marco Lógico completa con Indicadores, Medios de Verificación y Supuestos.</p>
+    <h2 class="section-title">Paso 6. Resumen Narrativo</h2>
+    <p class="section-sub">Columna de objetivos de la Matriz de Marco Lógico con Indicadores, Medios de Verificación y Supuestos.</p>
 
-    <!-- Resumen narrativo tabla -->
-    <div class="tw" style="margin-bottom:28px;">
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">6.1</span><span class="dtag s">Resumen narrativo del proyecto</span></div>
+    <div class="tw" style="margin-bottom:20px;">
       <table>
-        <thead><tr><th colspan="2" style="text-align:center;font-size:.82rem;">RESUMEN NARRATIVO — Matriz de Marco Lógico</th></tr></thead>
+        <thead><tr><th colspan="2" style="text-align:center;font-size:.82rem;">RESUMEN NARRATIVO — Matriz de Marco Lógico · NeuroByte 2026</th></tr></thead>
         <tbody>
-          <tr><td style="width:170px;font-weight:700;background:var(--gl);color:var(--gdd);">Título</td><td>"Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias en las pruebas Saber 11°".</td></tr>
-          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Tema</td><td>Implementación de una herramienta gamificada para fortalecer competencias académicas en estudiantes de grado 11.</td></tr>
-          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Objetivo</td><td>Evaluar la influencia de un tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes durante la preparación para las pruebas Saber 11°.</td></tr>
-          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Pregunta</td><td>¿En qué medida la implementación de un tutor lúdico tipo trivia influye en el desempeño académico y la motivación de los estudiantes de grado 11 durante el periodo académico 2026-2?</td></tr>
-          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Resultados esperados</td><td>Incremento en la motivación estudiantil · Mejora en resultados de simulacros · Mayor participación en aprendizaje autónomo · Integración de tecnología en procesos educativos.</td></tr>
-          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Financiamiento</td><td>Recursos propios y apoyo institucional. Total: $1.100.000 COP.</td></tr>
-          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Duración</td><td>5 meses.</td></tr>
-          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Equipo</td><td>Investigador principal · Docentes de apoyo institucional · Estudiantes participantes.</td></tr>
-          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Evaluación</td><td>Análisis comparativo de resultados académicos (pretest vs postest) y encuestas de percepción tipo Likert.</td></tr>
-          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Beneficios</td><td>Fortalecimiento de competencias · Incremento de motivación y participación · Integración de estrategias innovadoras de aprendizaje.</td></tr>
-          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Impacto</td><td>Contribución al uso de tecnologías educativas en la institución · Fortalecimiento de la preparación para pruebas Saber 11°.</td></tr>
+          <tr><td style="width:170px;font-weight:700;background:var(--gl);color:var(--gdd);">Título</td><td>"Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias en las pruebas Saber 11° en estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá".</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Tema</td><td>Implementación de una herramienta gamificada para fortalecer competencias académicas en estudiantes de grado 11 en contexto rural.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Objetivo General</td><td>Evaluar la influencia de la implementación de un tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá durante el periodo académico 2026-2.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Pregunta problema</td><td>¿En qué medida la implementación de un tutor lúdico tipo trivia influye en el desempeño académico y la motivación de los estudiantes de grado 11 de la IED Rural San Gabriel de Cajicá durante el periodo académico 2026-2?</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Resultados esperados</td><td>• Incremento en la motivación estudiantil frente al estudio para Saber 11°.<br/>• Mejora en los resultados de simulacros y postest.<br/>• Mayor participación en actividades de aprendizaje autónomo.<br/>• Integración de herramientas tecnológicas lúdicas en procesos educativos rurales.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Financiamiento</td><td>Recursos propios del equipo investigador y apoyo institucional. Total estimado: $1.100.000 COP.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Duración</td><td>5 meses (periodo académico 2026-2).</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Equipo</td><td>NeuroByte: Oscar Camilo Pineda Osorio · Jeison Crishtofer Rojas Cruz · Docentes de apoyo institucional · Estudiantes participantes.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Evaluación</td><td>Análisis comparativo de resultados académicos (pretest vs postest) mediante prueba t-student y encuestas de percepción tipo Likert (1-5).</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Beneficios</td><td>Fortalecimiento de competencias Saber 11° · Incremento de motivación y participación estudiantil · Integración de estrategias innovadoras · Evidencia empírica sobre gamificación en contextos rurales.</td></tr>
+          <tr><td style="font-weight:700;background:var(--gl);color:var(--gdd);">Impacto</td><td>Contribución al uso de tecnologías educativas en la IED Rural San Gabriel · Fortalecimiento de la preparación para Saber 11° · Modelo replicable para instituciones rurales de Cundinamarca.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Indicadores, MV y Supuestos -->
-    <div class="mlt">Objetivo General — Indicadores, Medios de Verificación y Supuestos</div>
-    <div class="tw">
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">6.2</span><span class="dtag s">Indicadores · Medios de Verificación · Supuestos</span></div>
+    <div class="mlt">Objetivo General</div>
+    <div class="tw" style="margin-bottom:18px;">
       <table>
         <thead><tr><th style="width:26%">Nivel / Objetivo</th><th>Indicadores</th><th>Medios de Verificación</th><th>Supuestos</th></tr></thead>
         <tbody>
+          <tr><td><b>Evaluar la influencia del tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11 durante el periodo 2026-2.</b></td>
+          <td>• ≥70% de estudiantes mejoran su puntaje en el postest.<br/>• Incremento promedio ≥15 puntos en áreas evaluadas.<br/>• Motivación ≥4/5 en Likert al finalizar.</td>
+          <td>• Resultados tabulados del pretest y postest.<br/>• Registros académicos del periodo.<br/>• Encuestas de percepción aplicadas.</td>
+          <td>• Disponibilidad tecnológica y acceso a internet en la institución.<br/>• Participación activa y constante de los estudiantes.<br/>• Autorización institucional y consentimiento de padres.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mlt">Componentes</div>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead><tr><th>Nivel / Código</th><th>Resumen narrativo</th><th>Indicador</th><th>Medios de verificación</th><th>Supuestos</th></tr></thead>
+        <tbody>
+          <tr><td><b>C.1</b> Diseño del sistema</td><td>Sistema del tutor lúdico diseñado y validado por docentes.</td><td>Prototipo validado por ≥2 docentes de la IED.</td><td>Capturas del sistema, repositorio, rúbrica de validación firmada.</td><td>Disponibilidad de herramientas de desarrollo y marcos Saber 11°.</td></tr>
+          <tr><td><b>C.2</b> Desarrollo del tutor</td><td>Tutor lúdico con ≥200 preguntas en 5 áreas y retroalimentación activa.</td><td>Tutor funcionando con banco de preguntas completo y sistema de puntajes.</td><td>Código fuente en repositorio, pruebas funcionales, prueba de usabilidad.</td><td>Acceso a recursos tecnológicos y conectividad para el desarrollo.</td></tr>
+          <tr><td><b>C.3</b> Implementación piloto</td><td>Implementación piloto con estudiantes de grado 11° completada durante 4 semanas.</td><td>≥80% de estudiantes participan en ≥3 sesiones del tutor.</td><td>Registros de uso de plataforma, listas de asistencia, bitácoras.</td><td>Disponibilidad de sala de cómputo, conectividad y acompañamiento docente.</td></tr>
+          <tr><td><b>C.4</b> Evaluación académica</td><td>Evaluación comparativa (pretest vs postest) analizada estadísticamente.</td><td>Diferencia significativa pretest vs postest (t-student, p &lt;0.05) en ≥3 áreas.</td><td>Resultados tabulados y análisis estadístico comparativo documentado.</td><td>Participación constante en ambas pruebas (pretest al inicio y postest al final).</td></tr>
+          <tr><td><b>C.5</b> Evaluación de percepción</td><td>Evaluación de percepción y motivación estudiantil aplicada y analizada.</td><td>Puntuación promedio ≥4/5 en Likert en motivación, utilidad y satisfacción.</td><td>Encuestas aplicadas, datos tabulados, análisis descriptivo por dimensión.</td><td>Honestidad y disponibilidad de los estudiantes para responder los instrumentos.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mlt">Actividades</div>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead><tr><th>Código</th><th>Actividad</th><th>Componente</th><th>Indicador</th><th>Medio de verificación</th><th>Supuesto</th><th>Responsable</th><th>Fecha</th></tr></thead>
+        <tbody>
+          <tr><td>A.1.1</td><td>Recolección de requerimientos pedagógicos y técnicos.</td><td>C1</td><td>Documento de requerimientos completado.</td><td>Documento firmado por docentes.</td><td>Acceso a docentes para entrevistas.</td><td>Investigador</td><td>Mes 1</td></tr>
+          <tr><td>A.1.2</td><td>Diseño de interfaces y experiencia de usuario.</td><td>C1</td><td>Prototipo de interfaz diseñado y validado.</td><td>Prototipo en herramienta de diseño.</td><td>Disponibilidad de herramientas de diseño.</td><td>Equipo técnico</td><td>Mes 1</td></tr>
+          <tr><td>A.2.1</td><td>Desarrollo del tutor lúdico tipo trivia.</td><td>C2</td><td>Módulos funcionales del tutor implementados.</td><td>Código fuente y pruebas funcionales.</td><td>Acceso a recursos tecnológicos adecuados.</td><td>Equipo técnico</td><td>Mes 3</td></tr>
+          <tr><td>A.2.2</td><td>Integración de preguntas tipo Saber 11° (5 áreas).</td><td>C2</td><td>≥200 preguntas integradas y validadas.</td><td>Base de datos de preguntas y validación docente.</td><td>Acceso a banco de preguntas tipo Saber 11°.</td><td>Equipo técnico</td><td>Mes 3</td></tr>
+          <tr><td>A.3.1</td><td>Aplicación de prueba diagnóstica (pretest).</td><td>C3</td><td>100% de estudiantes aplican pretest.</td><td>Resultados tabulados del pretest.</td><td>Asistencia de estudiantes en fecha programada.</td><td>Investigador</td><td>Mes 4</td></tr>
+          <tr><td>A.3.2</td><td>Implementación piloto del tutor con estudiantes.</td><td>C3</td><td>≥80% participan en ≥3 sesiones.</td><td>Registros de uso y listas de participación.</td><td>Disponibilidad de sala de cómputo y conectividad.</td><td>Investigador y docentes</td><td>Mes 4</td></tr>
+          <tr><td>A.4.1</td><td>Aplicación de postest y encuestas Likert.</td><td>C4, C5</td><td>100% aplican postest y encuesta.</td><td>Resultados tabulados del postest y encuestas.</td><td>Asistencia de estudiantes al finalizar la intervención.</td><td>Investigador</td><td>Mes 4</td></tr>
+          <tr><td>A.4.2</td><td>Análisis estadístico y elaboración de conclusiones.</td><td>C4</td><td>Informe con análisis t-student completado.</td><td>Informe de resultados y conclusiones documentadas.</td><td>Disponibilidad de herramienta estadística.</td><td>Investigador</td><td>Mes 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">6.3</span><span class="dtag s">Supuestos del proyecto</span></div>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead><tr><th>Nivel</th><th>Supuesto seleccionado</th><th>Naturaleza</th><th>Justificación</th></tr></thead>
+        <tbody>
+          <tr><td><b>Fin</b></td><td>La institución mantiene interés en integrar tecnologías lúdicas para mejorar resultados Saber 11°.</td><td>Institucional</td><td>Garantiza que los resultados sean pertinentes para futuras intervenciones pedagógicas.</td></tr>
+          <tr><td><b>Propósito</b></td><td>Los estudiantes participan activamente en el uso del tutor y en las evaluaciones pre y post.</td><td>Social / Académico</td><td>La participación activa es condición fundamental para el impacto esperado.</td></tr>
+          <tr><td><b>C1</b></td><td>Las herramientas de desarrollo y los marcos Saber 11° permanecen accesibles.</td><td>Tecnológico</td><td>El acceso a marcos curriculares condiciona la calidad del diseño pedagógico.</td></tr>
+          <tr><td><b>C2</b></td><td>La institución cuenta con conectividad y equipos para acceder al tutor.</td><td>Tecnológico / Institucional</td><td>La disponibilidad tecnológica es esencial para ejecutar el piloto.</td></tr>
+          <tr><td><b>C3</b></td><td>Los directivos y docentes brindan acompañamiento durante el piloto.</td><td>Institucional</td><td>El apoyo institucional facilita el acceso a los estudiantes y los espacios.</td></tr>
+          <tr><td><b>C4 y C5</b></td><td>Los estudiantes responden con honestidad el postest y las encuestas al finalizar.</td><td>Social / Académico</td><td>La validez de los instrumentos depende de la sinceridad de los participantes.</td></tr>
+          <tr><td><b>Actividades</b></td><td>Se mantiene el cronograma y la disponibilidad del equipo durante los 5 meses.</td><td>Académico / Institucional</td><td>El cumplimiento del cronograma es condición básica para ejecutar todas las actividades.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">6.4</span><span class="dtag s">Validación de coherencia</span></div>
+    <div class="tw" style="margin-bottom:20px;">
+      <table>
+        <thead><tr><th>Condición de coherencia</th><th>Cumple</th></tr></thead>
+        <tbody>
+          <tr><td>Las actividades especificadas para cada componente son necesarias para producir el componente.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+          <tr><td>Cada componente es necesario para lograr el propósito del proyecto.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+          <tr><td>No falta ninguno de los componentes necesarios para lograr el propósito.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+          <tr><td>Si se logra el propósito del proyecto, contribuirá al logro del fin.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+          <tr><td>Se indican claramente el fin, propósito, componentes y actividades.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+          <tr><td>El fin es una respuesta pertinente al problema central identificado.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+          <tr><td>Los indicadores son medibles, verificables y delimitados en tiempo, cantidad y calidad.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+          <tr><td>Los medios de verificación son accesibles y coherentes con el desarrollo metodológico.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--g);border-radius:0 var(--rl) var(--rl) 0;">
+      <h3>Interpretación del Resumen Narrativo y Lógica Vertical</h3>
+      <p>La validación confirma la relación causal ascendente entre actividades, componentes, propósito y fin. Si las actividades se ejecutan y los supuestos se cumplen, se producen los 5 componentes. Si los componentes se obtienen, se mejora el desempeño y la motivación en Saber 11°. Si el propósito se alcanza, contribuye al fin: mayor acceso a educación superior desde contextos rurales y reducción de la brecha educativa campo-ciudad en Colombia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PASO 7 — INDICADORES -->
+<section id="indicadores">
+  <div class="ctr">
+    <div class="badge"><span class="dot">7</span>Marco Lógico</div>
+    <h2 class="section-title">Paso 7. Indicadores</h2>
+    <p class="section-sub">Definición, clasificación y selección de indicadores para evaluar el avance y cumplimiento de los objetivos de la Matriz de Marco Lógico.</p>
+
+    <div class="card" style="margin-bottom:18px;">
+      <div class="dtags"><span class="dtag v">7.1</span><span class="dtag s">Definición</span></div>
+      <h3>Criterios de los indicadores</h3>
+      <p>Los indicadores permiten operacionalizar los objetivos definidos en la MML, estableciendo criterios para verificar el avance y cumplimiento del proyecto. Para este proyecto, los indicadores se orientan a medir el desempeño académico de los estudiantes, el nivel de motivación, la usabilidad del tutor lúdico y el cumplimiento de las actividades metodológicas.</p>
+      <div style="background:#111;border-radius:var(--r);padding:14px 20px;margin-top:12px;">
+        <p style="color:rgba(255,255,255,.8);font-size:.88rem;line-height:1.7;">Los indicadores deben ser: <span style="color:#7dd63a;font-weight:600;">claros, medibles, pertinentes, verificables</span> y delimitados en términos de <strong style="color:#fff;">cantidad, calidad, tiempo, lugar y grupo social</strong>.</p>
+      </div>
+    </div>
+
+    <!-- 7.2 Revisión de criterios -->
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">7.2</span><span class="dtag s">Revisión de criterios</span></div>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead><tr><th>Nivel</th><th>Resumen narrativo</th><th>Indicador</th><th>Cantidad</th><th>Calidad</th><th>Tiempo</th><th>Lugar</th><th>Grupo social</th></tr></thead>
+        <tbody>
+          <tr><td>Fin</td><td>Contribuir a mejorar el acceso a educación superior desde contextos rurales.</td><td>Documento final con síntesis de resultados, conclusiones y recomendaciones de réplica.</td><td>1 documento final</td><td>Integra análisis estadístico y hallazgos sistematizados.</td><td>Mes 5</td><td>IED Rural San Gabriel / portafolio digital.</td><td>Estudiantes de grado 11°, institución e investigadores.</td></tr>
+          <tr><td>Propósito</td><td>Mejorar el desempeño académico y la motivación en Saber 11° mediante el tutor lúdico tipo trivia.</td><td>Porcentaje de estudiantes que mejoran su puntaje en el postest respecto al pretest.</td><td>≥70% de estudiantes</td><td>Mejora verificada mediante análisis estadístico (t-student, p &lt;0.05).</td><td>Mes 4 (postest) y Mes 5 (análisis)</td><td>IED Rural San Gabriel de Cajicá.</td><td>Estudiantes de grado 11°.</td></tr>
+          <tr><td>Componente 1</td><td>Sistema del tutor lúdico diseñado y validado pedagógicamente.</td><td>Prototipo de interfaz validado por ≥2 docentes de la IED mediante rúbrica.</td><td>1 prototipo validado</td><td>Alineado con competencias Saber 11° y principios de gamificación.</td><td>Mes 1</td><td>Herramienta de diseño (Figma) / repositorio.</td><td>Docentes y equipo técnico NeuroByte.</td></tr>
+          <tr><td>Componente 2</td><td>Tutor lúdico tipo trivia desarrollado con ≥200 preguntas en 5 áreas.</td><td>Número de preguntas integradas y funcionalidades implementadas (retroalimentación, puntajes, niveles).</td><td>≥200 preguntas / 5 áreas</td><td>Preguntas alineadas con guía ICFES Saber 11° y validadas por docentes.</td><td>Mes 3</td><td>Plataforma del tutor lúdico / repositorio de código.</td><td>Equipo técnico y docentes validadores.</td></tr>
+          <tr><td>Componente 3</td><td>Implementación piloto completada con estudiantes de grado 11°.</td><td>Número de estudiantes que participan en ≥3 sesiones del tutor durante el piloto.</td><td>≥80% de estudiantes matriculados</td><td>Participación registrada en la plataforma con datos de uso.</td><td>Mes 4</td><td>Sala de cómputo IED Rural San Gabriel.</td><td>Estudiantes de grado 11°.</td></tr>
+          <tr><td>Componente 4</td><td>Evaluación académica comparativa (pretest vs postest) realizada.</td><td>Diferencia estadísticamente significativa entre resultados del pretest y postest.</td><td>t-student, p &lt;0.05 en ≥3 áreas</td><td>Análisis con herramienta estadística validada.</td><td>Mes 4 (aplicación) / Mes 5 (análisis)</td><td>IED Rural San Gabriel / herramienta estadística.</td><td>Estudiantes de grado 11°.</td></tr>
+          <tr><td>Componente 5</td><td>Evaluación de percepción y motivación estudiantil aplicada y analizada.</td><td>Puntuación promedio en escala Likert (1-5) en dimensiones de motivación, utilidad y satisfacción.</td><td>Promedio ≥4/5</td><td>Encuesta validada por instrumento Likert coherente con las variables del estudio.</td><td>Mes 4</td><td>IED Rural San Gabriel.</td><td>Estudiantes de grado 11°.</td></tr>
+          <tr><td>Actividades</td><td>Desarrollo de las actividades de diseño, desarrollo, implementación y evaluación.</td><td>Porcentaje de actividades metodológicas completadas por mes según cronograma.</td><td>100% de actividades programadas</td><td>Actividades coherentes con la EAP y el marco lógico del proyecto.</td><td>Meses 1 a 5</td><td>UCundinamarca / IED Rural San Gabriel / portafolio digital.</td><td>Equipo NeuroByte y docentes.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7.3 Clasificación -->
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">7.3</span><span class="dtag s">Clasificación de indicadores</span></div>
+    <p style="font-size:.87rem;color:var(--inks);margin-bottom:8px;">Los indicadores se clasifican según su naturaleza cuantitativa o cualitativa, y según su función como indicadores finales, intermedios o proxy.</p>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead>
+          <tr><th rowspan="2">Nivel</th><th rowspan="2">Indicador</th><th colspan="3" style="text-align:center;">Cuantitativos</th><th colspan="3" style="text-align:center;">Cualitativos</th></tr>
+          <tr><th>Final</th><th>Intermedio</th><th>Proxy</th><th>Final</th><th>Intermedio</th><th>Proxy</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Fin</td><td>Documento final con síntesis de resultados.</td><td></td><td></td><td></td><td>X</td><td></td><td></td></tr>
+          <tr><td>Propósito</td><td>≥70% de estudiantes mejoran puntaje en postest.</td><td>X</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>C1</td><td>Prototipo validado por ≥2 docentes.</td><td></td><td>X</td><td></td><td></td><td>X</td><td></td></tr>
+          <tr><td>C2</td><td>≥200 preguntas integradas en 5 áreas Saber 11°.</td><td></td><td>X</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>C3</td><td>≥80% de estudiantes participan en ≥3 sesiones.</td><td></td><td>X</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>C4</td><td>Diferencia significativa pretest vs postest (t-student).</td><td>X</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>C5</td><td>Promedio Likert ≥4/5 en motivación y satisfacción.</td><td></td><td>X</td><td></td><td></td><td>X</td><td></td></tr>
+          <tr><td>Actividades</td><td>100% de actividades completadas por cronograma.</td><td></td><td>X</td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7.4 Ponderación -->
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">7.4</span><span class="dtag s">Ponderación para selección</span></div>
+    <p style="font-size:.87rem;color:var(--inks);margin-bottom:8px;"><b>A:</b> El indicador es claro. <b>B:</b> Existe información disponible o recolectable. <b>C:</b> El indicador es observable. <b>D:</b> La recolección está al alcance del proyecto. <b>E:</b> Representa adecuadamente el resultado esperado.</p>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead><tr><th>Nivel</th><th>Indicador</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>Puntaje</th><th class="thg">Selección</th></tr></thead>
+        <tbody>
+          <tr><td>Fin</td><td>Documento final con síntesis de resultados.</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>5</td><td style="color:#2a6000;font-weight:700;">✔ Seleccionado</td></tr>
+          <tr><td>Propósito</td><td>≥70% de estudiantes mejoran puntaje en postest.</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>5</td><td style="color:#2a6000;font-weight:700;">✔ Seleccionado</td></tr>
+          <tr><td>C1</td><td>Prototipo validado por ≥2 docentes.</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>5</td><td style="color:#2a6000;font-weight:700;">✔ Seleccionado</td></tr>
+          <tr><td>C2</td><td>≥200 preguntas integradas en 5 áreas Saber 11°.</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>5</td><td style="color:#2a6000;font-weight:700;">✔ Seleccionado</td></tr>
+          <tr><td>C3</td><td>≥80% de estudiantes participan en ≥3 sesiones.</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>5</td><td style="color:#2a6000;font-weight:700;">✔ Seleccionado</td></tr>
+          <tr><td>C4</td><td>Diferencia significativa pretest vs postest (t-student, p &lt;0.05).</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>5</td><td style="color:#2a6000;font-weight:700;">✔ Seleccionado</td></tr>
+          <tr><td>C5</td><td>Promedio Likert ≥4/5 en motivación y satisfacción.</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>5</td><td style="color:#2a6000;font-weight:700;">✔ Seleccionado</td></tr>
+          <tr><td>Actividades</td><td>100% de actividades completadas por cronograma.</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>5</td><td style="color:#2a6000;font-weight:700;">✔ Seleccionado</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7.5 Resultados intermedios -->
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">7.5</span><span class="dtag s">Resultados intermedios por indicador</span></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Nivel</th><th>Indicador</th><th>Meta final</th><th>Mes 1</th><th>Mes 2-3</th><th>Mes 4</th><th>Mes 5</th></tr></thead>
+        <tbody>
+          <tr><td>Fin</td><td>Documento final con síntesis de resultados.</td><td>Documento final consolidado.</td><td>Planeación del proyecto</td><td>Diseño y desarrollo del tutor</td><td>Implementación y evaluación</td><td>Síntesis y conclusiones finales</td></tr>
+          <tr><td>Propósito</td><td>≥70% mejoran puntaje en postest.</td><td>100% del proceso cuasi-experimental completado.</td><td>Pretest aplicado</td><td>Tutor desarrollado</td><td>Piloto y postest aplicados</td><td>Análisis comparativo realizado</td></tr>
+          <tr><td>C1</td><td>Prototipo validado.</td><td>Diseño aprobado y validado.</td><td>Diseño completado</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>C2</td><td>≥200 preguntas integradas.</td><td>Tutor funcional con banco completo.</td><td>—</td><td>Desarrollo completo</td><td>—</td><td>—</td></tr>
+          <tr><td>C3</td><td>≥80% participan en ≥3 sesiones.</td><td>Registros de uso completos.</td><td>—</td><td>—</td><td>Piloto ejecutado</td><td>—</td></tr>
+          <tr><td>C4</td><td>Diferencia significativa pretest vs postest.</td><td>Análisis t-student documentado.</td><td>—</td><td>—</td><td>Datos recolectados</td><td>Análisis concluido</td></tr>
+          <tr><td>C5</td><td>Promedio Likert ≥4/5.</td><td>Encuestas analizadas.</td><td>—</td><td>—</td><td>Encuestas aplicadas</td><td>Análisis concluido</td></tr>
+          <tr><td>Actividades</td><td>100% completadas.</td><td>100%</td><td>25%</td><td>50%</td><td>75%</td><td>100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:18px;border-left:4px solid var(--g);border-radius:0 var(--rl) var(--rl) 0;">
+      <h3>Interpretación de los indicadores</h3>
+      <p>Todos los indicadores seleccionados obtuvieron puntaje máximo (5/5) en los criterios de claridad, disponibilidad, observabilidad, factibilidad y representatividad. Los indicadores cuantitativos predominan en los niveles de propósito y componentes, donde la medición estadística es posible (t-student, porcentajes, conteos). Los indicadores cualitativos se combinan en los componentes donde la valoración pedagógica es central (validación docente del prototipo, satisfacción estudiantil). Los resultados intermedios están organizados mes a mes, permitiendo el seguimiento progresivo del proyecto durante los 5 meses de ejecución.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PASO 8 — MEDIOS DE VERIFICACIÓN -->
+<section id="medios-verificacion" style="background:var(--sf);">
+  <div class="ctr">
+    <div class="badge"><span class="dot">8</span>Marco Lógico</div>
+    <h2 class="section-title">Paso 8. Medios de Verificación</h2>
+    <p class="section-sub">Fuentes de información, métodos de recolección, métodos de análisis, frecuencia y responsables para verificar cada indicador.</p>
+
+    <div class="card" style="margin-bottom:18px;">
+      <div class="dtags"><span class="dtag v">8.1</span><span class="dtag s">Función</span></div>
+      <h3>Fuentes y métodos de verificación de indicadores</h3>
+      <p>Los medios de verificación permiten precisar las fuentes, métodos de recolección, métodos de análisis, frecuencia y responsables necesarios para comprobar el avance y cumplimiento de los indicadores. Para este proyecto, los medios corresponden a productos documentales y técnicos propios de un estudio cuasi-experimental: prueba diagnóstica, registros del tutor, encuestas Likert, código fuente, bitácoras y análisis estadístico.</p>
+      <div style="background:#111;border-radius:var(--r);padding:14px 20px;margin-top:12px;">
+        <p style="color:rgba(255,255,255,.8);font-size:.88rem;line-height:1.7;">Los medios de verificación permiten comprobar si los indicadores pueden ser evaluados mediante fuentes <span style="color:#7dd63a;font-weight:600;">concretas, accesibles y coherentes</span> con el desarrollo metodológico del proyecto.</p>
+      </div>
+    </div>
+
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">8.2</span><span class="dtag s">Medios de verificación por indicador</span></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Nivel</th><th>Resumen narrativo</th><th>Indicador</th><th>Fuente de información</th><th>Método de recolección</th><th>Método de análisis</th><th>Frecuencia</th><th>Responsable</th></tr></thead>
+        <tbody>
           <tr>
-            <td><b>Evaluar la influencia del tutor lúdico tipo trivia en el desempeño académico y la motivación de los estudiantes de grado 11 durante el periodo 2026-2.</b></td>
-            <td>• ≥70% de estudiantes mejoran puntaje en postest.<br/>• Incremento promedio ≥15 puntos en áreas evaluadas.<br/>• Motivación ≥4/5 en escala Likert al finalizar.</td>
-            <td>• Resultados de pruebas diagnósticas y postest.<br/>• Registros académicos del periodo.<br/>• Encuestas de percepción aplicadas.</td>
-            <td>• Disponibilidad de recursos tecnológicos y acceso a internet.<br/>• Participación activa de los estudiantes durante toda la intervención.</td>
+            <td>Fin</td>
+            <td>Contribuir a mejorar el acceso a educación superior desde contextos rurales.</td>
+            <td>Documento final con síntesis de resultados, conclusiones y recomendaciones.</td>
+            <td>Documento final del proyecto, análisis estadístico y portafolio digital.</td>
+            <td>Consolidación de resultados obtenidos en las fases de evaluación académica y percepción.</td>
+            <td>Análisis crítico e interpretación de hallazgos del estudio cuasi-experimental.</td>
+            <td>Al cierre del proyecto, Mes 5.</td>
+            <td>Oscar C. Pineda Osorio y Jeison C. Rojas Cruz.</td>
+          </tr>
+          <tr>
+            <td>Propósito</td>
+            <td>Mejorar el desempeño académico y la motivación en Saber 11° mediante el tutor lúdico.</td>
+            <td>≥70% de estudiantes mejoran su puntaje en postest. Promedio Likert ≥4/5.</td>
+            <td>Resultados del pretest, postest y encuestas de percepción tipo Likert.</td>
+            <td>Aplicación de prueba diagnóstica antes y prueba equivalente después de la implementación. Aplicación de encuesta al finalizar.</td>
+            <td>Análisis estadístico comparativo t-student (p &lt;0.05) y análisis descriptivo de encuesta Likert.</td>
+            <td>Pretest: Mes 4 (inicio piloto). Postest y encuesta: Mes 4 (cierre piloto). Análisis: Mes 5.</td>
+            <td>Investigador principal.</td>
+          </tr>
+          <tr>
+            <td>C1: Diseño del sistema</td>
+            <td>Sistema del tutor lúdico diseñado y validado pedagógicamente.</td>
+            <td>Prototipo validado por ≥2 docentes de la IED mediante rúbrica.</td>
+            <td>Prototipo de interfaz (Figma), documento de requerimientos, rúbrica de validación firmada por docentes.</td>
+            <td>Reuniones de validación con docentes de la IED para revisar el diseño y la alineación con Saber 11°.</td>
+            <td>Revisión de rúbrica de validación pedagógica con criterios de alineación curricular, usabilidad y pertinencia.</td>
+            <td>Mes 1, al finalizar el diseño.</td>
+            <td>Equipo técnico NeuroByte y docentes validadores.</td>
+          </tr>
+          <tr>
+            <td>C2: Desarrollo del tutor</td>
+            <td>Tutor lúdico tipo trivia desarrollado con ≥200 preguntas en 5 áreas.</td>
+            <td>Tutor funcionando con banco de preguntas completo, retroalimentación activa y sistema de puntajes.</td>
+            <td>Código fuente en repositorio (GitHub), pruebas funcionales documentadas, prueba de usabilidad con usuarios piloto.</td>
+            <td>Ejecución de pruebas funcionales (test cases) y prueba de usabilidad con 3-5 estudiantes piloto.</td>
+            <td>Verificación de funcionalidades implementadas vs. requerimientos. Conteo y clasificación de preguntas por área.</td>
+            <td>Mes 3, al finalizar el desarrollo.</td>
+            <td>Equipo técnico NeuroByte.</td>
+          </tr>
+          <tr>
+            <td>C3: Implementación piloto</td>
+            <td>Implementación piloto completada con estudiantes de grado 11° durante 4 semanas.</td>
+            <td>≥80% de estudiantes participan en ≥3 sesiones del tutor con registro en la plataforma.</td>
+            <td>Registros automáticos de la plataforma del tutor (sesiones, tiempo, puntajes), listas de asistencia, bitácoras del docente acompañante.</td>
+            <td>Descarga de reportes de uso de la plataforma. Registro manual de asistencia por sesión.</td>
+            <td>Conteo de sesiones por estudiante. Porcentaje de participación sobre total matriculados.</td>
+            <td>Semanal durante el Mes 4 (4 semanas de piloto).</td>
+            <td>Investigador principal y docente acompañante.</td>
+          </tr>
+          <tr>
+            <td>C4: Evaluación académica</td>
+            <td>Evaluación comparativa (pretest vs postest) realizada y analizada estadísticamente.</td>
+            <td>Diferencia estadísticamente significativa entre pretest y postest (t-student, p &lt;0.05) en ≥3 áreas evaluadas.</td>
+            <td>Resultados tabulados del pretest y postest, herramienta estadística (SPSS, Excel, R o similar).</td>
+            <td>Digitación y tabulación de resultados de ambas pruebas. Verificación de completitud de datos.</td>
+            <td>Prueba t para muestras relacionadas. Cálculo de diferencia de medias, desviación estándar y valor p por área evaluada.</td>
+            <td>Análisis realizado en el Mes 5, tras finalizar el piloto.</td>
+            <td>Investigador principal.</td>
+          </tr>
+          <tr>
+            <td>C5: Evaluación de percepción</td>
+            <td>Evaluación de percepción y motivación estudiantil aplicada y analizada.</td>
+            <td>Puntuación promedio ≥4/5 en escala Likert en motivación, utilidad percibida y satisfacción.</td>
+            <td>Formulario de encuesta tipo Likert (digital o impreso), datos tabulados por dimensión.</td>
+            <td>Aplicación de encuesta al finalizar la última sesión del piloto. Tabulación de respuestas por dimensión.</td>
+            <td>Análisis descriptivo: media, moda y desviación estándar por ítem y por dimensión. Representación gráfica de resultados.</td>
+            <td>Mes 4 (al finalizar el piloto). Análisis: Mes 5.</td>
+            <td>Investigador principal.</td>
+          </tr>
+          <tr>
+            <td>Actividades</td>
+            <td>Desarrollo de las actividades de diseño, desarrollo, implementación y evaluación.</td>
+            <td>100% de actividades metodológicas completadas por mes según cronograma.</td>
+            <td>Cronograma de actividades, portafolio digital, entregables documentales y técnicos de cada fase.</td>
+            <td>Seguimiento semanal de actividades realizadas frente a las programadas en la EAP.</td>
+            <td>Cálculo del porcentaje de avance mensual y revisión de cumplimiento por componente.</td>
+            <td>Mensual, durante los Meses 1 a 5.</td>
+            <td>Equipo NeuroByte (Oscar Pineda y Jeison Rojas).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:18px;border-left:4px solid var(--g);border-radius:0 var(--rl) var(--rl) 0;">
+      <h3>Interpretación de los medios de verificación</h3>
+      <p>Los medios de verificación definidos garantizan trazabilidad en cada fase del proyecto. Las fuentes principales son: prueba diagnóstica (pretest), postest, registros automáticos del tutor lúdico, rúbricas de validación docente, encuestas Likert, código fuente en repositorio y portafolio digital. La frecuencia de recolección está organizada mes a mes: Mes 1 (diseño y validación), Mes 3 (desarrollo y pruebas), Mes 4 (piloto, pretest y postest, encuestas), Mes 5 (análisis estadístico y documento final). Esto garantiza que todos los indicadores sean verificables con los recursos disponibles del proyecto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PASO 9 — SUPUESTOS -->
+<section id="supuestos">
+  <div class="ctr">
+    <div class="badge"><span class="dot">9</span>Marco Lógico</div>
+    <h2 class="section-title">Paso 9. Supuestos</h2>
+    <p class="section-sub">Factores externos, riesgos y condiciones necesarias para validar la lógica vertical de la Matriz de Marco Lógico.</p>
+
+    <div class="card" style="margin-bottom:18px;">
+      <div class="dtags"><span class="dtag v">9.1</span><span class="dtag s">Función de los supuestos</span></div>
+      <h3>Identificación de factores externos y riesgos</h3>
+      <p>Los supuestos corresponden a factores externos que se encuentran fuera del control directo del proyecto, pero que pueden incidir en el cumplimiento de los objetivos de la MML. Para este proyecto, los supuestos se relacionan con la disponibilidad tecnológica, el compromiso estudiantil e institucional, la validez de los instrumentos y el cumplimiento del cronograma.</p>
+      <div style="background:#111;border-radius:var(--r);padding:14px 20px;margin-top:12px;">
+        <p style="color:rgba(255,255,255,.8);font-size:.88rem;line-height:1.7;">Los supuestos permiten identificar las condiciones externas que deben mantenerse para que <span style="color:#7dd63a;font-weight:600;">las actividades produzcan componentes</span>, los componentes permitan alcanzar el propósito y el propósito contribuya al fin del proyecto.</p>
+      </div>
+    </div>
+
+    <!-- 9.2 Factores de riesgo -->
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">9.2</span><span class="dtag s">Factores de riesgo por nivel</span></div>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead><tr><th>Nivel</th><th>Resumen narrativo</th><th>Financiero</th><th>Político / Institucional</th><th>Social / Académico</th><th>Tecnológico</th><th>Legal / Ético</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Fin</td>
+            <td>Contribuir a mejorar el acceso a educación superior desde contextos rurales.</td>
+            <td>El proyecto puede ejecutarse con recursos propios ($1.100.000 COP) sin financiamiento externo.</td>
+            <td>La institución mantiene interés en integrar tecnologías lúdicas para mejorar resultados Saber 11°.</td>
+            <td>La comunidad educativa reconoce el valor de la innovación pedagógica con gamificación.</td>
+            <td>Las herramientas digitales utilizadas permanecen disponibles y funcionales.</td>
+            <td>Los resultados se presentan con rigor académico respetando la autoría y la integridad investigativa.</td>
+          </tr>
+          <tr>
+            <td>Propósito</td>
+            <td>Mejorar el desempeño académico y la motivación en Saber 11° mediante el tutor lúdico.</td>
+            <td>Los recursos propios son suficientes para cubrir desarrollo, hosting y aplicación de instrumentos.</td>
+            <td>Se mantiene el acompañamiento académico del líder CTeI y la orientación de la UCundinamarca.</td>
+            <td>Los estudiantes de grado 11° participan activamente en el piloto y en las evaluaciones.</td>
+            <td>La institución cuenta con conectividad y equipos adecuados para el acceso al tutor lúdico.</td>
+            <td>Los instrumentos de evaluación respetan la confidencialidad y el consentimiento informado.</td>
+          </tr>
+          <tr>
+            <td>C1: Diseño</td>
+            <td>Sistema del tutor lúdico diseñado y validado pedagógicamente.</td>
+            <td>Las herramientas de diseño (Figma u otras) están disponibles en versión gratuita.</td>
+            <td>Los docentes de la IED disponen de tiempo para participar en las sesiones de validación.</td>
+            <td>Los docentes validadores cuentan con conocimiento de las competencias Saber 11°.</td>
+            <td>Las herramientas de diseño de interfaz permanecen accesibles durante la fase.</td>
+            <td>El diseño respeta los marcos curriculares del ICFES y las guías de orientación Saber 11°.</td>
+          </tr>
+          <tr>
+            <td>C2: Desarrollo</td>
+            <td>Tutor lúdico tipo trivia desarrollado con ≥200 preguntas en 5 áreas.</td>
+            <td>Los recursos tecnológicos para desarrollo (hosting, dominio) son asequibles con presupuesto propio.</td>
+            <td>La metodología y el enfoque tecnológico seleccionado son aceptados por la institución.</td>
+            <td>El equipo técnico cuenta con las competencias necesarias para el desarrollo de la plataforma.</td>
+            <td>El entorno de desarrollo y el servidor de hosting permanecen operativos durante la fase.</td>
+            <td>El banco de preguntas desarrollado no infringe derechos de autor del ICFES ni de terceros.</td>
+          </tr>
+          <tr>
+            <td>C3: Piloto</td>
+            <td>Implementación piloto completada con estudiantes de grado 11° durante 4 semanas.</td>
+            <td>No se requieren costos adicionales significativos para la fase de implementación.</td>
+            <td>Los directivos autorizan el uso de la sala de cómputo y el acompañamiento durante el piloto.</td>
+            <td>Los estudiantes asisten regularmente y se comprometen con el uso del tutor durante las 4 semanas.</td>
+            <td>La sala de cómputo de la IED cuenta con acceso a internet y equipos funcionales.</td>
+            <td>Los padres de familia firman el consentimiento informado para la participación de sus hijos.</td>
+          </tr>
+          <tr>
+            <td>C4: Eval. académica</td>
+            <td>Evaluación comparativa (pretest vs postest) realizada y analizada.</td>
+            <td>No se requieren costos adicionales para la aplicación de pruebas y el análisis estadístico.</td>
+            <td>Los directivos y docentes facilitan el espacio y el tiempo para la aplicación de pruebas.</td>
+            <td>Los estudiantes participan en el pretest y el postest con honestidad y disposición.</td>
+            <td>La herramienta estadística seleccionada (Excel, SPSS, R) está disponible para el investigador.</td>
+            <td>Las pruebas diagnóstica y postest son equivalentes y no reproducen ítems protegidos del ICFES.</td>
+          </tr>
+          <tr>
+            <td>C5: Percepción</td>
+            <td>Evaluación de percepción y motivación estudiantil aplicada y analizada.</td>
+            <td>La encuesta puede aplicarse en formato digital (Google Forms) sin costo adicional.</td>
+            <td>Los docentes acompañan la aplicación de la encuesta al finalizar el piloto.</td>
+            <td>Los estudiantes responden la encuesta con honestidad, compromiso y sin presiones externas.</td>
+            <td>La plataforma de formularios digitales permanece accesible al momento de la aplicación.</td>
+            <td>La encuesta preserva el anonimato de las respuestas y el bienestar emocional de los participantes.</td>
+          </tr>
+          <tr>
+            <td>Actividades</td>
+            <td>Desarrollo de las actividades de diseño, desarrollo, implementación y evaluación.</td>
+            <td>Las actividades se desarrollan con los recursos propios presupuestados sin imprevistos mayores.</td>
+            <td>Se mantiene el cronograma académico del CAI y las orientaciones del líder CTeI.</td>
+            <td>El equipo investigador mantiene disponibilidad de tiempo durante los 5 meses de ejecución.</td>
+            <td>Los recursos tecnológicos y herramientas digitales necesarios permanecen disponibles y funcionales.</td>
+            <td>Las actividades se ejecutan respetando la integridad académica y los principios éticos de la investigación.</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="mlt" style="margin-top:24px;">Componentes</div>
-    <div class="tw">
+    <!-- 9.3 Supuestos seleccionados -->
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">9.3</span><span class="dtag s">Supuestos seleccionados para la MML</span></div>
+    <div class="tw" style="margin-bottom:18px;">
       <table>
-        <thead><tr><th>Componente</th><th>Objetivo específico</th><th>Indicador</th><th>Medios de verificación</th><th>Supuestos</th></tr></thead>
+        <thead><tr><th>Nivel</th><th>Supuesto seleccionado</th><th>Justificación</th></tr></thead>
         <tbody>
-          <tr><td><b>C1: Diseño del sistema</b></td><td>Diseñar la arquitectura y funcionalidades del tutor lúdico tipo trivia.</td><td>Documento de diseño aprobado y prototipo validado por docentes.</td><td>Capturas del sistema, repositorio, rúbrica de validación.</td><td>Disponibilidad de herramientas de desarrollo y marcos Saber 11°.</td></tr>
-          <tr><td><b>C2: Desarrollo del tutor</b></td><td>Implementar los módulos funcionales con preguntas tipo Saber 11°.</td><td>Tutor funcionando con ≥200 preguntas en 5 áreas, retroalimentación activa.</td><td>Código fuente, pruebas funcionales y prueba de usabilidad.</td><td>Acceso a recursos tecnológicos y conectividad adecuada.</td></tr>
-          <tr><td><b>C3: Implementación piloto</b></td><td>Aplicar el tutor con estudiantes de grado 11.</td><td>≥80% de estudiantes participan en ≥3 sesiones del tutor.</td><td>Registros de uso de la plataforma, listas de participación, bitácoras.</td><td>Disponibilidad y compromiso de estudiantes y acompañamiento institucional.</td></tr>
-          <tr><td><b>C4: Evaluación académica</b></td><td>Analizar cambio en resultados antes y después del uso del tutor.</td><td>Diferencia estadísticamente significativa pretest vs postest (t-student, p &lt;0.05).</td><td>Resultados de simulacros y análisis estadístico comparativo.</td><td>Participación constante en ambas pruebas.</td></tr>
-          <tr><td><b>C5: Evaluación de percepción</b></td><td>Medir motivación y percepción de utilidad del tutor.</td><td>Puntuación promedio ≥4 en escala Likert (1–5) en motivación y satisfacción.</td><td>Encuestas y formularios aplicados al finalizar la intervención.</td><td>Honestidad y compromiso de los estudiantes en sus respuestas.</td></tr>
+          <tr><td><b>Fin</b></td><td>La institución y la comunidad académica mantienen interés en integrar tecnologías lúdicas para mejorar los resultados Saber 11° en contextos rurales.</td><td>Este interés garantiza que los resultados del proyecto sean pertinentes, utilizables y replicables en futuras intervenciones pedagógicas.</td></tr>
+          <tr><td><b>Propósito</b></td><td>Los estudiantes de grado 11° participan activamente en el uso del tutor lúdico y en las evaluaciones (pretest, postest y encuesta) durante toda la intervención.</td><td>La participación activa y constante es condición fundamental para que la intervención genere el impacto esperado en desempeño y motivación.</td></tr>
+          <tr><td><b>C1</b></td><td>Los docentes de la IED disponen de tiempo y conocimiento para participar en las sesiones de validación pedagógica del diseño del tutor.</td><td>La validación docente garantiza la alineación del tutor con las competencias Saber 11° y su pertinencia pedagógica para el contexto institucional.</td></tr>
+          <tr><td><b>C2</b></td><td>Los recursos tecnológicos para el desarrollo (entorno de programación, hosting y banco de preguntas) permanecen accesibles y funcionales durante la fase de desarrollo.</td><td>La disponibilidad tecnológica es condición básica para desarrollar el tutor lúdico con las funcionalidades requeridas.</td></tr>
+          <tr><td><b>C3</b></td><td>La IED Rural San Gabriel cuenta con sala de cómputo con acceso a internet y los directivos autorizan su uso durante las 4 semanas del piloto.</td><td>El acceso a equipos y conectividad es indispensable para que los estudiantes puedan interactuar con el tutor lúdico durante la implementación.</td></tr>
+          <tr><td><b>C4</b></td><td>Los estudiantes participan con honestidad en el pretest y el postest, respondiendo de forma individual y sin acceso previo a las respuestas.</td><td>La validez interna del diseño cuasi-experimental depende de la independencia y honestidad de las respuestas en ambas pruebas.</td></tr>
+          <tr><td><b>C5</b></td><td>Los estudiantes responden la encuesta de percepción con honestidad y compromiso al finalizar el piloto, sin presiones externas.</td><td>La validez de los datos de motivación y satisfacción depende de la sinceridad y disposición de los participantes al momento de responder.</td></tr>
+          <tr><td><b>Actividades</b></td><td>El equipo NeuroByte mantiene disponibilidad de tiempo y se cumple el cronograma académico del CAI CTeI durante los 5 meses de ejecución.</td><td>El cumplimiento del cronograma y la disponibilidad del equipo son condiciones básicas para ejecutar todas las actividades previstas en la EAP.</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- 9.4 Lógica vertical -->
+    <div class="dtags" style="margin-bottom:8px;"><span class="dtag v">9.4</span><span class="dtag s">Verificación de la lógica vertical</span></div>
+    <div class="tw" style="margin-bottom:18px;">
+      <table>
+        <thead><tr><th>Lógica vertical</th><th>¿Cumple?</th></tr></thead>
+        <tbody>
+          <tr><td>Si se llevan a cabo las actividades y los supuestos de este nivel se ratifican, se obtendrán los componentes del proyecto.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+          <tr><td>Si se producen los componentes y los supuestos a este nivel se conforman, se logrará el propósito de la intervención.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+          <tr><td>Si se logra el propósito y se conforman los supuestos a este nivel, se habrá contribuido de manera significativa a alcanzar el fin.</td><td style="color:#2a6000;font-weight:700;">✔ Sí</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--g);border-radius:0 var(--rl) var(--rl) 0;">
+      <h3>Interpretación de los supuestos y lógica vertical</h3>
+      <p>Los supuestos identificados permiten reconocer las condiciones externas que deben mantenerse para favorecer el desarrollo exitoso del proyecto. Los riesgos más relevantes se relacionan con la disponibilidad tecnológica de la institución, el compromiso estudiantil durante el piloto, la validez de los instrumentos de evaluación y el cumplimiento del cronograma del equipo investigador. Al tratarse de una investigación aplicada de tipo cuasi-experimental, no se identifican riesgos ambientales ni financieros significativos, dado que el proyecto puede ejecutarse con los recursos propios presupuestados. La lógica vertical confirma que, si las actividades se ejecutan y los supuestos se mantienen, los 5 componentes se producirán; los componentes permitirán alcanzar el propósito de mejorar el desempeño y la motivación en Saber 11°; y el propósito contribuirá al fin de ampliar el acceso a educación superior desde contextos rurales y reducir la brecha educativa campo-ciudad en Colombia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section id="equipo">
+  <div class="ctr">
+    <div class="badge"><span class="dot">👥</span>Equipo</div>
+    <h2 class="section-title">Equipo NeuroByte</h2>
+    <div class="tgrid">
+      <div class="tcard"><div class="av">OP</div><h4>Oscar Camilo Pineda Osorio</h4><div class="role">Investigador principal</div><div class="inst">UCundinamarca · CAI CTeI I · 2026</div></div>
+      <div class="tcard"><div class="av">JR</div><h4>Jeison Crishtofer Rojas Cruz</h4><div class="role">Investigador principal</div><div class="inst">UCundinamarca · CAI CTeI I · 2026</div></div>
+      <div class="tcard"><div class="av">JM</div><h4>José Alejandro Martínez Escobar</h4><div class="role">Líder CAI CTeI</div><div class="inst">Universidad de Cundinamarca · 2026</div></div>
     </div>
   </div>
 </section>
@@ -669,7 +1286,7 @@ footer strong{color:var(--g)}
 <!-- FOOTER -->
 <footer>
   <p><strong>NeuroByte</strong> — Portafolio Digital CTeI I · Universidad de Cundinamarca · CAD102020631 · 2026</p>
-  <p style="margin-top:5px;">IED Rural San Gabriel de Cajicá · Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias Saber 11°</p>
+  <p style="margin-top:5px;">Ingenieria de sistemas y computación · Diseño e implementación de un tutor lúdico tipo trivia para el fortalecimiento de competencias Saber 11°</p>
 </footer>
 
 </body>
