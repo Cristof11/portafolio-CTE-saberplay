@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>NeuroByte | Portafolio CTeI — Tutor Lúdico Saber 11°</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1503'/%3E%3Crect x='2' y='2' width='28' height='28' rx='7' fill='none' stroke='%236abf1e' stroke-width='2'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial Black,sans-serif' font-weight='900' font-size='13' fill='%236abf1e'%3ENB%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
@@ -258,7 +259,6 @@ footer strong{color:var(--g)}
     <div class="ficha">
       <div class="ficha-hd">
         <div class="onum">NB</div>
-        <!--<div class="ficon">🧠</div>-->
         <div><h3>NeuroByte</h3><p>Ficha del proyecto</p></div>
       </div>
       <ul>
@@ -476,108 +476,144 @@ footer strong{color:var(--g)}
     <h3 style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:14px;">Representación de los involucrados</h3>
     
     <!-- MAPA DE ACTORES — Diagrama visual -->
-    <div class="card" style="margin-bottom:20px;overflow-x:auto;">
-      <p style="font-size:.82rem;color:var(--inks);margin-bottom:14px;">El siguiente diagrama presenta los actores identificados organizados según su nivel de influencia (eje vertical) e interés (eje horizontal) frente al proyecto.</p>
-      <svg viewBox="0 0 820 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:820px;display:block;margin:0 auto;font-family:'DM Sans',sans-serif;">
-        <!-- Background -->
-        <rect width="820" height="480" fill="#f7f9f4" rx="12"/>
-        <!-- Grid quadrants -->
-        <rect x="40" y="30" width="370" height="210" fill="#fff0f0" rx="8" opacity=".6"/>
-        <rect x="420" y="30" width="370" height="210" fill="#eaf0ff" rx="8" opacity=".6"/>
-        <rect x="40" y="250" width="370" height="210" fill="#fff8e8" rx="8" opacity=".6"/>
-        <rect x="420" y="250" width="370" height="210" fill="#f0fae0" rx="8" opacity=".6"/>
-        <!-- Quadrant labels -->
-        <text x="225" y="52" text-anchor="middle" font-size="11" fill="#c0a0a0" font-weight="600">Alta influencia · Bajo interés</text>
-        <text x="605" y="52" text-anchor="middle" font-size="11" fill="#8090c0" font-weight="600">Alta influencia · Alto interés</text>
-        <text x="225" y="270" text-anchor="middle" font-size="11" fill="#b09060" font-weight="600">Baja influencia · Bajo interés</text>
-        <text x="605" y="270" text-anchor="middle" font-size="11" fill="#4a8010" font-weight="600">Baja influencia · Alto interés</text>
-        <!-- Axes -->
-        <line x1="410" y1="20" x2="410" y2="470" stroke="#ccc" stroke-width="1.5" stroke-dasharray="6,4"/>
-        <line x1="30" y1="240" x2="790" y2="240" stroke="#ccc" stroke-width="1.5" stroke-dasharray="6,4"/>
-        <!-- Axis labels -->
-        <text x="410" y="14" text-anchor="middle" font-size="10" fill="#888">INTERÉS →</text>
-        <text x="14" y="240" text-anchor="middle" font-size="10" fill="#888" transform="rotate(-90,14,240)">INFLUENCIA →</text>
+    <div class="card" style="margin-bottom:20px;">
+      <p style="font-size:.82rem;color:var(--inks);margin-bottom:16px;">El siguiente diagrama organiza los actores según su <strong>nivel de influencia</strong> (eje vertical) e <strong>interés</strong> (eje horizontal) frente al proyecto. Fuente: Elaboración propia · NeuroByte 2026.</p>
+      <div style="overflow-x:auto;">
+        <div style="min-width:600px;">
 
-        <!-- ── ACTORES ── -->
-        <!-- Alta influencia + Alto interés (top-right) — NeuroByte, Directivos, Docentes -->
-        <!-- NeuroByte -->
-        <g>
-          <circle cx="560" cy="90" r="32" fill="#2d5a07" opacity=".9"/>
-          <text x="560" y="85" text-anchor="middle" font-size="18" fill="white">🔬</text>
-          <text x="560" y="100" text-anchor="middle" font-size="9.5" fill="white" font-weight="700">NeuroByte</text>
-          <text x="560" y="111" text-anchor="middle" font-size="8.5" fill="rgba(255,255,255,.8)">Promotor</text>
-        </g>
-        <!-- Directivos -->
-        <g>
-          <circle cx="680" cy="110" r="30" fill="#1a3a8a" opacity=".85"/>
-          <text x="680" y="105" text-anchor="middle" font-size="17" fill="white">🏫</text>
-          <text x="680" y="120" text-anchor="middle" font-size="8.5" fill="white" font-weight="700">Directivos IED</text>
-          <text x="680" y="131" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.8)">Influencia: Alta</text>
-        </g>
-        <!-- Estudiantes Grado 11 -->
-        <g>
-          <circle cx="620" cy="175" r="30" fill="#6abf1e" opacity=".9"/>
-          <text x="620" y="170" text-anchor="middle" font-size="17" fill="white">🎓</text>
-          <text x="620" y="184" text-anchor="middle" font-size="8.5" fill="white" font-weight="700">Estudiantes G11</text>
-          <text x="620" y="195" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">Interés: Alto</text>
-        </g>
+          <!-- EJE INFLUENCIA LABEL -->
+          <div style="display:flex;align-items:stretch;gap:0;">
+            <!-- Y-axis label -->
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:32px;flex-shrink:0;gap:4px;">
+              <span style="font-size:.65rem;font-weight:800;color:var(--inkq);text-transform:uppercase;letter-spacing:1px;writing-mode:vertical-rl;transform:rotate(180deg);">Influencia ↑</span>
+            </div>
 
-        <!-- Alta influencia + Bajo interés (top-left) — Docentes, UCundinamarca -->
-        <!-- Docentes -->
-        <g>
-          <circle cx="230" cy="90" r="30" fill="#1a3a8a" opacity=".8"/>
-          <text x="230" y="85" text-anchor="middle" font-size="17" fill="white">👩‍🏫</text>
-          <text x="230" y="100" text-anchor="middle" font-size="9" fill="white" font-weight="700">Docentes IED</text>
-          <text x="230" y="111" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.8)">Influencia: Alta</text>
-        </g>
-        <!-- UCundinamarca -->
-        <g>
-          <circle cx="120" cy="155" r="28" fill="#7a4a00" opacity=".8"/>
-          <text x="120" y="150" text-anchor="middle" font-size="16" fill="white">🏛️</text>
-          <text x="120" y="163" text-anchor="middle" font-size="8.5" fill="white" font-weight="700">UCundinamarca</text>
-          <text x="120" y="174" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.8)">Influencia: Media</text>
-        </g>
+            <div style="flex:1;display:flex;flex-direction:column;gap:0;">
 
-        <!-- Baja influencia + Alto interés (bottom-right) — Padres -->
-        <g>
-          <circle cx="580" cy="340" r="28" fill="#f5a623" opacity=".85"/>
-          <text x="580" y="335" text-anchor="middle" font-size="16" fill="white">👨‍👩‍👧</text>
-          <text x="580" y="348" text-anchor="middle" font-size="8.5" fill="white" font-weight="700">Padres de Familia</text>
-          <text x="580" y="359" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)">Interés: Medio</text>
-        </g>
+              <!-- FILA HEADERS -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;padding-left:8px;">
+                <div style="text-align:center;font-size:.72rem;font-weight:700;color:#888;padding:4px 0;border-bottom:2px solid #eee;">Bajo interés</div>
+                <div style="text-align:center;font-size:.72rem;font-weight:700;color:#888;padding:4px 0;border-bottom:2px solid #eee;">Alto interés</div>
+              </div>
 
-        <!-- Baja influencia + Bajo interés (bottom-left) — ICFES, MEN -->
-        <!-- ICFES -->
-        <g>
-          <circle cx="200" cy="340" r="26" fill="#888" opacity=".8"/>
-          <text x="200" y="335" text-anchor="middle" font-size="15" fill="white">📊</text>
-          <text x="200" y="349" text-anchor="middle" font-size="8.5" fill="white" font-weight="700">ICFES</text>
-          <text x="200" y="360" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.8)">Influencia: Baja</text>
-        </g>
-        <!-- MEN -->
-        <g>
-          <circle cx="310" cy="390" r="24" fill="#888" opacity=".75"/>
-          <text x="310" y="385" text-anchor="middle" font-size="14" fill="white">🏢</text>
-          <text x="310" y="398" text-anchor="middle" font-size="8.5" fill="white" font-weight="700">MEN / Sec. Educ.</text>
-          <text x="310" y="408" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.75)">Influencia: Baja</text>
-        </g>
+              <!-- ROW 1: Alta influencia -->
+              <div style="display:grid;grid-template-columns:auto 1fr 1fr;gap:8px;align-items:center;margin-bottom:4px;">
+                <div style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:.66rem;font-weight:800;color:var(--gdd);background:var(--gl);padding:8px 5px;border-radius:6px;text-align:center;white-space:nowrap;">Alta</div>
+                <!-- Bajo interés + Alta influencia -->
+                <div style="background:#f0f4ff;border:1px solid #c8d8f8;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+                  <!-- Docentes -->
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:8px;padding:8px 12px;border:1px solid #d8e4f8;">
+                    <span style="font-size:1.4rem;flex-shrink:0;">👩‍🏫</span>
+                    <div>
+                      <div style="font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#1a3a8a;">Docentes IED</div>
+                      <div style="font-size:.72rem;color:#5c6a9a;">Actor académico · Influencia Alta</div>
+                    </div>
+                    <span style="margin-left:auto;background:#1a3a8a;color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">E:5 F:5</span>
+                  </div>
+                  <!-- UCundinamarca -->
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:8px;padding:8px 12px;border:1px solid #d8e4f8;">
+                    <span style="font-size:1.4rem;flex-shrink:0;">🏛️</span>
+                    <div>
+                      <div style="font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#1a3a8a;">UCundinamarca</div>
+                      <div style="font-size:.72rem;color:#5c6a9a;">Actor institucional · Influencia Media</div>
+                    </div>
+                    <span style="margin-left:auto;background:#1a3a8a;color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">E:5 F:4</span>
+                  </div>
+                </div>
+                <!-- Alto interés + Alta influencia -->
+                <div style="background:#f0fae0;border:1px solid #b8d898;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+                  <!-- NeuroByte -->
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:8px;padding:8px 12px;border:1px solid #b8d898;">
+                    <span style="font-size:1.4rem;flex-shrink:0;">🔬</span>
+                    <div>
+                      <div style="font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#2d5a07;">NeuroByte</div>
+                      <div style="font-size:.72rem;color:#4a7a10;">Promotor / Investigador</div>
+                    </div>
+                    <span style="margin-left:auto;background:#2d5a07;color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">E:5 F:5</span>
+                  </div>
+                  <!-- Directivos -->
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:8px;padding:8px 12px;border:1px solid #b8d898;">
+                    <span style="font-size:1.4rem;flex-shrink:0;">🏫</span>
+                    <div>
+                      <div style="font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#2d5a07;">Directivos IED</div>
+                      <div style="font-size:.72rem;color:#4a7a10;">Actor institucional · Influencia Alta</div>
+                    </div>
+                    <span style="margin-left:auto;background:#2d5a07;color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">E:5 F:4</span>
+                  </div>
+                  <!-- Estudiantes -->
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:8px;padding:8px 12px;border:1px solid #b8d898;">
+                    <span style="font-size:1.4rem;flex-shrink:0;">🎓</span>
+                    <div>
+                      <div style="font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#2d5a07;">Estudiantes Grado 11</div>
+                      <div style="font-size:.72rem;color:#4a7a10;">Actor directo · Interés Alto</div>
+                    </div>
+                    <span style="margin-left:auto;background:#6abf1e;color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">E:5 F:5</span>
+                  </div>
+                </div>
+              </div>
 
-        <!-- Leyenda -->
-        <rect x="30" y="445" width="760" height="28" fill="rgba(0,0,0,.04)" rx="6"/>
-        <circle cx="55" cy="459" r="7" fill="#2d5a07"/>
-        <text x="67" y="463" font-size="9" fill="#444">Promotor</text>
-        <circle cx="130" cy="459" r="7" fill="#1a3a8a"/>
-        <text x="142" y="463" font-size="9" fill="#444">Influencia Alta</text>
-        <circle cx="230" cy="459" r="7" fill="#6abf1e"/>
-        <text x="242" y="463" font-size="9" fill="#444">Interés Alto</text>
-        <circle cx="315" cy="459" r="7" fill="#f5a623"/>
-        <text x="327" y="463" font-size="9" fill="#444">Interés Medio</text>
-        <circle cx="410" cy="459" r="7" fill="#7a4a00"/>
-        <text x="422" y="463" font-size="9" fill="#444">Influencia Media</text>
-        <circle cx="520" cy="459" r="7" fill="#888"/>
-        <text x="532" y="463" font-size="9" fill="#444">Influencia Baja</text>
-        <text x="650" y="463" font-size="8.5" fill="#aaa" font-style="italic">Fuente: Elaboración propia · NeuroByte 2026</text>
-      </svg>
+              <!-- Separador horizontal -->
+              <div style="border-top:2px dashed #ccc;margin:4px 0 4px 0;position:relative;">
+                <span style="position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:#fff;padding:0 8px;font-size:.65rem;color:#aaa;font-weight:600;">BAJA INFLUENCIA</span>
+              </div>
+
+              <!-- ROW 2: Baja influencia -->
+              <div style="display:grid;grid-template-columns:auto 1fr 1fr;gap:8px;align-items:center;margin-top:4px;">
+                <div style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:.66rem;font-weight:800;color:#888;background:#f0f0f0;padding:8px 5px;border-radius:6px;text-align:center;white-space:nowrap;">Baja</div>
+                <!-- Bajo interés + Baja influencia -->
+                <div style="background:#fff4e8;border:1px solid #f0d090;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+                  <!-- ICFES -->
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:8px;padding:8px 12px;border:1px solid #f0d090;">
+                    <span style="font-size:1.4rem;flex-shrink:0;">📊</span>
+                    <div>
+                      <div style="font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#7a5000;">ICFES</div>
+                      <div style="font-size:.72rem;color:#9a7020;">Actor normativo · Influencia Baja</div>
+                    </div>
+                    <span style="margin-left:auto;background:#c8a040;color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">E:3 F:3</span>
+                  </div>
+                  <!-- MEN -->
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:8px;padding:8px 12px;border:1px solid #f0d090;">
+                    <span style="font-size:1.4rem;flex-shrink:0;">🏢</span>
+                    <div>
+                      <div style="font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#7a5000;">MEN / Sec. Educ.</div>
+                      <div style="font-size:.72rem;color:#9a7020;">Actor normativo · Influencia Baja</div>
+                    </div>
+                    <span style="margin-left:auto;background:#c8a040;color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">E:3 F:2</span>
+                  </div>
+                </div>
+                <!-- Alto interés + Baja influencia -->
+                <div style="background:#fff0f8;border:1px solid #f0b8d8;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+                  <!-- Padres -->
+                  <div style="display:flex;align-items:center;gap:10px;background:#fff;border-radius:8px;padding:8px 12px;border:1px solid #f0b8d8;">
+                    <span style="font-size:1.4rem;flex-shrink:0;">👨‍👩‍👧</span>
+                    <div>
+                      <div style="font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#8a2060;">Padres de Familia</div>
+                      <div style="font-size:.72rem;color:#a04080;">Beneficiario indirecto · Interés Medio</div>
+                    </div>
+                    <span style="margin-left:auto;background:#d060a0;color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;">E:4 F:3</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- X-axis label -->
+              <div style="text-align:center;margin-top:10px;">
+                <span style="font-size:.65rem;font-weight:800;color:var(--inkq);text-transform:uppercase;letter-spacing:1px;">← Bajo interés · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · Alto interés →</span>
+              </div>
+
+            </div><!-- end flex col -->
+          </div><!-- end flex row -->
+
+          <!-- LEYENDA -->
+          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid var(--bds);">
+            <span style="font-size:.72rem;color:var(--inkq);font-weight:600;">Leyenda — Resultante (E×F):</span>
+            <span style="display:inline-flex;align-items:center;gap:5px;font-size:.72rem;color:var(--inks);"><span style="background:#2d5a07;color:#fff;padding:1px 7px;border-radius:8px;font-size:.65rem;font-weight:700;">25</span> Muy alta prioridad</span>
+            <span style="display:inline-flex;align-items:center;gap:5px;font-size:.72rem;color:var(--inks);"><span style="background:#1a3a8a;color:#fff;padding:1px 7px;border-radius:8px;font-size:.65rem;font-weight:700;">20</span> Alta prioridad</span>
+            <span style="display:inline-flex;align-items:center;gap:5px;font-size:.72rem;color:var(--inks);"><span style="background:#d060a0;color:#fff;padding:1px 7px;border-radius:8px;font-size:.65rem;font-weight:700;">12</span> Prioridad media</span>
+            <span style="display:inline-flex;align-items:center;gap:5px;font-size:.72rem;color:var(--inks);"><span style="background:#c8a040;color:#fff;padding:1px 7px;border-radius:8px;font-size:.65rem;font-weight:700;">6–9</span> Baja prioridad</span>
+          </div>
+
+        </div>
+      </div>
     </div>
 
 <div class="agrid" style="margin-bottom:24px;">
